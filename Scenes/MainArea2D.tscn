@@ -21,39 +21,47 @@ position = Vector2(-566, 284)
 scale = Vector2(0.75, 0.75)
 
 [node name="StaticBody2D" parent="." unique_id=1673683336 instance=ExtResource("3_ajca5")]
-position = Vector2(-432, -232)
+position = Vector2(-480, -256)
 
 [node name="StaticBody2D7" parent="." unique_id=2059806413 instance=ExtResource("3_ajca5")]
-position = Vector2(-240, -232)
+position = Vector2(-320, -256)
 
 [node name="StaticBody2D3" parent="." unique_id=931411792 instance=ExtResource("3_ajca5")]
-position = Vector2(-336, -232)
+position = Vector2(-352, -256)
 
 [node name="SWall001" parent="StaticBody2D3" index="1" unique_id=1379828624]
+position = Vector2(-47.999996, 0)
+texture = ExtResource("4_50x82")
+
+[node name="SWall002" type="Sprite2D" parent="StaticBody2D3" unique_id=348777095]
+position = Vector2(103.999985, 0)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("4_50x82")
 
 [node name="StaticBody2D2" parent="." unique_id=1872636436 instance=ExtResource("3_ajca5")]
-position = Vector2(-568, -232)
+position = Vector2(-584, -256)
 
 [node name="SWall001" parent="StaticBody2D2" index="1" unique_id=1379828624]
 texture = ExtResource("5_50x82")
 
 [node name="StaticBody2D4" parent="." unique_id=262608573 instance=ExtResource("3_ajca5")]
-position = Vector2(568, -232)
+position = Vector2(584, -256)
 
 [node name="SWall001" parent="StaticBody2D4" index="1" unique_id=1379828624]
 texture = ExtResource("4_ahpr3")
 
 [node name="StaticBody2D5" parent="." unique_id=168445550 instance=ExtResource("3_ajca5")]
-position = Vector2(568, 368)
+position = Vector2(552, 344)
 
 [node name="SWall001" parent="StaticBody2D5" index="1" unique_id=1379828624]
+position = Vector2(31.999998, 23.999996)
 texture = ExtResource("4_ahpr3")
 
 [node name="StaticBody2D6" parent="." unique_id=5963247 instance=ExtResource("3_ajca5")]
-position = Vector2(-568, 368)
+position = Vector2(-584, 344)
 
 [node name="SWall001" parent="StaticBody2D6" index="1" unique_id=1379828624]
+position = Vector2(0, 23.999998)
 texture = ExtResource("4_ahpr3")
 
 [editable path="StaticBody2D3"]
