@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dv328438bkuk3"]
+[gd_scene format=3 uid="uid://cp7rya56tr4e0"]
 
 [ext_resource type="Texture2D" uid="uid://bslx5r8r0yjp8" path="res://Sprites/S_Wall_001.png" id="1_lpdjv"]
 
@@ -14,8 +14,3 @@ shape = SubResource("RectangleShape2D_pv77i")
 [node name="SWall001" type="Sprite2D" parent="." unique_id=1379828624]
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_lpdjv")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=988460013]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1326236499]
-shape = SubResource("RectangleShape2D_pv77i")
