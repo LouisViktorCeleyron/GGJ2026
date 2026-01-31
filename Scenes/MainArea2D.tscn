@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://be8n1bv2r6gwk"]
+[gd_scene format=3 uid="uid://ccbjtu65wdpvb"]
 
 [ext_resource type="Texture2D" uid="uid://dmi8binjjp1ar" path="res://Temp/LeSol.png" id="1_lduwd"]
 [ext_resource type="PackedScene" uid="uid://cieemcbemdyu1" path="res://Objects/Bard.tscn" id="2_ulm5l"]
-[ext_resource type="PackedScene" uid="uid://cp7rya56tr4e0" path="res://Objects/Obstacle.tscn" id="3_ajca5"]
+[ext_resource type="PackedScene" path="res://Objects/Obstacle.tscn" id="3_ajca5"]
 [ext_resource type="Texture2D" uid="uid://bfv70cb81hx0k" path="res://Sprites/S_Tower_003.png" id="4_50x82"]
 [ext_resource type="Texture2D" uid="uid://58311enhn36i" path="res://Sprites/S_Tower_002.png" id="4_ahpr3"]
 [ext_resource type="Texture2D" uid="uid://bmh7yd61xfcbd" path="res://Sprites/S_Wall_002.png" id="4_gg7im"]
@@ -12,149 +12,140 @@
 [node name="MainArea2d" type="Node2D" unique_id=661939480]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=708613885]
-zoom = Vector2(0.68, 0.68)
+zoom = Vector2(0.38, 0.38)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=565141892]
 modulate = Color(0.18326035, 0.40376717, 0.3722785, 1)
-scale = Vector2(0.8668674, 0.66955435)
+scale = Vector2(2.447, 2.451)
 texture = ExtResource("1_lduwd")
 
 [node name="Bard" parent="." unique_id=646171583 instance=ExtResource("2_ulm5l")]
 position = Vector2(-566, 284)
-scale = Vector2(0.75, 0.75)
 
 [node name="Art" type="Node2D" parent="." unique_id=25068648]
-position = Vector2(-584, 344)
-
-[node name="DownBigTower_002" parent="Art" unique_id=5963247 instance=ExtResource("3_ajca5")]
-modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
-z_index = 3
-
-[node name="SWall001" parent="Art/DownBigTower_002" index="1" unique_id=1379828624]
-position = Vector2(0, 23.999998)
-texture = ExtResource("4_ahpr3")
+position = Vector2(-98.38, -145.535)
 
 [node name="UpBigTower_001" parent="Art" unique_id=1872636436 instance=ExtResource("3_ajca5")]
 z_index = 1
-position = Vector2(0, -600)
+position = Vector2(-1383, -561)
 
 [node name="SWall001" parent="Art/UpBigTower_001" index="1" unique_id=1379828624]
 texture = ExtResource("5_50x82")
 
 [node name="UpBigTower_002" parent="Art" unique_id=262608573 instance=ExtResource("3_ajca5")]
 z_index = 1
-position = Vector2(1168, -600)
+position = Vector2(1591, -561)
 
 [node name="SWall001" parent="Art/UpBigTower_002" index="1" unique_id=1379828624]
 texture = ExtResource("4_ahpr3")
 
 [node name="UpSmallTower_001" parent="Art" unique_id=1714256576 instance=ExtResource("3_ajca5")]
 z_index = 1
-position = Vector2(183, -600)
+position = Vector2(-894, -561)
 
 [node name="SWall001" parent="Art/UpSmallTower_001" index="1" unique_id=1379828624]
 texture = ExtResource("4_50x82")
 
 [node name="UpSmallTower_002" parent="Art" unique_id=1918902399 instance=ExtResource("3_ajca5")]
 z_index = 1
-position = Vector2(1015, -600)
+position = Vector2(1015, -561)
 
 [node name="SWall001" parent="Art/UpSmallTower_002" index="1" unique_id=1379828624]
 texture = ExtResource("4_50x82")
 
 [node name="UpWall_001" parent="Art" unique_id=1673683336 instance=ExtResource("3_ajca5")]
-position = Vector2(104, -600)
+position = Vector2(-1100, -561)
 
 [node name="UpWall_002" parent="Art" unique_id=627966768 instance=ExtResource("3_ajca5")]
-position = Vector2(320, -600)
+position = Vector2(-614, -561)
 
 [node name="SWall001" parent="Art/UpWall_002" index="1" unique_id=1379828624]
 position = Vector2(-23.999992, 0)
 texture = ExtResource("4_gg7im")
 
 [node name="UpWall_003" parent="Art" unique_id=1481113291 instance=ExtResource("3_ajca5")]
-position = Vector2(524, -600)
+position = Vector2(-104, -561)
 
 [node name="SWall001" parent="Art/UpWall_003" index="1" unique_id=1379828624]
 position = Vector2(-23.999992, 0)
 texture = ExtResource("4_gg7im")
 
 [node name="UpWall_004" parent="Art" unique_id=1718006287 instance=ExtResource("3_ajca5")]
-position = Vector2(723, -600)
+position = Vector2(402, -561)
 
 [node name="SWall001" parent="Art/UpWall_004" index="1" unique_id=1379828624]
 position = Vector2(-20, 0)
 texture = ExtResource("4_gg7im")
 
 [node name="UpWall_005" parent="Art" unique_id=90856849 instance=ExtResource("3_ajca5")]
-position = Vector2(925, -600)
+position = Vector2(910, -561)
 
 [node name="SWall001" parent="Art/UpWall_005" index="1" unique_id=1379828624]
 position = Vector2(-20, 0)
 texture = ExtResource("4_gg7im")
 
 [node name="UpWall_006" parent="Art" unique_id=636636908 instance=ExtResource("3_ajca5")]
-position = Vector2(1095, -600)
+position = Vector2(1335, -561)
 
-[node name="UpSmallTower_003" parent="Art" unique_id=1923471301 instance=ExtResource("3_ajca5")]
+[node name="DownSmallTower_001" parent="Art" unique_id=1923471301 instance=ExtResource("3_ajca5")]
 modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
 z_index = 1
-position = Vector2(183, 25)
+position = Vector2(-912, 1124)
 
-[node name="SWall001" parent="Art/UpSmallTower_003" index="1" unique_id=1379828624]
+[node name="SWall001" parent="Art/DownSmallTower_001" index="1" unique_id=1379828624]
 texture = ExtResource("4_50x82")
 
-[node name="UpSmallTower_004" parent="Art" unique_id=381374428 instance=ExtResource("3_ajca5")]
+[node name="DownSmallTower_002" parent="Art" unique_id=381374428 instance=ExtResource("3_ajca5")]
 modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
 z_index = 1
-position = Vector2(1015, 25)
+position = Vector2(1138, 1127)
 
-[node name="SWall001" parent="Art/UpSmallTower_004" index="1" unique_id=1379828624]
+[node name="SWall001" parent="Art/DownSmallTower_002" index="1" unique_id=1379828624]
 texture = ExtResource("4_50x82")
 
-[node name="UpWall_007" parent="Art" unique_id=1368323776 instance=ExtResource("3_ajca5")]
+[node name="DownWall_001" parent="Art" unique_id=1368323776 instance=ExtResource("3_ajca5")]
 modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
-position = Vector2(104, 25)
+position = Vector2(-1103, 1122)
 
-[node name="UpWall_008" parent="Art" unique_id=981335885 instance=ExtResource("3_ajca5")]
+[node name="DownWall_002" parent="Art" unique_id=981335885 instance=ExtResource("3_ajca5")]
 modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
-position = Vector2(320, 25)
+position = Vector2(-627, 1122)
 
-[node name="SWall001" parent="Art/UpWall_008" index="1" unique_id=1379828624]
+[node name="SWall001" parent="Art/DownWall_002" index="1" unique_id=1379828624]
 position = Vector2(-23.999992, 0)
 texture = ExtResource("4_gg7im")
 
-[node name="UpWall_009" parent="Art" unique_id=1760289043 instance=ExtResource("3_ajca5")]
+[node name="DownWall_003" parent="Art" unique_id=1760289043 instance=ExtResource("3_ajca5")]
 modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
-position = Vector2(524, 25)
+position = Vector2(-117, 1122)
 
-[node name="SWall001" parent="Art/UpWall_009" index="1" unique_id=1379828624]
+[node name="SWall001" parent="Art/DownWall_003" index="1" unique_id=1379828624]
 position = Vector2(-23.999992, 0)
 texture = ExtResource("4_gg7im")
 
-[node name="UpWall_010" parent="Art" unique_id=1564022032 instance=ExtResource("3_ajca5")]
+[node name="DownWall_004" parent="Art" unique_id=1564022032 instance=ExtResource("3_ajca5")]
 modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
-position = Vector2(723, 25)
+position = Vector2(386, 1122)
 
-[node name="SWall001" parent="Art/UpWall_010" index="1" unique_id=1379828624]
+[node name="SWall001" parent="Art/DownWall_004" index="1" unique_id=1379828624]
 position = Vector2(-20, 0)
 texture = ExtResource("4_gg7im")
 
-[node name="UpWall_011" parent="Art" unique_id=931548437 instance=ExtResource("3_ajca5")]
+[node name="DownWall_005" parent="Art" unique_id=931548437 instance=ExtResource("3_ajca5")]
 modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
-position = Vector2(925, 25)
+position = Vector2(896, 1122)
 
-[node name="SWall001" parent="Art/UpWall_011" index="1" unique_id=1379828624]
+[node name="SWall001" parent="Art/DownWall_005" index="1" unique_id=1379828624]
 position = Vector2(-20, 0)
 texture = ExtResource("4_gg7im")
 
-[node name="UpWall_012" parent="Art" unique_id=706130363 instance=ExtResource("3_ajca5")]
+[node name="DownWall_006" parent="Art" unique_id=706130363 instance=ExtResource("3_ajca5")]
 modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
-position = Vector2(1095, 25)
+position = Vector2(1323.84, 1122)
 
 [node name="RWall_001" parent="Art" unique_id=1673427982 instance=ExtResource("3_ajca5")]
 z_index = 2
-position = Vector2(1188, -437)
+position = Vector2(1613, -266)
 scale = Vector2(0.83999515, 1)
 
 [node name="SWall001" parent="Art/RWall_001" index="1" unique_id=1379828624]
@@ -163,7 +154,7 @@ texture = ExtResource("8_e3ne5")
 
 [node name="RWall_002" parent="Art" unique_id=898838305 instance=ExtResource("3_ajca5")]
 z_index = 2
-position = Vector2(1188, -234)
+position = Vector2(1613, 239)
 scale = Vector2(0.83999515, 1)
 
 [node name="SWall001" parent="Art/RWall_002" index="1" unique_id=1379828624]
@@ -172,34 +163,34 @@ texture = ExtResource("8_e3ne5")
 
 [node name="RWall_003" parent="Art" unique_id=399284520 instance=ExtResource("3_ajca5")]
 z_index = 2
-position = Vector2(1188, -30)
+position = Vector2(1613, 743)
 scale = Vector2(0.83999515, 1)
 
 [node name="SWall001" parent="Art/RWall_003" index="1" unique_id=1379828624]
 position = Vector2(-23.999992, 0)
 texture = ExtResource("8_e3ne5")
 
-[node name="LWall_001" parent="Art" unique_id=887008955 instance=ExtResource("3_ajca5")]
+[node name="LWall_001" parent="Art" unique_id=945322596 instance=ExtResource("3_ajca5")]
 z_index = 2
-position = Vector2(18, -437)
+position = Vector2(-1364, -266)
 scale = Vector2(0.83999515, 1)
 
 [node name="SWall001" parent="Art/LWall_001" index="1" unique_id=1379828624]
 position = Vector2(-23.999992, 0)
 texture = ExtResource("8_e3ne5")
 
-[node name="LWall_002" parent="Art" unique_id=869947636 instance=ExtResource("3_ajca5")]
+[node name="LWall_002" parent="Art" unique_id=1076514946 instance=ExtResource("3_ajca5")]
 z_index = 2
-position = Vector2(18, -234)
+position = Vector2(-1364, 239)
 scale = Vector2(0.83999515, 1)
 
 [node name="SWall001" parent="Art/LWall_002" index="1" unique_id=1379828624]
 position = Vector2(-23.999992, 0)
 texture = ExtResource("8_e3ne5")
 
-[node name="LWall_003" parent="Art" unique_id=457908650 instance=ExtResource("3_ajca5")]
+[node name="LWall_003" parent="Art" unique_id=789403708 instance=ExtResource("3_ajca5")]
 z_index = 2
-position = Vector2(18, -30)
+position = Vector2(-1364, 743)
 scale = Vector2(0.83999515, 1)
 
 [node name="SWall001" parent="Art/LWall_003" index="1" unique_id=1379828624]
@@ -209,13 +200,21 @@ texture = ExtResource("8_e3ne5")
 [node name="DownBigTower_001" parent="Art" unique_id=168445550 instance=ExtResource("3_ajca5")]
 modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
 z_index = 3
-position = Vector2(1136, 0)
+position = Vector2(-1383, 1098)
 
 [node name="SWall001" parent="Art/DownBigTower_001" index="1" unique_id=1379828624]
-position = Vector2(31.999998, 23.999996)
+position = Vector2(-3.000002, 23.999996)
 texture = ExtResource("4_ahpr3")
 
-[editable path="Art/DownBigTower_002"]
+[node name="DownBigTower_002" parent="Art" unique_id=5963247 instance=ExtResource("3_ajca5")]
+modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
+z_index = 3
+position = Vector2(1590, 1099)
+
+[node name="SWall001" parent="Art/DownBigTower_002" index="1" unique_id=1379828624]
+position = Vector2(0, 23.999998)
+texture = ExtResource("4_ahpr3")
+
 [editable path="Art/UpBigTower_001"]
 [editable path="Art/UpBigTower_002"]
 [editable path="Art/UpSmallTower_001"]
@@ -224,12 +223,12 @@ texture = ExtResource("4_ahpr3")
 [editable path="Art/UpWall_003"]
 [editable path="Art/UpWall_004"]
 [editable path="Art/UpWall_005"]
-[editable path="Art/UpSmallTower_003"]
-[editable path="Art/UpSmallTower_004"]
-[editable path="Art/UpWall_008"]
-[editable path="Art/UpWall_009"]
-[editable path="Art/UpWall_010"]
-[editable path="Art/UpWall_011"]
+[editable path="Art/DownSmallTower_001"]
+[editable path="Art/DownSmallTower_002"]
+[editable path="Art/DownWall_002"]
+[editable path="Art/DownWall_003"]
+[editable path="Art/DownWall_004"]
+[editable path="Art/DownWall_005"]
 [editable path="Art/RWall_001"]
 [editable path="Art/RWall_002"]
 [editable path="Art/RWall_003"]
@@ -237,3 +236,4 @@ texture = ExtResource("4_ahpr3")
 [editable path="Art/LWall_002"]
 [editable path="Art/LWall_003"]
 [editable path="Art/DownBigTower_001"]
+[editable path="Art/DownBigTower_002"]

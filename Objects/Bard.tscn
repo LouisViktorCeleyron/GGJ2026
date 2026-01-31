@@ -23,7 +23,6 @@ script = ExtResource("1_6cr34")
 shape = SubResource("RectangleShape2D_j7ih7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=210915665]
-scale = Vector2(0.51, 0.51)
 sprite_frames = ExtResource("2_vycds")
 animation = &"Walk"
 autoplay = "Walk"
