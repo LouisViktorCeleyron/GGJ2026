@@ -5,6 +5,7 @@ public partial class MovementModule : Module
 {
 	[Export]
 	private Node2D _canonRotator;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -23,7 +24,7 @@ public partial class MovementModule : Module
 	{
 		Vector2 velocity = _owner.Velocity;
 
-		Vector2 inputDir = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+		Vector2 inputDir = _owner.MovAxis; 
 		Vector2 direction = (new Vector2(inputDir.X, inputDir.Y)).Normalized();
 		if (direction != Vector2.Zero)
 		{
@@ -41,7 +42,7 @@ public partial class MovementModule : Module
 
 	private void Rotation()
 	{
-		Vector2 inputDir = Input.GetVector("ui_lookLeft", "ui_lookRight", "ui_lookDown", "ui_lookUp");
+		Vector2 inputDir = _owner.LookAxis;
 		var angle =  Mathf.Atan2(inputDir.X, inputDir.Y);
 		_canonRotator.Rotation = angle;
 	}

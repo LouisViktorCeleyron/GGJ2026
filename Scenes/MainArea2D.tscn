@@ -12,4 +12,5 @@ modulate = Color(0.18326035, 0.40376717, 0.3722785, 1)
 texture = ExtResource("1_lduwd")
 
 [node name="Bard" parent="." unique_id=646171583 instance=ExtResource("2_ulm5l")]
-position = Vector2(-302, 86)
+position = Vector2(-566, 284)
+scale = Vector2(0.75, 0.75)

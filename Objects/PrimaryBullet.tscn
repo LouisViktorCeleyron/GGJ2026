@@ -7,13 +7,24 @@
 radius = 50.0
 
 [node name="BulletBody" type="RigidBody2D" unique_id=383007295]
+mass = 0.001
+gravity_scale = 0.0
 script = ExtResource("1_w2fdd")
 metadata/_custom_type_script = "uid://dg1ihpi6j1315"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=319384282]
+[node name="Area2D" type="Area2D" parent="." unique_id=1591744049]
 scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=319384282]
 shape = SubResource("CircleShape2D_w2fdd")
 
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1558127251]
+[node name="Sprite2D" type="Sprite2D" parent="Area2D/CollisionShape2D" unique_id=1558127251]
 texture_filter = 1
 texture = ExtResource("2_6gk0t")
+
+[node name="Timer" type="Timer" parent="Area2D" unique_id=1078268870]
+wait_time = 1.5
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="Collide"]
+[connection signal="timeout" from="Area2D/Timer" to="." method="queue_free"]

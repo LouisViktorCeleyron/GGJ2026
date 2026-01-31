@@ -3,11 +3,12 @@ using System;
 
 public partial class Module : Node
 {
-	protected CharacterBody2D _owner;
+	protected PlayerRef _owner;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		_owner = GetParent<CharacterBody2D>();
+		_owner = GetParent<PlayerRef>();
+		_owner.AddModule(this);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
