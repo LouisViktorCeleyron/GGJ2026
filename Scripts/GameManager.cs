@@ -26,6 +26,15 @@ public partial class GameManager : Node
 		}
 	}
 
+	public PlayerRef FindRandomPlayer(PlayerRef exclude = null)
+	{
+		PlayerRef ret = null;
+		while (ret is null || ret != exclude)
+		{
+			
+		}
+	}
+
 	public void SpawnPlayerAtPoint(PlayerRef player)
 	{
 		player.Position = _spawnPoints.PickRandom().Position;

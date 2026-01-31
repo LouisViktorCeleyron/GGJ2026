@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://clad4bcpv8bu7"]
+
+[ext_resource type="Script" uid="uid://csw1nuql0ding" path="res://Scripts/Extentions/TopMask.cs" id="1_ofltd"]
+[ext_resource type="Texture2D" uid="uid://k4swen8vmaan" path="res://Temp/Top2.png" id="2_edpwm"]
+
+[node name="Mask" type="Node2D" unique_id=1561778943]
+script = ExtResource("1_ofltd")
+metadata/_custom_type_script = "uid://cuydf2ekmlwni"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1982586066]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_edpwm")

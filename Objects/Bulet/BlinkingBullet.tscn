@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dcc1u2h8oatkx"]
+
+[ext_resource type="PackedScene" uid="uid://bsnb1s6qpl11k" path="res://Objects/Bulet/PrimaryBullet.tscn" id="1_tpdfm"]
+
+[node name="BulletBody" unique_id=383007295 instance=ExtResource("1_tpdfm")]
+
+[node name="Area2D" parent="." index="0" unique_id=1591744049]
+modulate = Color(1, 1, 0.4627451, 1)
+
+[node name="Blink1" type="Timer" parent="." index="1" unique_id=1452543945]
+wait_time = 0.7
+one_shot = true
+autostart = true
+
+[node name="Blink2" type="Timer" parent="." index="2" unique_id=220217358]
+wait_time = 0.7
+one_shot = true
+autostart = true
+
+[node name="Timer" parent="." index="3" unique_id=1078268870]
+wait_time = 3.4
+
+[connection signal="timeout" from="Blink1" to="." method="SetShouldCollide" binds= [false]]
+[connection signal="timeout" from="Blink1" to="Area2D" method="set_modulate" binds= [Color(1, 1, 0.4627451, 0.49019608)]]
+[connection signal="timeout" from="Blink1" to="Blink2" method="start" binds= [0.0]]
+[connection signal="timeout" from="Blink2" to="." method="SetShouldCollide" binds= [true]]
+[connection signal="timeout" from="Blink2" to="Area2D" method="set_modulate" binds= [Color(1, 1, 0.4627451, 1)]]
+[connection signal="timeout" from="Blink2" to="Blink1" method="start" binds= [0.0]]

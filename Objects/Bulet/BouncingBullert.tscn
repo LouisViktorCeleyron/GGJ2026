@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d3rg1qraa04y0"]
+
+[ext_resource type="PackedScene" uid="uid://bsnb1s6qpl11k" path="res://Objects/Bulet/PrimaryBullet.tscn" id="1_6lfmx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p74jw"]
+friction = 0.0
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p74jw"]
+radius = 4.0
+
+[node name="BulletBody" unique_id=383007295 instance=ExtResource("1_6lfmx")]
+physics_material_override = SubResource("PhysicsMaterial_p74jw")
+
+[node name="Sprite2D" parent="Area2D/CollisionShape2D" parent_id_path=PackedInt32Array(319384282) index="0" unique_id=1558127251]
+modulate = Color(0.06666667, 1, 1, 1)
+
+[node name="Timer" parent="." index="1" unique_id=1078268870]
+wait_time = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2" unique_id=1421315710]
+shape = SubResource("CircleShape2D_p74jw")
+
+[connection signal="area_entered" from="Area2D" to="." method="Bounce"]

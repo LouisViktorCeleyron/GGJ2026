@@ -7,7 +7,7 @@ public partial class ShooterModule : Module
 	[Export] private Timer _shootTimer;
 	[Export]
 	private Node2D _canon;
-	[Export] private PackedScene _spawnedBulletBody;
+	[Export] private BotMask _botMask;
 
 	private bool _canShoot=true;
 
@@ -30,7 +30,7 @@ public partial class ShooterModule : Module
 		{
 			return;
 		}
-		if (_spawnedBulletBody.Instantiate() is BulletBody spawnedBullet)
+		if (_botMask.BulletToSpawn.Instantiate() is BulletBody spawnedBullet)
 		{
 			_canShoot = false;
 			AddChild(spawnedBullet);

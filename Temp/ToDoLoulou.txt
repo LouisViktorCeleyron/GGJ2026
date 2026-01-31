@@ -1,9 +1,13 @@
-Add timer to ball 
-Changer tir pour que ce soit tant qu'on appuye/avec le joystick/avec un timer
-Ajouter des murs
 envoyer mail Labo 
-Faire que la balle puisse tuer un joueur
-Faire des manager global et par joueur
 UI et score des joueurs
+Ajout de mask du bas pour changer les balles 
 
+
+
+
+//Faire des manager global et par joueur
+//Add timer to ball 
+//Changer tir pour que ce soit tant qu'on appuye/avec le joystick/avec un timer
+//Ajouter des murs
+//Faire que la balle puisse tuer un joueur
 //faire les 2 joueurs

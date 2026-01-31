@@ -4,10 +4,11 @@
 [ext_resource type="Script" uid="uid://dsxgn7ujeotov" path="res://Scripts/MovementModule.cs" id="2_hj2n3"]
 [ext_resource type="SpriteFrames" uid="uid://0pwfb2bexl30" path="res://Sprites/chara_sprite_frame.tres" id="2_vycds"]
 [ext_resource type="Script" uid="uid://x2fqao1t4e3d" path="res://Scripts/ShooterModule.cs" id="3_j35rj"]
-[ext_resource type="PackedScene" uid="uid://bsnb1s6qpl11k" path="res://Objects/PrimaryBullet.tscn" id="4_6cr34"]
-[ext_resource type="Texture2D" uid="uid://bab2qusomcupk" path="res://Temp/Triangle.png" id="5_j35rj"]
 [ext_resource type="Script" uid="uid://idi63dk6617h" path="res://Scripts/DeathModule.cs" id="6_vycds"]
 [ext_resource type="Script" uid="uid://jabjt1w4hat0" path="res://Scripts/ScoreModule.cs" id="7_m75ex"]
+[ext_resource type="PackedScene" uid="uid://c03p03e54xiq6" path="res://Objects/Mask/BotMaskBase.tscn" id="8_l63ou"]
+[ext_resource type="Texture2D" uid="uid://bfjpeixqnxh0u" path="res://Sprites/S_Flute_001.png" id="8_m75ex"]
+[ext_resource type="PackedScene" uid="uid://clad4bcpv8bu7" path="res://Objects/Mask/TopMaskBase.tscn" id="9_l63ou"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7ih7"]
 size = Vector2(128, 128)
@@ -33,11 +34,11 @@ script = ExtResource("2_hj2n3")
 _canonRotator = NodePath("../Node2D")
 Speed = 100.0
 
-[node name="ShooterModule" type="Node" parent="." unique_id=392662035 node_paths=PackedStringArray("_shootTimer", "_canon")]
+[node name="ShooterModule" type="Node" parent="." unique_id=392662035 node_paths=PackedStringArray("_shootTimer", "_canon", "_botMask")]
 script = ExtResource("3_j35rj")
 _shootTimer = NodePath("../ShootReset")
-_canon = NodePath("../Node2D/Sprite2D")
-_spawnedBulletBody = ExtResource("4_6cr34")
+_canon = NodePath("../Node2D/Sprite2D/CannonPoint")
+_botMask = NodePath("../BotMask")
 
 [node name="DeathModule" type="Node" parent="." unique_id=1671506929]
 script = ExtResource("6_vycds")
@@ -49,8 +50,12 @@ script = ExtResource("7_m75ex")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=1845068327]
 position = Vector2(0, -115)
+rotation = 3.1415927
 scale = Vector2(0.315, 0.315)
-texture = ExtResource("5_j35rj")
+texture = ExtResource("8_m75ex")
+
+[node name="CannonPoint" type="Node2D" parent="Node2D/Sprite2D" unique_id=805856140]
+position = Vector2(9.991174e-06, 114.285706)
 
 [node name="Label" type="Label" parent="." unique_id=1580218230]
 offset_left = -65.0
@@ -61,6 +66,12 @@ text = "00"
 label_settings = SubResource("LabelSettings_l63ou")
 
 [node name="ShootReset" type="Timer" parent="." unique_id=571089655]
+
+[node name="BotMask" parent="." unique_id=1561778943 instance=ExtResource("8_l63ou")]
+position = Vector2(32, -32)
+
+[node name="TopMask" parent="." unique_id=1819704367 instance=ExtResource("9_l63ou")]
+position = Vector2(32, -32)
 
 [connection signal="ChangeScore" from="ScoreModule" to="Label" method="set_text"]
 [connection signal="timeout" from="ShootReset" to="ShooterModule" method="ResetShoot"]
