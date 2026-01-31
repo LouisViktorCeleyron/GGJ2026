@@ -12,5 +12,4 @@ visible = false
 shape = SubResource("RectangleShape2D_pv77i")
 
 [node name="SWall001" type="Sprite2D" parent="." unique_id=1379828624]
-scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_lpdjv")

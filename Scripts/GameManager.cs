@@ -33,6 +33,8 @@ public partial class GameManager : Node
 		{
 			
 		}
+
+		return null;
 	}
 
 	public void SpawnPlayerAtPoint(PlayerRef player)
