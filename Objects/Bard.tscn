@@ -7,9 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://bsnb1s6qpl11k" path="res://Objects/PrimaryBullet.tscn" id="4_6cr34"]
 [ext_resource type="Texture2D" uid="uid://bab2qusomcupk" path="res://Temp/Triangle.png" id="5_j35rj"]
 [ext_resource type="Script" uid="uid://idi63dk6617h" path="res://Scripts/DeathModule.cs" id="6_vycds"]
+[ext_resource type="Script" uid="uid://jabjt1w4hat0" path="res://Scripts/ScoreModule.cs" id="7_m75ex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7ih7"]
 size = Vector2(128, 128)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l63ou"]
+font_size = 46
 
 [node name="Bard" type="CharacterBody2D" unique_id=646171583]
 script = ExtResource("1_6cr34")
@@ -29,13 +33,17 @@ script = ExtResource("2_hj2n3")
 _canonRotator = NodePath("../Node2D")
 Speed = 100.0
 
-[node name="ShooterModule" type="Node" parent="." unique_id=392662035 node_paths=PackedStringArray("_canon")]
+[node name="ShooterModule" type="Node" parent="." unique_id=392662035 node_paths=PackedStringArray("_shootTimer", "_canon")]
 script = ExtResource("3_j35rj")
+_shootTimer = NodePath("../ShootReset")
 _canon = NodePath("../Node2D/Sprite2D")
 _spawnedBulletBody = ExtResource("4_6cr34")
 
 [node name="DeathModule" type="Node" parent="." unique_id=1671506929]
 script = ExtResource("6_vycds")
+
+[node name="ScoreModule" type="Node" parent="." unique_id=1318049100]
+script = ExtResource("7_m75ex")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=449125132]
 
@@ -43,3 +51,16 @@ script = ExtResource("6_vycds")
 position = Vector2(0, -115)
 scale = Vector2(0.315, 0.315)
 texture = ExtResource("5_j35rj")
+
+[node name="Label" type="Label" parent="." unique_id=1580218230]
+offset_left = -65.0
+offset_top = -89.0
+offset_right = -12.0
+offset_bottom = -25.0
+text = "00"
+label_settings = SubResource("LabelSettings_l63ou")
+
+[node name="ShootReset" type="Timer" parent="." unique_id=571089655]
+
+[connection signal="ChangeScore" from="ScoreModule" to="Label" method="set_text"]
+[connection signal="timeout" from="ShootReset" to="ShooterModule" method="ResetShoot"]

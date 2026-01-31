@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://be8n1bv2r6gwk"]
 
+[ext_resource type="Script" uid="uid://daub10c41cmtp" path="res://Scripts/GameManager.cs" id="1_ajca5"]
 [ext_resource type="Texture2D" uid="uid://dmi8binjjp1ar" path="res://Temp/LeSol.png" id="1_lduwd"]
 [ext_resource type="PackedScene" uid="uid://cieemcbemdyu1" path="res://Objects/Bard.tscn" id="2_ulm5l"]
+[ext_resource type="PackedScene" uid="uid://ce5nt6vldt8wy" path="res://UI/MainUI.tscn" id="3_vo8r2"]
+[ext_resource type="PackedScene" uid="uid://b7pp74715uex" path="res://Objects/SpawnPoint.tscn" id="5_ahpr3"]
 
 [node name="MainArea2d" type="Node2D" unique_id=661939480]
+
+[node name="GameManager" type="Node" parent="." unique_id=106667780 node_paths=PackedStringArray("_spawnPoints")]
+script = ExtResource("1_ajca5")
+_spawnPoints = [NodePath("../SpawnPoints/SpawnPoint"), NodePath("../SpawnPoints/SpawnPoint2"), NodePath("../SpawnPoints/SpawnPoint3"), NodePath("../SpawnPoints/SpawnPoint4")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=708613885]
 
@@ -14,3 +21,26 @@ texture = ExtResource("1_lduwd")
 [node name="Bard" parent="." unique_id=646171583 instance=ExtResource("2_ulm5l")]
 position = Vector2(-566, 284)
 scale = Vector2(0.75, 0.75)
+
+[node name="MainUi" parent="." unique_id=2139807447 instance=ExtResource("3_vo8r2")]
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Bard2" parent="." unique_id=1018851117 instance=ExtResource("2_ulm5l")]
+position = Vector2(469, -135)
+scale = Vector2(0.75, 0.75)
+_playerIndex = 1
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=795250622]
+
+[node name="SpawnPoint" parent="SpawnPoints" unique_id=2027480021 instance=ExtResource("5_ahpr3")]
+position = Vector2(-548, -262)
+
+[node name="SpawnPoint2" parent="SpawnPoints" unique_id=14023252 instance=ExtResource("5_ahpr3")]
+position = Vector2(503, -276)
+
+[node name="SpawnPoint3" parent="SpawnPoints" unique_id=183655347 instance=ExtResource("5_ahpr3")]
+position = Vector2(-545, 274)
+
+[node name="SpawnPoint4" parent="SpawnPoints" unique_id=606564098 instance=ExtResource("5_ahpr3")]
+position = Vector2(512, 251)
