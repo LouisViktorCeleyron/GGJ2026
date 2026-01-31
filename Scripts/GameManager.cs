@@ -26,15 +26,23 @@ public partial class GameManager : Node
 		}
 	}
 
+	public void AddPlayerRef(PlayerRef pr)
+	{
+		if (_score is null)
+		{
+			_score = new List<PlayerRef>();
+		}
+		_score.Add(pr);
+	}
+
 	public PlayerRef FindRandomPlayer(PlayerRef exclude = null)
 	{
 		PlayerRef ret = null;
-		while (ret is null || ret != exclude)
+		while (ret is null || ret == exclude)
 		{
-			
+			ret = _score[(int)GD.Randi() % _score.Count];
 		}
-
-		return null;
+		return ret;
 	}
 
 	public void SpawnPlayerAtPoint(PlayerRef player)

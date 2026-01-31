@@ -34,11 +34,10 @@ script = ExtResource("2_hj2n3")
 _canonRotator = NodePath("../Node2D")
 Speed = 100.0
 
-[node name="ShooterModule" type="Node" parent="." unique_id=392662035 node_paths=PackedStringArray("_shootTimer", "_canon", "_botMask")]
+[node name="ShooterModule" type="Node" parent="." unique_id=392662035 node_paths=PackedStringArray("_shootTimer", "_canon")]
 script = ExtResource("3_j35rj")
 _shootTimer = NodePath("../ShootReset")
 _canon = NodePath("../Node2D/Sprite2D/CannonPoint")
-_botMask = NodePath("../BotMask")
 
 [node name="DeathModule" type="Node" parent="." unique_id=1671506929]
 script = ExtResource("6_vycds")

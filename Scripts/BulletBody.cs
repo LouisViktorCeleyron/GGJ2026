@@ -46,7 +46,7 @@ public partial class BulletBody : RigidBody2D
 			}
 			else
 			{
-				
+				prBody.GetModule<DeathModule>().Die(GameManager.Instance.FindRandomPlayer(_owner));
 			}
 		}
 	}

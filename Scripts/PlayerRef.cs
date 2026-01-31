@@ -21,6 +21,7 @@ public partial class PlayerRef : CharacterBody2D
 	public override void _Ready()
 	{
 		base._Ready();
+		GameManager.Instance.AddPlayerRef(this);
 	}
 	public void AddModule(Module module)
 	{

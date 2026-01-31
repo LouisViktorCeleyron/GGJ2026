@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://daub10c41cmtp" path="res://Scripts/GameManager.cs" id="1_omw78"]
 [ext_resource type="Texture2D" uid="uid://dmi8binjjp1ar" path="res://Temp/LeSol.png" id="2_i0quh"]
 [ext_resource type="PackedScene" uid="uid://cieemcbemdyu1" path="res://Objects/Bard.tscn" id="3_64kvy"]
-[ext_resource type="PackedScene" uid="uid://ce5nt6vldt8wy" path="res://UI/MainUI.tscn" id="4_jgfcf"]
 [ext_resource type="PackedScene" uid="uid://b7pp74715uex" path="res://Objects/SpawnPoint.tscn" id="5_ndu42"]
+[ext_resource type="PackedScene" uid="uid://cp7rya56tr4e0" path="res://Objects/Obstacle.tscn" id="5_omw78"]
 
 [node name="MainArea2d" type="Node2D" unique_id=661939480]
 
@@ -21,10 +21,6 @@ texture = ExtResource("2_i0quh")
 [node name="Bard" parent="." unique_id=646171583 instance=ExtResource("3_64kvy")]
 position = Vector2(-566, 284)
 scale = Vector2(0.75, 0.75)
-
-[node name="MainUi" parent="." unique_id=2139807447 instance=ExtResource("4_jgfcf")]
-offset_right = 1280.0
-offset_bottom = 720.0
 
 [node name="Bard2" parent="." unique_id=1018851117 instance=ExtResource("3_64kvy")]
 position = Vector2(469, -135)
@@ -44,3 +40,6 @@ position = Vector2(-545, 274)
 
 [node name="SpawnPoint4" parent="SpawnPoints" unique_id=606564098 instance=ExtResource("5_ndu42")]
 position = Vector2(512, 251)
+
+[node name="StaticBody2D" parent="." unique_id=1673683336 instance=ExtResource("5_omw78")]
+position = Vector2(-378, -283)

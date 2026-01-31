@@ -1,10 +1,21 @@
 envoyer mail Labo 
 UI et score des joueurs
-Ajout de mask du bas pour changer les balles 
+
+tu t'arrete pour tirer
+balle qui font reculer
+personne qui traversent les murs
+controle inversé
+deplacer mur/paroi
+Deplacement qui change la taille
+Changer tire rate sur les masque
 
 
+Balle d'une seconde 
+Balle super LENTE
 
-
+// Ajout de mask du bas pour changer les balles 
+//Balle rebondissante
+//Balle qui clignotte
 //Faire des manager global et par joueur
 //Add timer to ball 
 //Changer tir pour que ce soit tant qu'on appuye/avec le joystick/avec un timer
