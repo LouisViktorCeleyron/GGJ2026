@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://kdktt20af17p"]
+
+[ext_resource type="PackedScene" uid="uid://dt254kj3ka8n7" path="res://Objects/Chara.tscn" id="1_qpiak"]
+
+[node name="MainArena" type="Node3D" unique_id=924390284]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1522091150]
+transform = Transform3D(1, 0, 0, 0, 0.25881907, 0.9659258, 0, -0.9659258, 0.25881907, 0, 7.5, 2.885)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1142113819]
+size = Vector3(17.205, 0.01, 11.335)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1417805728]
+transform = Transform3D(1, 0, 0, 0, 0.7575194, 0.65281266, 0, -0.65281266, 0.7575194, 0, 1.6450105, 0.9818443)
+
+[node name="Character" parent="." unique_id=2040545028 instance=ExtResource("1_qpiak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.125)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=533876992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.715, 0, 0)
+use_collision = true
