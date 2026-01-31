@@ -13,6 +13,7 @@ public partial class ShooterModule : Module
 		{
 			if (_spawnedBulletBody.Instantiate() is BulletBody spawnedBullet)
 			{
+				AddChild(spawnedBullet);
 				spawnedBullet.Prout();
 				spawnedBullet.Position = _owner.Position;
 			}

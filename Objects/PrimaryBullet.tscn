@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://bsnb1s6qpl11k"]
 
 [ext_resource type="Script" uid="uid://dg1ihpi6j1315" path="res://Scripts/BulletBody.cs" id="1_w2fdd"]
+[ext_resource type="Texture2D" uid="uid://buyutk1q1paut" path="res://Temp/Circle100.png" id="2_6gk0t"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_6gk0t"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_w2fdd"]
+radius = 50.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w2fdd"]
-albedo_color = Color(0.21168767, 0.99969536, 0.99969536, 1)
-
-[node name="BulletBody" type="RigidBody3D" unique_id=207306038]
+[node name="BulletBody" type="RigidBody2D" unique_id=383007295]
 script = ExtResource("1_w2fdd")
 metadata/_custom_type_script = "uid://dg1ihpi6j1315"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1229180085]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
-shape = SubResource("SphereShape3D_6gk0t")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=319384282]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_w2fdd")
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="CollisionShape3D" unique_id=258131784]
-material = SubResource("StandardMaterial3D_w2fdd")
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1558127251]
+texture_filter = 1
+texture = ExtResource("2_6gk0t")

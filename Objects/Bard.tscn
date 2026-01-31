@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cieemcbemdyu1"]
+
+[ext_resource type="Texture2D" uid="uid://cnfytrl0jhugb" path="res://Temp/icon.svg" id="1_wvucg"]
+[ext_resource type="Script" uid="uid://dsxgn7ujeotov" path="res://Scripts/MovementModule.cs" id="2_hj2n3"]
+[ext_resource type="Script" uid="uid://x2fqao1t4e3d" path="res://Scripts/ShooterModule.cs" id="3_j35rj"]
+[ext_resource type="PackedScene" uid="uid://bsnb1s6qpl11k" path="res://Objects/PrimaryBullet.tscn" id="4_6cr34"]
+[ext_resource type="Texture2D" uid="uid://bab2qusomcupk" path="res://Temp/Triangle.png" id="5_j35rj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7ih7"]
+size = Vector2(128, 128)
+
+[node name="Bard" type="CharacterBody2D" unique_id=646171583]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1916308384]
+shape = SubResource("RectangleShape2D_j7ih7")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=815867731]
+texture = ExtResource("1_wvucg")
+
+[node name="MovementModule" type="Node" parent="." unique_id=404004772 node_paths=PackedStringArray("_canonRotator")]
+script = ExtResource("2_hj2n3")
+_canonRotator = NodePath("../Node2D")
+Speed = 100.0
+
+[node name="ShooterModule" type="Node" parent="." unique_id=392662035]
+script = ExtResource("3_j35rj")
+_spawnedBulletBody = ExtResource("4_6cr34")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=449125132]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=1845068327]
+position = Vector2(0, -115)
+scale = Vector2(0.315, 0.315)
+texture = ExtResource("5_j35rj")
