@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://bw3cnu3ajpejh"]
+
+[ext_resource type="Texture2D" uid="uid://dnvjyey85bdlu" path="res://Sprites/S_CharaSelect_001.png" id="1_50ohp"]
+[ext_resource type="Texture2D" uid="uid://duvkvv1qa3y2o" path="res://Sprites/S_CharaSelect_002.png" id="2_iu5uj"]
+[ext_resource type="Texture2D" uid="uid://bfjpeixqnxh0u" path="res://Sprites/S_Flute_001.png" id="3_qckux"]
+[ext_resource type="Texture2D" uid="uid://bes8aku01yhfu" path="res://Sprites/S_Butt_001.png" id="4_2fimi"]
+[ext_resource type="Texture2D" uid="uid://4f3qpvkg32fa" path="res://Sprites/S_Butt_002.png" id="5_jpgin"]
+
+[sub_resource type="Animation" id="Animation_yhjms"]
+resource_name = "CharacterSelection"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SButt001:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
+"update": 0,
+"values": [0.425, 1.0, 0.9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SButt001:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
+"update": 0,
+"values": [-31.49, -88.335, -83.55]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SButt001:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
+"update": 0,
+"values": [30.52, 47.99, 47.99]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFlute001:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5.9604645e-08, 0.30000007, 0.8),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
+"update": 0,
+"values": [0.425, 1.0, 0.9]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SFlute002:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(6.1190585e-05, 0.3000612, 0.80006117),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
+"update": 0,
+"values": [0.425, 1.0, 0.9]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SButt002:scale:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.29999995, 0.79999995),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
+"update": 0,
+"values": [0.425, 1.0, 0.9]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SButt002:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.29999995, 0.79999995),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
+"update": 0,
+"values": [31.49, 88.335, 83.55]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SButt002:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.29999995, 0.79999995),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
+"update": 0,
+"values": [30.52, 47.99, 47.99]
+}
+
+[sub_resource type="Animation" id="Animation_v7jm5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SButt001:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.995]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SButt001:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [43.000004]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SButt001:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-79.00001]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tehjf"]
+_data = {
+&"CharacterSelection": SubResource("Animation_yhjms"),
+&"RESET": SubResource("Animation_v7jm5")
+}
+
+[node name="Node2D" type="Node2D" unique_id=936254722]
+
+[node name="SCharaSelect001" type="Sprite2D" parent="." unique_id=1160430063]
+texture = ExtResource("1_50ohp")
+
+[node name="SCharaSelect002" type="Sprite2D" parent="." unique_id=969705753]
+z_index = 1
+position = Vector2(0, 3)
+texture = ExtResource("2_iu5uj")
+
+[node name="SFlute001" type="Sprite2D" parent="." unique_id=1616097586]
+z_index = -1
+position = Vector2(-253.99998, -128)
+rotation = 1.9406583
+scale = Vector2(1, 0.50772715)
+texture = ExtResource("3_qckux")
+
+[node name="SFlute002" type="Sprite2D" parent="." unique_id=662526606]
+z_index = -1
+position = Vector2(268.00003, -133)
+rotation = 4.3866496
+scale = Vector2(0.9, 0.5078473)
+texture = ExtResource("3_qckux")
+
+[node name="SButt001" type="Sprite2D" parent="." unique_id=1459178962]
+position = Vector2(-79.00001, 43.000004)
+scale = Vector2(1.995, 0.865)
+texture = ExtResource("4_2fimi")
+
+[node name="SButt002" type="Sprite2D" parent="." unique_id=796604284]
+position = Vector2(40.55688, 33.562614)
+scale = Vector2(0.507727, 0.8646956)
+texture = ExtResource("5_jpgin")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=634636907]
+libraries/ = SubResource("AnimationLibrary_tehjf")
