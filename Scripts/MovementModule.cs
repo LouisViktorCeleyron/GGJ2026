@@ -43,6 +43,10 @@ public partial class MovementModule : Module
 	}
 	private void MoveLogic()
 	{
+		if (_owner.Pause)
+		{
+			return;
+		}
 		 _velocity = _owner.Velocity;
 
 		Vector2 inputDir = _owner.MovAxis; 

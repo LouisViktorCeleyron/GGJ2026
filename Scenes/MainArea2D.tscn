@@ -135,6 +135,7 @@ position = Vector2(0, 987.9999)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="DownWalls" type="Node2D" parent="Art" unique_id=986946365]
+z_index = 13
 position = Vector2(-1482, 974)
 
 [node name="DownBigTower_001" parent="Art/DownWalls" unique_id=1997715444 instance=ExtResource("11_7vphi")]
@@ -278,15 +279,15 @@ position = Vector2(46, -185)
 [node name="StaticBody2D2" parent="." unique_id=905888063 instance=ExtResource("12_xy48h")]
 position = Vector2(-374, 124)
 
-[node name="Bard2" parent="." unique_id=646171583 node_paths=PackedStringArray("_scallable") instance=ExtResource("2_ulm5l")]
-position = Vector2(-566, 284)
-_scallable = [null, null]
+[node name="Bard2" parent="." unique_id=646171583 instance=ExtResource("2_ulm5l")]
+z_index = 2
+position = Vector2(-692, 413)
 _frames = ExtResource("4_7vphi")
 
-[node name="Bard3" parent="." unique_id=1823047616 node_paths=PackedStringArray("_scallable") instance=ExtResource("2_ulm5l")]
+[node name="Bard3" parent="." unique_id=1823047616 instance=ExtResource("2_ulm5l")]
+z_index = 2
 position = Vector2(1063, -172)
 _playerIndex = 1
-_scallable = [null, null]
 _frames = ExtResource("5_rdcnd")
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=935454320]

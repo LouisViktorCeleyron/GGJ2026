@@ -1,18 +1,21 @@
 envoyer mail Labo 
 UI et score des joueurs
 
-1/Mettre en place victoire defaire (Bo3)
+
 
 Roulette de Mask
 Integrer masque centré
 UI/Compteur de score
 Tweak de perso
 Integrer sons/musiques
-
+Bouger le truc de mort 
 
 
 generation d'objet
 Option
 
 
+passr les balels en +z
+Passer e chato en + Z
+//Mettre en place victoire defaire (Bo3)
 //Integrer Balle

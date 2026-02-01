@@ -16,6 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://bqr78pjypam2t" path="res://Objects/Mask/Bot/HeavyMask.tscn" id="10_gncx5"]
 [ext_resource type="PackedScene" uid="uid://duegd7sb1lahr" path="res://Objects/Mask/Top/TopCanShootAndMove.tscn" id="10_wuptk"]
 [ext_resource type="PackedScene" uid="uid://daorbttk3cicv" path="res://Objects/Mask/Bot/BouncingMask.tscn" id="11_f4fd3"]
+[ext_resource type="PackedScene" uid="uid://de2u2akcifkdu" path="res://Objects/AudioCollection.tscn" id="17_pv0n8"]
+[ext_resource type="AudioStream" uid="uid://dvk8sts5fnfqh" path="res://Audio/TROMPETTE_LANCE_1.wav" id="18_esbs5"]
+[ext_resource type="AudioStream" uid="uid://4hfycp2s3jhc" path="res://Audio/TROMPETTE_LANCER_2.wav" id="19_jwbo8"]
+[ext_resource type="AudioStream" uid="uid://dbv4fjbyywbno" path="res://Audio/BRUITS PAS.wav" id="20_jwbo8"]
+[ext_resource type="Script" uid="uid://8k4wclcys2qv" path="res://Scripts/Extentions/BGSound.cs" id="21_ptxdi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7ih7"]
 size = Vector2(256, 256)
@@ -161,9 +166,9 @@ animation = &"Iddle"
 [node name="Node2D" type="Node2D" parent="." unique_id=449125132]
 
 [node name="Trumpet" type="AnimatedSprite2D" parent="Node2D" unique_id=562335248]
-position = Vector2(-6.465939e-13, -206)
+position = Vector2(0, -240.06)
 rotation = 3.1415927
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.75, 0.75)
 sprite_frames = ExtResource("3_f4fd3")
 animation = &"Shoot"
 
@@ -183,7 +188,7 @@ label_settings = SubResource("LabelSettings_l63ou")
 [node name="MovementModule" type="Node" parent="." unique_id=404004772 node_paths=PackedStringArray("_canonRotator")]
 script = ExtResource("2_hj2n3")
 _canonRotator = NodePath("../Node2D")
-Speed = 150.0
+Speed = 250.0
 
 [node name="ShooterModule" type="Node" parent="." unique_id=392662035 node_paths=PackedStringArray("_shootTimer", "_canon")]
 script = ExtResource("3_j35rj")
@@ -209,12 +214,28 @@ wait_time = 0.5
 one_shot = true
 autostart = true
 
+[node name="TrumpetLancer" parent="." unique_id=103590640 instance=ExtResource("17_pv0n8")]
+position = Vector2(0, -240.06)
+volume_db = -12.0
+pitch_scale = 2.96
+_audioList = Array[AudioStream]([ExtResource("18_esbs5"), ExtResource("19_jwbo8")])
+_pitchRandom = 3.0
+
+[node name="WalkSound" type="AudioStreamPlayer2D" parent="." unique_id=829274145]
+stream = ExtResource("20_jwbo8")
+volume_db = -12.0
+autoplay = true
+script = ExtResource("21_ptxdi")
+
 [connection signal="animation_finished" from="Node2D/Trumpet" to="ShooterModule" method="CreateBullet"]
+[connection signal="animation_finished" from="Node2D/Trumpet" to="TrumpetLancer" method="PlayRandom"]
 [connection signal="timeout" from="ShootReset" to="ShooterModule" method="ResetShoot"]
 [connection signal="Flip" from="MovementModule" to="Scaler/AnimatedSprite2D" method="set_flip_h"]
 [connection signal="Flip" from="MovementModule" to="MaskManagerModule" method="MaskFlip"]
 [connection signal="Iddle" from="MovementModule" to="Scaler/AnimatedSprite2D" method="play" binds= ["Iddle"]]
+[connection signal="Iddle" from="MovementModule" to="WalkSound" method="set_stream_paused" binds= [true]]
 [connection signal="Walking" from="MovementModule" to="Scaler/AnimatedSprite2D" method="play" binds= ["Walking"]]
+[connection signal="Walking" from="MovementModule" to="WalkSound" method="set_stream_paused" binds= [false]]
 [connection signal="OnShoot" from="ShooterModule" to="Node2D/Trumpet" method="play"]
 [connection signal="OnDeath" from="DeathModule" to="Scaler/BotSpawnPoint" method="set_visible" binds= [false]]
 [connection signal="OnDeath" from="DeathModule" to="Scaler/TopSpawnPoint" method="set_visible" binds= [false]]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://de2u2akcifkdu"]
+
+[ext_resource type="Script" uid="uid://cfawxbfmxpdgx" path="res://Scripts/Extentions/AudioPlayerCollection.cs" id="1_y28on"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=103590640]
+rotation = -3.1415925
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_y28on")

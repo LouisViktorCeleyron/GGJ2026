@@ -25,6 +25,7 @@ public partial class PlayerRef : CharacterBody2D
 	[Export] private AnimatedSprite2D _as;
 
 	private bool _pause = true;
+	public bool Pause => _pause;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -84,6 +85,9 @@ public partial class PlayerRef : CharacterBody2D
 	{
 		if (_pause)
 		{
+			_movAxis = Vector2.Zero;
+			_lookAxis= Vector2.Zero;
+			_shoot = false;
 			return;
 		}
 		_movAxis = Input.GetVector(

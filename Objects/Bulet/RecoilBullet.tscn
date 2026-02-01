@@ -7,3 +7,4 @@
 modulate = Color(0.64469343, 0.68633497, 0.42974433, 1)
 script = ExtResource("2_8s2f3")
 _impulseForce = 300.0
+_bulletSpeed = 200.0
