@@ -11,7 +11,8 @@ public partial class ShooterModule : Module
 
 	private bool _canShoot=true;
 	private System.Func<bool> _additionalCheck;
-	
+	[Signal]
+	private delegate void OnShootEventHandler();
 	public void ResetShoot()
 	{
 		_canShoot = true;
@@ -44,7 +45,12 @@ public partial class ShooterModule : Module
 		{
 			return;
 		}
+		EmitSignalOnShoot();
+		
+	}
 
+	private void CreateBullet()
+	{
 		var botMask = _owner.GetModule<BotMask>();
 		if (botMask.BulletToSpawn.Instantiate() is BulletBody spawnedBullet)
 		{

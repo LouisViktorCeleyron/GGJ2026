@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://ctjb1eughues3" path="res://Scripts/PlayerRef.cs" id="1_6cr34"]
 [ext_resource type="Script" uid="uid://dsxgn7ujeotov" path="res://Scripts/MovementModule.cs" id="2_hj2n3"]
 [ext_resource type="SpriteFrames" uid="uid://0pwfb2bexl30" path="res://Sprites/chara_sprite_frame.tres" id="2_vycds"]
+[ext_resource type="SpriteFrames" uid="uid://cu0xntdpb5j1j" path="res://Sprites/Trumpet.tres" id="3_f4fd3"]
 [ext_resource type="Script" uid="uid://x2fqao1t4e3d" path="res://Scripts/ShooterModule.cs" id="3_j35rj"]
 [ext_resource type="Script" uid="uid://idi63dk6617h" path="res://Scripts/DeathModule.cs" id="6_vycds"]
 [ext_resource type="Script" uid="uid://jabjt1w4hat0" path="res://Scripts/ScoreModule.cs" id="7_m75ex"]
 [ext_resource type="PackedScene" uid="uid://btxcu3ocmec0l" path="res://Objects/Mask/Top/SizeManagementTop.tscn" id="8_gu161"]
-[ext_resource type="Texture2D" uid="uid://bfjpeixqnxh0u" path="res://Sprites/S_Flute_001.png" id="8_m75ex"]
 [ext_resource type="PackedScene" uid="uid://cbx0wa83ttvbq" path="res://Objects/Mask/Top/TopInverseControl.tscn" id="8_wuptk"]
 [ext_resource type="Script" uid="uid://rchpu5klj7ae" path="res://Scripts/MaskManagerModule.cs" id="9_gu161"]
 [ext_resource type="PackedScene" uid="uid://bkvuqgwl3d6v7" path="res://Objects/Mask/Bot/RecoilMask.tscn" id="9_ipvlt"]
@@ -47,13 +47,14 @@ frame_progress = 0.56987375
 
 [node name="Node2D" type="Node2D" parent="." unique_id=449125132]
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=1845068327]
+[node name="Trumpet" type="AnimatedSprite2D" parent="Node2D" unique_id=562335248]
 position = Vector2(-6.465939e-13, -206)
 rotation = 3.1415927
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("8_m75ex")
+sprite_frames = ExtResource("3_f4fd3")
+animation = &"Shoot"
 
-[node name="CannonPoint" type="Node2D" parent="Node2D/Sprite2D" unique_id=805856140]
+[node name="CannonPoint" type="Node2D" parent="Node2D/Trumpet" unique_id=805856140]
 position = Vector2(9.991174e-06, 114.285706)
 
 [node name="Label" type="Label" parent="." unique_id=1580218230]
@@ -74,7 +75,7 @@ Speed = 100.0
 [node name="ShooterModule" type="Node" parent="." unique_id=392662035 node_paths=PackedStringArray("_shootTimer", "_canon")]
 script = ExtResource("3_j35rj")
 _shootTimer = NodePath("../ShootReset")
-_canon = NodePath("../Node2D/Sprite2D/CannonPoint")
+_canon = NodePath("../Node2D/Trumpet/CannonPoint")
 
 [node name="DeathModule" type="Node" parent="." unique_id=1671506929]
 script = ExtResource("6_vycds")
@@ -95,6 +96,8 @@ wait_time = 0.5
 one_shot = true
 autostart = true
 
+[connection signal="animation_finished" from="Node2D/Trumpet" to="ShooterModule" method="CreateBullet"]
 [connection signal="timeout" from="ShootReset" to="ShooterModule" method="ResetShoot"]
+[connection signal="OnShoot" from="ShooterModule" to="Node2D/Trumpet" method="play"]
 [connection signal="ChangeScore" from="ScoreModule" to="Label" method="set_text"]
 [connection signal="timeout" from="MaskSpawnTimer" to="MaskManagerModule" method="GenerateMasks"]
