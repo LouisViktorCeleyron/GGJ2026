@@ -2,49 +2,145 @@
 
 [ext_resource type="Texture2D" uid="uid://sf1ukgj0b5x3" path="res://Sprites/S_Scroll_001.png" id="1_qvw0l"]
 [ext_resource type="Texture2D" uid="uid://b13f0o3v3rjm5" path="res://Sprites/S_Text_001.png" id="2_44hwp"]
+[ext_resource type="Texture2D" uid="uid://bgph640ryu7cu" path="res://Sprites/S_Text_002.png" id="3_hkwdu"]
+[ext_resource type="Texture2D" uid="uid://dgd253wul70t2" path="res://Sprites/S_Text_003.png" id="4_j06l2"]
+[ext_resource type="Texture2D" uid="uid://dhllg0ig28cov" path="res://Sprites/S_Text_004.png" id="5_qnurb"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qvw0l"]
-atlas = ExtResource("2_44hwp")
-region = Rect2(0, 0, 512, 81)
+[sub_resource type="Animation" id="Animation_hkwdu"]
+resource_name = "A_Scroll"
+length = 15.033334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text_001:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(0.30394292, 0.30394292, 0.30394292, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Text_002:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Text_003:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 6, 9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Text_004:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 9, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_44hwp"]
-atlas = ExtResource("2_44hwp")
-region = Rect2(4, 111, 501, 77)
+[sub_resource type="Animation" id="Animation_j06l2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text_001:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Text_002:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Text_003:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Text_004:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p58qj"]
-atlas = ExtResource("2_44hwp")
-region = Rect2(4, 226, 501, 108)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hkwdu"]
-atlas = ExtResource("2_44hwp")
-region = Rect2(73, 372, 364, 71)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qnurb"]
+_data = {
+&"A_Scroll": SubResource("Animation_hkwdu"),
+&"RESET": SubResource("Animation_j06l2")
+}
 
 [node name="Node2D" type="Node2D" unique_id=448693553]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1128842601]
 scale = Vector2(2.153838, 2.153838)
 texture = ExtResource("1_qvw0l")
+metadata/_edit_lock_ = true
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1588843569]
-position = Vector2(-79, -189.00002)
-rotation = 0.005996309
-scale = Vector2(1.1314473, 1.5090498)
-texture = SubResource("AtlasTexture_qvw0l")
+[node name="Text_001" type="Sprite2D" parent="." unique_id=254835507]
+position = Vector2(-57, 49)
+scale = Vector2(0.91944945, 0.91944945)
+texture = ExtResource("2_44hwp")
 
-[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=173176328]
-position = Vector2(-62, 6)
-rotation = 0.005996309
-scale = Vector2(1.1314473, 1.5090498)
-texture = SubResource("AtlasTexture_44hwp")
+[node name="Text_002" type="Sprite2D" parent="." unique_id=559024196]
+position = Vector2(-57, 49)
+scale = Vector2(0.91944945, 0.91944945)
+texture = ExtResource("3_hkwdu")
 
-[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1192708855]
-position = Vector2(-53, 172.99998)
-rotation = 0.005996309
-scale = Vector2(1.1314473, 1.5090498)
-texture = SubResource("AtlasTexture_p58qj")
+[node name="Text_003" type="Sprite2D" parent="." unique_id=799432710]
+position = Vector2(-57, 49)
+scale = Vector2(0.91944945, 0.91944945)
+texture = ExtResource("4_j06l2")
 
-[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=840794096]
-position = Vector2(-64, 185)
-rotation = 0.005996309
-scale = Vector2(1.1314473, 1.5090498)
-texture = SubResource("AtlasTexture_hkwdu")
+[node name="Text_004" type="Sprite2D" parent="." unique_id=430088575]
+position = Vector2(-57, 180)
+scale = Vector2(0.91944945, 0.91944945)
+texture = ExtResource("5_qnurb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=724822963]
+libraries/ = SubResource("AnimationLibrary_qnurb")
