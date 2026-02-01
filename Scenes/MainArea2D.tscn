@@ -58,10 +58,10 @@ position = Vector2(-282, 391)
 texture = SubResource("AtlasTexture_rdcnd")
 
 [node name="Grass" type="TextureRect" parent="." unique_id=338291629]
-offset_left = -1402.0
-offset_top = -469.0
-offset_right = 898.0
-offset_bottom = 43.0
+offset_left = -1715.0
+offset_top = -970.0
+offset_right = 1685.0
+offset_bottom = 1030.0
 texture = ExtResource("11_kg1u7")
 stretch_mode = 1
 
