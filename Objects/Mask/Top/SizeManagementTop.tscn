@@ -9,5 +9,5 @@ script = ExtResource("2_odvdc")
 _scaleSpeed = 0.01
 
 [node name="Sprite2D" parent="." index="0" unique_id=1982586066]
-position = Vector2(8, -21)
+position = Vector2(16, -28.666668)
 texture = ExtResource("3_ul6g0")

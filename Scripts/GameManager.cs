@@ -29,7 +29,7 @@ public partial class GameManager : Node
 			{
 				pos = _spawnPoints.PickRandom();
 			}
-
+			player.GetModule<MovementModule>().InitMovement();
 			player.Position = pos.Position;
 			pos.IsOccupied = true;
 		}

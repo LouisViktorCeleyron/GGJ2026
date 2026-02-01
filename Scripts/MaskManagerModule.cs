@@ -24,9 +24,9 @@ public partial class MaskManagerModule : Module
 	{
 		
 		 _topPos.Position =new Vector2(_baseTopPos.X*(flip?-1:1),_topPos.Position.Y);
-		 _topSprite.FlipH = flip;
+		 _topPos.Scale = Vector2.Right * (flip ? -1 : 1);
 		 _botPos.Position = new Vector2(_baseBotPos.X*(flip?-1:1),_botPos.Position.Y);
-		 _botSprite.FlipH = flip;
+		 _botPos.Scale = Vector2.Right * (flip ? -1 : 1);
 	}
 	public void GenerateMasks()
 	{
