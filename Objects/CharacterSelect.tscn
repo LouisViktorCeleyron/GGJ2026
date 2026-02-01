@@ -288,14 +288,14 @@ texture = ExtResource("2_iu5uj")
 z_index = -1
 position = Vector2(-253.99998, -128)
 rotation = 1.9406583
-scale = Vector2(1, 0.9000375)
+scale = Vector2(1, 0.9)
 texture = ExtResource("3_qckux")
 
 [node name="SFlute002" type="Sprite2D" parent="." unique_id=662526606]
 z_index = -1
 position = Vector2(268.00003, -133)
 rotation = 4.3866496
-scale = Vector2(0.9, 0.90003765)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("3_qckux")
 
 [node name="SButt001" type="Sprite2D" parent="." unique_id=1459178962]
@@ -304,8 +304,8 @@ scale = Vector2(1.995, 0.865)
 texture = ExtResource("4_2fimi")
 
 [node name="SButt002" type="Sprite2D" parent="." unique_id=796604284]
-position = Vector2(83.551796, 47.99)
-scale = Vector2(0.9000375, 0.8646956)
+position = Vector2(83.55, 47.99)
+scale = Vector2(0.9, 0.8646956)
 texture = ExtResource("5_jpgin")
 
 [node name="SMaskRoulette" type="Sprite2D" parent="." unique_id=2000569312]
@@ -342,7 +342,7 @@ texture = ExtResource("7_jpgin")
 
 [node name="SBottomMask001" type="Sprite2D" parent="." unique_id=1240492084]
 position = Vector2(-3, -395)
-texture = ExtResource("8_rq35b")
+texture = ExtResource("9_1hp0g")
 
 [node name="TGround001" type="Sprite2D" parent="." unique_id=282463288]
 modulate = Color(0.028900003, 0.09474667, 0.17, 0.53333336)
@@ -352,11 +352,12 @@ scale = Vector2(2.36, 2.9600022)
 texture = ExtResource("16_1hp0g")
 
 [node name="Label" type="Label" parent="." unique_id=958034942]
+visible = false
 z_index = 5
 offset_left = -304.0
-offset_top = 398.0
+offset_top = 216.0
 offset_right = 525.0
-offset_bottom = 551.0
+offset_bottom = 369.0
 text = "Press A to Start"
 label_settings = SubResource("LabelSettings_1hp0g")
 

@@ -13,6 +13,8 @@ public partial class GameManager : Node
 
 	[Export] private Array<SpawnPoint> _spawnPoints;
 	[Signal]
+	public delegate void StartGameSignalEventHandler();
+	[Signal]
 	public delegate void EndGameSignalEventHandler(PlayerRef winner);
 
 	public int BestOf = 3;
@@ -20,7 +22,6 @@ public partial class GameManager : Node
 
 	private void StartGame()
 	{
-		GD.Print(_players);
 		foreach (var player in _players)
 		{
 			var pos = _spawnPoints.PickRandom();
@@ -41,6 +42,7 @@ public partial class GameManager : Node
 
 	private void LaunchMask()
 	{
+		EmitSignalStartGameSignal();
 		foreach (var player in _players)
 		{
 			player.GetModule<MaskManagerModule>().GenerateMasks();
@@ -70,7 +72,7 @@ public partial class GameManager : Node
 		{
 			if (Input.IsActionJustPressed("ui_accept"))
 			{
-				StartGame();
+				LaunchMask();
 			}
 		}
 	}

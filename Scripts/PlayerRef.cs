@@ -6,7 +6,8 @@ using Godot.Collections;
 public partial class PlayerRef : CharacterBody2D
 {
 	private List<Module> _modules;
-	
+	[Signal]
+	private delegate void OnScoreChangedEventHandler(int score);
 	[Export]
 	private int _playerIndex;
 	public int PlayerIndex => _playerIndex;
@@ -35,6 +36,11 @@ public partial class PlayerRef : CharacterBody2D
 		_as.Play();
 		GameManager.Instance.AddPlayerRef(this);
 		CallDeferred("CallPostReady");
+	}
+
+	public void Bridge(int score)
+	{
+		EmitSignalOnScoreChanged(score);
 	}
 
 	public void SetPause(bool status)

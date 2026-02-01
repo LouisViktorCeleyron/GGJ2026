@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dmi8binjjp1ar" path="res://Temp/LeSol.png" id="1_lduwd"]
 [ext_resource type="PackedScene" uid="uid://cieemcbemdyu1" path="res://Objects/Bard.tscn" id="2_ulm5l"]
 [ext_resource type="PackedScene" uid="uid://bw3cnu3ajpejh" path="res://Objects/CharacterSelect.tscn" id="3_uixek"]
-[ext_resource type="Texture2D" uid="uid://cfjc71y1v26wb" path="res://Sprites/S_BottomMask_001.png" id="4_a0v8m"]
+[ext_resource type="Texture2D" uid="uid://bwfyypfmlsdg8" path="res://Sprites/S_BottomMask_004.png" id="4_m74dh"]
 [ext_resource type="PackedScene" uid="uid://dqvay87d4v6g6" path="res://Objects/Wall_003.tscn" id="6_4ln0f"]
 [ext_resource type="Texture2D" uid="uid://d1oeclm8vx3o0" path="res://Textures/T_Ground_001.png" id="9_t0kd8"]
 [ext_resource type="Texture2D" uid="uid://c7ome75583blt" path="res://Sprites/S_Grass_001.png" id="10_xy48h"]
@@ -16,13 +16,15 @@
 [ext_resource type="Texture2D" uid="uid://dj5o04eopppbw" path="res://Sprites/S_Dirt_001.png" id="13_kg1u7"]
 [ext_resource type="PackedScene" uid="uid://dv5vggydyrxvy" path="res://Objects/Wall_001.tscn" id="13_uixek"]
 [ext_resource type="PackedScene" path="res://Objects/Wall_002.tscn" id="14_j7u81"]
+[ext_resource type="SpriteFrames" uid="uid://dh5fk4gnh2o8a" path="res://Sprites/SF_P1.tres" id="16_a0v8m"]
 [ext_resource type="PackedScene" uid="uid://b7pp74715uex" path="res://Objects/SpawnPoint.tscn" id="16_uixek"]
+[ext_resource type="SpriteFrames" uid="uid://tp3kabu2lqyi" path="res://Sprites/SF_P2.tres" id="17_4t8pf"]
 [ext_resource type="PackedScene" uid="uid://csbh3twk2ycu1" path="res://Objects/Barrel_001.tscn" id="17_7g5k4"]
-[ext_resource type="AudioStream" uid="uid://brptmidl6fts6" path="res://Audio/MUSIQUE MENU PRINCIPAL_Loop Début.wav" id="17_j7u81"]
 [ext_resource type="Script" uid="uid://8k4wclcys2qv" path="res://Scripts/Extentions/BGSound.cs" id="18_7g5k4"]
 [ext_resource type="PackedScene" uid="uid://cepi6ct5rbue5" path="res://Objects/Barrel_002.tscn" id="18_s4ppk"]
 [ext_resource type="PackedScene" uid="uid://2se2v6jfe33w" path="res://Objects/Straw_001.tscn" id="19_s4ppk"]
-[ext_resource type="AudioStream" uid="uid://cxg2eo6anrsne" path="res://Audio/MUSIQUE MENU PRINCIPAL_Loop Middle.wav" id="21_2qx6d"]
+[ext_resource type="AudioStream" uid="uid://ntm68dd7g7n3" path="res://Audio/MUSIQUE MENU PRINCIPAL_Loop.wav" id="20_a0v8m"]
+[ext_resource type="PackedScene" uid="uid://ce5nt6vldt8wy" path="res://UI/MainUI.tscn" id="25_m74dh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7vphi"]
 atlas = ExtResource("10_xy48h")
@@ -53,20 +55,20 @@ texture = ExtResource("1_lduwd")
 [node name="Character Select" parent="." unique_id=936254722 instance=ExtResource("3_uixek")]
 z_index = 176
 position = Vector2(0, 233)
-scale = Vector2(2.036, 2.036)
+scale = Vector2(2.071, 2.071)
 
 [node name="SFlute001" parent="Character Select" index="2" unique_id=1616097586]
-scale = Vector2(1, 0.43911555)
+scale = Vector2(1, 0.5346371)
 
 [node name="SFlute002" parent="Character Select" index="3" unique_id=662526606]
-scale = Vector2(0.9, 0.43908146)
+scale = Vector2(0.9, 0.5347726)
 
 [node name="SButt002" parent="Character Select" index="5" unique_id=796604284]
-position = Vector2(32.88548, 30.948868)
-scale = Vector2(0.43911558, 0.8646956)
+position = Vector2(43.506214, 34.552334)
+scale = Vector2(0.534637, 0.8646956)
 
 [node name="SBottomMask001" parent="Character Select" index="11" unique_id=1240492084]
-texture = ExtResource("4_a0v8m")
+texture = ExtResource("4_m74dh")
 
 [node name="Art" type="Node2D" parent="." unique_id=25068648]
 
@@ -306,11 +308,13 @@ position = Vector2(39, 108)
 [node name="Bard2" parent="." unique_id=646171583 instance=ExtResource("2_ulm5l")]
 z_index = 22
 position = Vector2(-566, 284)
+_frames = ExtResource("16_a0v8m")
 
 [node name="Bard3" parent="." unique_id=1823047616 instance=ExtResource("2_ulm5l")]
 z_index = 38
 position = Vector2(1063, -172)
 _playerIndex = 1
+_frames = ExtResource("17_4t8pf")
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=935454320]
 
@@ -336,9 +340,28 @@ position = Vector2(945, 630)
 position = Vector2(-988, 633)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2136693153]
-stream = ExtResource("17_j7u81")
+stream = ExtResource("20_a0v8m")
+volume_db = -10.0
+autoplay = true
 script = ExtResource("18_7g5k4")
-_partOne = ExtResource("17_j7u81")
-_partTwo = ExtResource("21_2qx6d")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1767531622]
+visible = false
+follow_viewport_enabled = true
+
+[node name="MainUi" parent="CanvasLayer" unique_id=2139807447 instance=ExtResource("25_m74dh")]
+offset_left = -1320.0
+offset_top = -926.0
+offset_right = -40.0
+offset_bottom = -206.0
+
+[connection signal="StartGameSignal" from="GameManager" to="Character Select" method="queue_free"]
+[connection signal="StartGameSignal" from="GameManager" to="CanvasLayer" method="set_visible" binds= [true]]
+[connection signal="OnScoreChanged" from="Bard2" to="CanvasLayer/MainUi/HBoxContainer2" method="SetScore"]
+[connection signal="OnScoreChanged" from="Bard3" to="CanvasLayer/MainUi/HBoxContainer3" method="SetScore"]
+[connection signal="OnChangeMusic" from="AudioStreamPlayer2D" to="GameManager" method="CanGameStart"]
+[connection signal="OnChangeMusic" from="AudioStreamPlayer2D" to="Character Select/Label" method="set_visible" binds= [true]]
 
 [editable path="Character Select"]
+[editable path="CanvasLayer/MainUi"]
+[editable path="CanvasLayer/MainUi/HBoxContainer3"]
