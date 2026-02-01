@@ -45,6 +45,9 @@ public partial class MovementModule : Module
 	{
 		if (_owner.Pause)
 		{
+			_velocity = Vector2.Zero;
+			_owner.Velocity = Vector2.Zero;
+			EmitSignalIddle();
 			return;
 		}
 		 _velocity = _owner.Velocity;

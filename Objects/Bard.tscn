@@ -21,9 +21,12 @@
 [ext_resource type="AudioStream" uid="uid://4hfycp2s3jhc" path="res://Audio/TROMPETTE_LANCER_2.wav" id="19_jwbo8"]
 [ext_resource type="AudioStream" uid="uid://dbv4fjbyywbno" path="res://Audio/BRUITS PAS.wav" id="20_jwbo8"]
 [ext_resource type="Script" uid="uid://8k4wclcys2qv" path="res://Scripts/Extentions/BGSound.cs" id="21_ptxdi"]
+[ext_resource type="AudioStream" uid="uid://w71syu5sg22d" path="res://Audio/TROMPETTE_VICTOIRE_1.wav" id="22_idveu"]
+[ext_resource type="AudioStream" uid="uid://crmcf48h3n84e" path="res://Audio/TROMPETTE_MORT.wav" id="22_x1yxg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7ih7"]
-size = Vector2(256, 256)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ptxdi"]
+radius = 65.7
+height = 204.24
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_maamg"]
 atlas = ExtResource("3_efr62")
@@ -147,7 +150,8 @@ _frames = ExtResource("2_vycds")
 _as = NodePath("Scaler/AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1916308384]
-shape = SubResource("RectangleShape2D_j7ih7")
+position = Vector2(0, 12)
+shape = SubResource("CapsuleShape2D_ptxdi")
 
 [node name="Scaler" type="Node2D" parent="." unique_id=2080904182]
 
@@ -227,6 +231,12 @@ volume_db = -12.0
 autoplay = true
 script = ExtResource("21_ptxdi")
 
+[node name="VictorySound" type="AudioStreamPlayer2D" parent="." unique_id=885047035]
+stream = ExtResource("22_idveu")
+
+[node name="DefeatSound" type="AudioStreamPlayer2D" parent="." unique_id=532544911]
+stream = ExtResource("22_x1yxg")
+
 [connection signal="animation_finished" from="Node2D/Trumpet" to="ShooterModule" method="CreateBullet"]
 [connection signal="animation_finished" from="Node2D/Trumpet" to="TrumpetLancer" method="PlayRandom"]
 [connection signal="timeout" from="ShootReset" to="ShooterModule" method="ResetShoot"]
@@ -241,6 +251,7 @@ script = ExtResource("21_ptxdi")
 [connection signal="OnDeath" from="DeathModule" to="Scaler/TopSpawnPoint" method="set_visible" binds= [false]]
 [connection signal="OnDeath" from="DeathModule" to="Scaler/AnimatedSprite2D" method="play" binds= ["Lose"]]
 [connection signal="OnDeath" from="DeathModule" to="Node2D" method="set_visible" binds= [false]]
+[connection signal="OnDeath" from="DeathModule" to="DefeatSound" method="play" binds= [0.0]]
 [connection signal="ChangeScore" from="ScoreModule" to="Label" method="set_text"]
 [connection signal="OnVictory" from="ScoreModule" to="Scaler/BotSpawnPoint" method="set_visible" binds= [false]]
 [connection signal="OnVictory" from="ScoreModule" to="Scaler/TopSpawnPoint" method="set_visible" binds= [false]]
@@ -248,3 +259,4 @@ script = ExtResource("21_ptxdi")
 [connection signal="OnVictory" from="ScoreModule" to="Node2D" method="set_visible" binds= [false]]
 [connection signal="timeout" from="MaskSpawnTimer" to="MaskManagerModule" method="GenerateMasks"]
 [connection signal="timeout" from="MaskSpawnTimer" to="." method="SetPause" binds= [false]]
+[connection signal="finished" from="DefeatSound" to="VictorySound" method="play" binds= [0.0]]
