@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://daorbttk3cicv"]
 
 [ext_resource type="PackedScene" uid="uid://c03p03e54xiq6" path="res://Objects/Mask/BotMaskBase.tscn" id="1_o2pk4"]
-[ext_resource type="Texture2D" uid="uid://ck7nfgpjshx0r" path="res://Temp/bot3.png" id="2_mngwq"]
+[ext_resource type="Texture2D" uid="uid://dlpeqwh24rxlg" path="res://Sprites/S_BottomMask_003.png" id="2_o2pk4"]
 
 [node name="Mask" unique_id=1561778943 instance=ExtResource("1_o2pk4")]
 
 [node name="Sprite2D" parent="." index="0" unique_id=1982586066]
-texture = ExtResource("2_mngwq")
+position = Vector2(0, 21)
+texture = ExtResource("2_o2pk4")

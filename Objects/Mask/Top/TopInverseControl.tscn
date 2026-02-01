@@ -2,10 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://clad4bcpv8bu7" path="res://Objects/Mask/TopMaskBase.tscn" id="1_l1e7q"]
 [ext_resource type="Script" uid="uid://dre0kec7tros8" path="res://Scripts/Extentions/TopInverseControl.cs" id="2_hothm"]
-[ext_resource type="Texture2D" uid="uid://cmc0ffr806o6" path="res://Temp/Top3.png" id="2_pa0gh"]
+[ext_resource type="Texture2D" uid="uid://blb4j6dx4ksh1" path="res://Sprites/S_TopMask_004.png" id="3_hothm"]
 
 [node name="Mask" unique_id=1561778943 instance=ExtResource("1_l1e7q")]
 script = ExtResource("2_hothm")
 
 [node name="Sprite2D" parent="." index="0" unique_id=1982586066]
-texture = ExtResource("2_pa0gh")
+position = Vector2(-13, -15)
+texture = ExtResource("3_hothm")

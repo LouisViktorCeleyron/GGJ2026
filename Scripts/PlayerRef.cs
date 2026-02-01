@@ -20,11 +20,16 @@ public partial class PlayerRef : CharacterBody2D
 	
 	[Export]
 	private Array<Node2D> _scallable;
+
+	[Export] private SpriteFrames _frames;
+	[Export] private AnimatedSprite2D _as;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		base._Ready();
+		_as.SpriteFrames = _frames;
+		_as.Play();
 		GameManager.Instance.AddPlayerRef(this);
 		CallDeferred("CallPostReady");
 	}

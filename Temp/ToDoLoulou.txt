@@ -4,6 +4,7 @@ UI et score des joueurs
 personne qui traversent les murs
 Changer tire rate sur les masque
 deplacer mur/paroi  
+Mettre les obstacle
 
 
 Balle d'une seconde 

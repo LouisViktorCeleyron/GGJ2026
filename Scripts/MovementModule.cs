@@ -9,6 +9,13 @@ public partial class MovementModule : Module
 	private Vector2 _velocity;
 	private Action<double> _addMovement;
 	public Vector2 Velocity => _velocity;
+
+	[Signal]
+	private delegate void WalkingEventHandler();
+	[Signal]
+	private delegate void IddleEventHandler();
+	[Signal]
+	private delegate void FlipEventHandler(bool isFlipped);
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -51,6 +58,15 @@ public partial class MovementModule : Module
 			_velocity.Y = Mathf.MoveToward(_owner.Velocity.Y, 0, Speed);
 		}
 
+		if (_velocity.Length() >= 0.02f)
+		{
+			EmitSignalWalking();
+			EmitSignalFlip(_velocity.X<=0);
+		}
+		else
+		{
+			EmitSignalIddle();
+		}
 		_owner.Velocity = _velocity;
 	}
 
