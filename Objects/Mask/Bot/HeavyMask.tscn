@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c03p03e54xiq6" path="res://Objects/Mask/BotMaskBase.tscn" id="1_idpxb"]
 [ext_resource type="PackedScene" uid="uid://jbw7kueq0yg" path="res://Objects/Bulet/Heavy_bullet.tscn" id="2_hry6m"]
-[ext_resource type="Texture2D" uid="uid://cfjc71y1v26wb" path="res://Sprites/S_BottomMask_001.png" id="3_idpxb"]
+[ext_resource type="Texture2D" uid="uid://bauy4ao76trxc" path="res://Sprites/S_BottomMask_005.png" id="3_idpxb"]
 
 [node name="Mask" unique_id=1561778943 instance=ExtResource("1_idpxb")]
 BulletToSpawn = ExtResource("2_hry6m")
