@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://p8kvet24kctl"]
+
+[ext_resource type="Script" uid="uid://cvre8bok6jmuq" path="res://Scripts/Extentions/UiScore.cs" id="1_6173j"]
+[ext_resource type="Texture2D" uid="uid://rdvxpq8ggj1p" path="res://Sprites/S_Sun_001.png" id="1_re6vd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6173j"]
+font_size = 83
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwh41"]
+atlas = ExtResource("1_re6vd")
+region = Rect2(529, 1040, 482, 482)
+
+[node name="HBoxContainer2" type="HBoxContainer" unique_id=497052685 node_paths=PackedStringArray("jpp")]
+offset_right = 427.0
+offset_bottom = 103.0
+script = ExtResource("1_6173j")
+jpp = NodePath("HBoxContainer")
+
+[node name="Label" type="Label" parent="." unique_id=1107557344]
+layout_mode = 2
+text = "P1"
+label_settings = SubResource("LabelSettings_6173j")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1315487878]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1191582179]
+visible = false
+layout_mode = 2
+texture = SubResource("AtlasTexture_wwh41")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer" unique_id=1990282903]
+visible = false
+layout_mode = 2
+texture = SubResource("AtlasTexture_wwh41")
+expand_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer" unique_id=1058547105]
+visible = false
+layout_mode = 2
+texture = SubResource("AtlasTexture_wwh41")
+expand_mode = 2

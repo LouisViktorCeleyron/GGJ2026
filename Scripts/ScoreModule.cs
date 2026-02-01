@@ -13,6 +13,7 @@ public partial class ScoreModule : Module
 	{
 		_score += 1;
 		EmitSignalChangeScore(_score.ToString());
+		_owner.Bridge(_score);
 		if (_score >= GameManager.Instance.BestOf)
 		{
 			Victory();

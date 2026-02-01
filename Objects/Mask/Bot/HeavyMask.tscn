@@ -8,5 +8,5 @@
 BulletToSpawn = ExtResource("2_hry6m")
 
 [node name="Sprite2D" parent="." index="0" unique_id=1982586066]
-position = Vector2(0, 24)
+position = Vector2(0, 30)
 texture = ExtResource("3_idpxb")
