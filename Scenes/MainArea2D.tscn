@@ -62,14 +62,14 @@ position = Vector2(0, 233)
 scale = Vector2(2.071, 2.071)
 
 [node name="SFlute001" parent="Character Select" index="2" unique_id=1616097586]
-scale = Vector2(1, 0.5652756)
+scale = Vector2(1, 0.42501077)
 
 [node name="SFlute002" parent="Character Select" index="3" unique_id=662526606]
-scale = Vector2(0.9, 0.56542605)
+scale = Vector2(0.9, 0.42501068)
 
 [node name="SButt002" parent="Character Select" index="5" unique_id=796604284]
-position = Vector2(46.86419, 35.679184)
-scale = Vector2(0.56527543, 0.8646956)
+position = Vector2(31.491064, 30.520327)
+scale = Vector2(0.42501077, 0.8646956)
 
 [node name="SBottomMask001" parent="Character Select" index="11" unique_id=1240492084]
 texture = ExtResource("4_m74dh")

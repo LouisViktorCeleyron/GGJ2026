@@ -11,7 +11,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_w2fdd"]
 radius = 50.0
 
-[node name="BulletBody" type="RigidBody2D" unique_id=383007295]
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ojt7"]
+radius = 4.0
+
+[node name="BulletBody" type="RigidBody2D" unique_id=383007295 groups=["Bullet"]]
 mass = 0.001
 gravity_scale = 0.0
 script = ExtResource("1_w2fdd")
@@ -36,6 +39,9 @@ autostart = true
 [node name="AudioStreamPlayer2D" parent="." unique_id=103590640 instance=ExtResource("3_7ojt7")]
 volume_db = -10.0
 _audioList = Array[AudioStream]([ExtResource("4_5u51q"), ExtResource("5_n1ope"), ExtResource("6_5hv1e"), ExtResource("7_0vmaq")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1911170314]
+shape = SubResource("CircleShape2D_7ojt7")
 
 [connection signal="body_entered" from="Area2D" to="." method="Collide"]
 [connection signal="body_entered" from="Area2D" to="AudioStreamPlayer2D" method="PlayRandom" unbinds=1]

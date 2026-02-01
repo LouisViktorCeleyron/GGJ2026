@@ -24,6 +24,10 @@ window/size/viewport_height=720
 
 project/assembly_name="Mask"
 
+[global_group]
+
+Bullet=""
+
 [input]
 
 ui_accept={

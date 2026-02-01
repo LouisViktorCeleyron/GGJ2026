@@ -6,10 +6,7 @@
 friction = 0.0
 bounce = 0.5
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_p74jw"]
-radius = 4.0
-
-[node name="BulletBody" unique_id=383007295 instance=ExtResource("1_6lfmx")]
+[node name="BulletBody" unique_id=383007295 groups=["Bullet"] instance=ExtResource("1_6lfmx")]
 physics_material_override = SubResource("PhysicsMaterial_p74jw")
 _bulletSpeed = 600.0
 
@@ -18,8 +15,3 @@ modulate = Color(0.57800335, 0.6403069, 0.5589779, 1)
 
 [node name="Timer" parent="." index="1" unique_id=1078268870]
 wait_time = 3.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2" unique_id=1421315710]
-shape = SubResource("CircleShape2D_p74jw")
-
-[connection signal="area_entered" from="Area2D" to="." method="Bounce"]

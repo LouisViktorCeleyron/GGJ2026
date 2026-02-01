@@ -38,6 +38,10 @@ public partial class BulletBody : RigidBody2D
 			{
 				prBody.GetModule<DeathModule>().Die(GameManager.Instance.FindRandomPlayer(_owner));
 			}
+		}
+
+		if (!body.IsInGroup("Bullet"))
+		{
 			QueueFree();
 		}
 	}

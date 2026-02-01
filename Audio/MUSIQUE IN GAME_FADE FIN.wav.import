@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cd6telylxa66q"
+path="res://.godot/imported/MUSIQUE IN GAME_FADE FIN.wav-ef24758ea7b81d90f66282cf17ba891c.sample"
+
+[deps]
+
+source_file="res://Audio/MUSIQUE IN GAME_FADE FIN.wav"
+dest_files=["res://.godot/imported/MUSIQUE IN GAME_FADE FIN.wav-ef24758ea7b81d90f66282cf17ba891c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
