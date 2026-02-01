@@ -213,11 +213,6 @@ _botPos = NodePath("../Scaler/TopSpawnPoint")
 [node name="ScoreModule" type="Node" parent="." unique_id=1318049100]
 script = ExtResource("7_m75ex")
 
-[node name="MaskSpawnTimer" type="Timer" parent="." unique_id=1184467307]
-wait_time = 0.5
-one_shot = true
-autostart = true
-
 [node name="TrumpetLancer" parent="." unique_id=103590640 instance=ExtResource("17_pv0n8")]
 position = Vector2(0, -240.06)
 volume_db = -12.0
@@ -257,6 +252,4 @@ stream = ExtResource("22_x1yxg")
 [connection signal="OnVictory" from="ScoreModule" to="Scaler/TopSpawnPoint" method="set_visible" binds= [false]]
 [connection signal="OnVictory" from="ScoreModule" to="Scaler/AnimatedSprite2D" method="play" binds= ["Win"]]
 [connection signal="OnVictory" from="ScoreModule" to="Node2D" method="set_visible" binds= [false]]
-[connection signal="timeout" from="MaskSpawnTimer" to="MaskManagerModule" method="GenerateMasks"]
-[connection signal="timeout" from="MaskSpawnTimer" to="." method="SetPause" binds= [false]]
 [connection signal="finished" from="DefeatSound" to="VictorySound" method="play" binds= [0.0]]

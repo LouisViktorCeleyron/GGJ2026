@@ -16,6 +16,7 @@ public partial class GameManager : Node
 	public delegate void EndGameSignalEventHandler(PlayerRef winner);
 
 	public int BestOf = 3;
+	private bool _gameStarted,_canGameStart;
 
 	private void StartGame()
 	{
@@ -32,6 +33,20 @@ public partial class GameManager : Node
 			pos.IsOccupied = true;
 		}
 	}
+
+	public void CanGameStart()
+	{
+		_canGameStart = true;
+	}
+
+	private void LaunchMask()
+	{
+		foreach (var player in _players)
+		{
+			player.GetModule<MaskManagerModule>().GenerateMasks();
+			player.SetPause(false);
+		}
+	}
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -46,6 +61,18 @@ public partial class GameManager : Node
 		}
 
 		CallDeferred("StartGame");
+	}
+
+	public override void _Process(double delta)
+	{
+		base._Process(delta);
+		if (!_gameStarted && _canGameStart)
+		{
+			if (Input.IsActionJustPressed("ui_accept"))
+			{
+				StartGame();
+			}
+		}
 	}
 
 	public void EndGame(PlayerRef winner)
