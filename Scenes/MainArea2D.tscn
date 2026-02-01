@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dmi8binjjp1ar" path="res://Temp/LeSol.png" id="1_lduwd"]
 [ext_resource type="PackedScene" uid="uid://cieemcbemdyu1" path="res://Objects/Bard.tscn" id="2_ulm5l"]
 [ext_resource type="PackedScene" uid="uid://bw3cnu3ajpejh" path="res://Objects/CharacterSelect.tscn" id="3_uixek"]
-[ext_resource type="Texture2D" uid="uid://cfjc71y1v26wb" path="res://Sprites/S_BottomMask_001.png" id="4_a0v8m"]
 [ext_resource type="PackedScene" uid="uid://dqvay87d4v6g6" path="res://Objects/Wall_003.tscn" id="6_4ln0f"]
 [ext_resource type="Texture2D" uid="uid://d1oeclm8vx3o0" path="res://Textures/T_Ground_001.png" id="9_t0kd8"]
 [ext_resource type="Texture2D" uid="uid://c7ome75583blt" path="res://Sprites/S_Grass_001.png" id="10_xy48h"]
@@ -19,15 +18,25 @@
 [ext_resource type="PackedScene" path="res://Objects/SpawnPoint.tscn" id="16_uixek"]
 [ext_resource type="PackedScene" uid="uid://csbh3twk2ycu1" path="res://Objects/Barrel_001.tscn" id="17_7g5k4"]
 [ext_resource type="AudioStream" uid="uid://brptmidl6fts6" path="res://Audio/MUSIQUE MENU PRINCIPAL_Loop Début.wav" id="17_j7u81"]
-[ext_resource type="Script" path="res://Scripts/Extentions/BGSound.cs" id="18_7g5k4"]
+[ext_resource type="Script" uid="uid://8k4wclcys2qv" path="res://Scripts/Extentions/BGSound.cs" id="18_7g5k4"]
+[ext_resource type="Texture2D" uid="uid://5h5ku68ei7vh" path="res://Sprites/S_Clouds.png" id="18_m74dh"]
 [ext_resource type="PackedScene" uid="uid://dmce73368y1b1" path="res://Objects/Barrel_002.tscn" id="18_s4ppk"]
 [ext_resource type="PackedScene" uid="uid://2oa80neb3mar" path="res://Objects/Straw_001.tscn" id="19_s4ppk"]
 [ext_resource type="AudioStream" uid="uid://cxg2eo6anrsne" path="res://Audio/MUSIQUE MENU PRINCIPAL_Loop Middle.wav" id="21_2qx6d"]
 [ext_resource type="PackedScene" uid="uid://cpg0cnr62ba2k" path="res://Objects/Chval_001.tscn" id="24_4t8pf"]
+[ext_resource type="SpriteFrames" uid="uid://pt1f6ed8ei2u" path="res://Sprites/SF_Sun_001.tres" id="25_csgkp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7vphi"]
 atlas = ExtResource("10_xy48h")
 region = Rect2(0, 2, 256, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_805s7"]
+atlas = ExtResource("18_m74dh")
+region = Rect2(0, 49, 316, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avo1b"]
+atlas = ExtResource("18_m74dh")
+region = Rect2(14, 376, 330, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rdcnd"]
 atlas = ExtResource("13_kg1u7")
@@ -67,9 +76,6 @@ scale = Vector2(0.9, 0.42500037)
 position = Vector2(31.49, 30.52)
 scale = Vector2(0.425, 0.8646956)
 
-[node name="SBottomMask001" parent="Character Select" index="11" unique_id=1240492084]
-texture = ExtResource("4_a0v8m")
-
 [node name="Art" type="Node2D" parent="." unique_id=25068648]
 
 [node name="TGround001" type="Sprite2D" parent="Art" unique_id=1605823688]
@@ -87,6 +93,39 @@ offset_bottom = 1030.0
 texture = ExtResource("11_kg1u7")
 stretch_mode = 1
 metadata/_edit_lock_ = true
+
+[node name="Grass2" type="TextureRect" parent="Art" unique_id=931699584]
+modulate = Color(0.30515012, 0.8329337, 1.3266667, 1)
+self_modulate = Color(2.137626, 2.137626, 2.137626, 1)
+offset_left = -1715.0
+offset_top = -970.0
+offset_right = 1685.0
+offset_bottom = 1030.0
+scale = Vector2(1, 0.24000031)
+texture = ExtResource("9_t0kd8")
+stretch_mode = 1
+
+[node name="Colliders" type="Node2D" parent="Art" unique_id=1244454947]
+
+[node name="Charette" parent="Art/Colliders" unique_id=1805333026 instance=ExtResource("11_t0kd8")]
+position = Vector2(46, -100)
+
+[node name="Puit" parent="Art/Colliders" unique_id=905888063 instance=ExtResource("12_xy48h")]
+position = Vector2(-137, 412)
+
+[node name="StaticBody2D" parent="Art/Colliders" unique_id=1051734606 instance=ExtResource("17_7g5k4")]
+z_index = 1
+position = Vector2(-905, -68)
+
+[node name="StaticBody2D2" parent="Art/Colliders" unique_id=34115552 instance=ExtResource("18_s4ppk")]
+position = Vector2(945, 630)
+
+[node name="StaticBody2D3" parent="Art/Colliders" unique_id=1297622738 instance=ExtResource("19_s4ppk")]
+z_index = 1
+position = Vector2(-988, 633)
+
+[node name="StaticBody2D4" parent="Art/Colliders" unique_id=47157491 instance=ExtResource("24_4t8pf")]
+position = Vector2(539, -170)
 
 [node name="LWalls" type="Node2D" parent="Art" unique_id=2048001889]
 position = Vector2(-1485.0001, -354)
@@ -284,6 +323,23 @@ position = Vector2(2497, 0)
 texture = SubResource("AtlasTexture_7vphi")
 metadata/_edit_lock_ = true
 
+[node name="Clouds" type="Node2D" parent="Art" unique_id=1006784336]
+
+[node name="Dirt6" type="Sprite2D" parent="Art/Clouds" unique_id=1342033574]
+position = Vector2(-600, -894)
+scale = Vector2(1.6222445, 1.3926554)
+texture = SubResource("AtlasTexture_805s7")
+
+[node name="Dirt8" type="Sprite2D" parent="Art/Clouds" unique_id=1568905610]
+position = Vector2(-1505, -862)
+scale = Vector2(1.6222445, 1.3926554)
+texture = SubResource("AtlasTexture_805s7")
+
+[node name="Dirt7" type="Sprite2D" parent="Art/Clouds" unique_id=221471866]
+position = Vector2(1072.0001, -894.00006)
+scale = Vector2(1.6222445, 1.3926554)
+texture = SubResource("AtlasTexture_avo1b")
+
 [node name="Dirt" type="Node2D" parent="Art" unique_id=1688586052]
 
 [node name="Dirt" type="Sprite2D" parent="Art/Dirt" unique_id=703061315]
@@ -341,24 +397,7 @@ script = ExtResource("18_7g5k4")
 _partOne = ExtResource("17_j7u81")
 _partTwo = ExtResource("21_2qx6d")
 
-[node name="Colliders" type="Node2D" parent="." unique_id=1244454947]
-
-[node name="Charette" parent="Colliders" unique_id=1805333026 instance=ExtResource("11_t0kd8")]
-position = Vector2(46, -100)
-
-[node name="Puit" parent="Colliders" unique_id=905888063 instance=ExtResource("12_xy48h")]
-position = Vector2(-137, 412)
-
-[node name="StaticBody2D" parent="Colliders" unique_id=1051734606 instance=ExtResource("17_7g5k4")]
-position = Vector2(-905, -68)
-
-[node name="StaticBody2D2" parent="Colliders" unique_id=34115552 instance=ExtResource("18_s4ppk")]
-position = Vector2(945, 630)
-
-[node name="StaticBody2D3" parent="Colliders" unique_id=1297622738 instance=ExtResource("19_s4ppk")]
-position = Vector2(-988, 633)
-
-[node name="StaticBody2D4" parent="Colliders" unique_id=47157491 instance=ExtResource("24_4t8pf")]
-position = Vector2(539, -170)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=243151356]
+sprite_frames = ExtResource("25_csgkp")
 
 [editable path="Character Select"]
