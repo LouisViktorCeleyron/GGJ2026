@@ -4,11 +4,15 @@ UI et score des joueurs
 1/Mettre en place victoire defaire (Bo3)
 
 Roulette de Mask
-Integrer Balle
 Integrer masque centré
 UI/Compteur de score
 Tweak de perso
 Integrer sons/musiques
 
+
+
 generation d'objet
 Option
+
+
+//Integrer Balle
