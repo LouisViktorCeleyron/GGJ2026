@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://8qc3jrkuaex7" path="res://Sprites/S_TopMask_003.png" id="13_xjafn"]
 [ext_resource type="Texture2D" uid="uid://blb4j6dx4ksh1" path="res://Sprites/S_TopMask_004.png" id="14_nk161"]
 [ext_resource type="Texture2D" uid="uid://d1oeclm8vx3o0" path="res://Textures/T_Ground_001.png" id="16_1hp0g"]
+[ext_resource type="Texture2D" uid="uid://biil7tw36vvhe" path="res://Sprites/S_ButtonA_001.png" id="17_73dwt"]
 
 [sub_resource type="Animation" id="Animation_yhjms"]
 resource_name = "CharacterSelection"
@@ -271,7 +272,7 @@ _data = {
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_1hp0g"]
-font_size = 78
+font_size = 42
 
 [node name="Node2D" type="Node2D" unique_id=936254722]
 z_index = 8
@@ -288,14 +289,14 @@ texture = ExtResource("2_iu5uj")
 z_index = -1
 position = Vector2(-253.99998, -128)
 rotation = 1.9406583
-scale = Vector2(1, 0.9821904)
+scale = Vector2(1, 0.9)
 texture = ExtResource("3_qckux")
 
 [node name="SFlute002" type="Sprite2D" parent="." unique_id=662526606]
 z_index = -1
 position = Vector2(268.00003, -133)
 rotation = 4.3866496
-scale = Vector2(0.9, 0.9824727)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("3_qckux")
 
 [node name="SButt001" type="Sprite2D" parent="." unique_id=1459178962]
@@ -304,8 +305,8 @@ scale = Vector2(1.995, 0.865)
 texture = ExtResource("4_2fimi")
 
 [node name="SButt002" type="Sprite2D" parent="." unique_id=796604284]
-position = Vector2(87.48278, 47.99)
-scale = Vector2(0.9821898, 0.8646956)
+position = Vector2(83.55, 47.99)
+scale = Vector2(0.9, 0.8646956)
 texture = ExtResource("5_jpgin")
 
 [node name="SMaskRoulette" type="Sprite2D" parent="." unique_id=2000569312]
@@ -342,7 +343,7 @@ texture = ExtResource("7_jpgin")
 
 [node name="SBottomMask001" type="Sprite2D" parent="." unique_id=1240492084]
 position = Vector2(-3, -395)
-texture = ExtResource("9_yhjms")
+texture = ExtResource("9_1hp0g")
 
 [node name="TGround001" type="Sprite2D" parent="." unique_id=282463288]
 modulate = Color(0.028900003, 0.09474667, 0.17, 0.53333336)
@@ -360,5 +361,12 @@ offset_right = 525.0
 offset_bottom = 369.0
 text = "Press A to Start"
 label_settings = SubResource("LabelSettings_1hp0g")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=930001572]
+offset_left = -267.0
+offset_top = 166.0
+offset_right = 245.0
+offset_bottom = 678.0
+texture = ExtResource("17_73dwt")
 
 [connection signal="ready" from="AnimationPlayer" to="AnimationPlayer" method="play" binds= ["CharacterSelection"]]

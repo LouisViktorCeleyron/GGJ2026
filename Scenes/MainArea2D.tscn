@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dmi8binjjp1ar" path="res://Temp/LeSol.png" id="1_lduwd"]
 [ext_resource type="PackedScene" uid="uid://cieemcbemdyu1" path="res://Objects/Bard.tscn" id="2_ulm5l"]
 [ext_resource type="PackedScene" uid="uid://bw3cnu3ajpejh" path="res://Objects/CharacterSelect.tscn" id="3_uixek"]
-[ext_resource type="Texture2D" uid="uid://bwfyypfmlsdg8" path="res://Sprites/S_BottomMask_004.png" id="4_m74dh"]
 [ext_resource type="PackedScene" uid="uid://dqvay87d4v6g6" path="res://Objects/Wall_003.tscn" id="6_4ln0f"]
 [ext_resource type="Texture2D" uid="uid://d1oeclm8vx3o0" path="res://Textures/T_Ground_001.png" id="9_t0kd8"]
 [ext_resource type="Texture2D" uid="uid://c7ome75583blt" path="res://Sprites/S_Grass_001.png" id="10_xy48h"]
@@ -55,23 +54,9 @@ scale = Vector2(2.447, 2.451)
 texture = ExtResource("1_lduwd")
 
 [node name="Character Select" parent="." unique_id=936254722 instance=ExtResource("3_uixek")]
-visible = false
 z_index = 176
 position = Vector2(0, 233)
 scale = Vector2(2.036, 2.036)
-
-[node name="SFlute001" parent="Character Select" index="2" unique_id=1616097586]
-scale = Vector2(1, 0.5080887)
-
-[node name="SFlute002" parent="Character Select" index="3" unique_id=662526606]
-scale = Vector2(0.9, 0.5082091)
-
-[node name="SButt002" parent="Character Select" index="5" unique_id=796604284]
-position = Vector2(40.59651, 33.575912)
-scale = Vector2(0.5080886, 0.8646956)
-
-[node name="SBottomMask001" parent="Character Select" index="11" unique_id=1240492084]
-texture = ExtResource("4_m74dh")
 
 [node name="Art" type="Node2D" parent="." unique_id=25068648]
 
