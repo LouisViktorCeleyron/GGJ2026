@@ -1,28 +1,11 @@
 envoyer mail Labo 
 UI et score des joueurs
 
-personne qui traversent les murs
-Changer tire rate sur les masque
-deplacer mur/paroi  
-Mettre les obstacle
+1/Mettre en place victoire defaire (Bo3)
 
-
-Balle d'une seconde 
-Generation de mask Polish
-
-
-//  Deplacement qui change la taille
-// controle inversé 
-//balle qui font reculer
-//Balle super LENTE
-//tu t'arrete pour tirer
-//Generation de mask
-// Ajout de mask du bas pour changer les balles 
-//Balle rebondissante
-//Balle qui clignotte
-//Faire des manager global et par joueur
-//Add timer to ball 
-//Changer tir pour que ce soit tant qu'on appuye/avec le joystick/avec un timer
-//Ajouter des murs
-//Faire que la balle puisse tuer un joueur
-//faire les 2 joueurs
+Roulette de Mask
+Integrer Balle
+Integrer masque centré
+UI/Compteur de score
+Tweak de perso
+Integrer sons/musiques

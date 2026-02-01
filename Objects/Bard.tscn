@@ -218,3 +218,4 @@ autostart = true
 [connection signal="OnShoot" from="ShooterModule" to="Node2D/Trumpet" method="play"]
 [connection signal="ChangeScore" from="ScoreModule" to="Label" method="set_text"]
 [connection signal="timeout" from="MaskSpawnTimer" to="MaskManagerModule" method="GenerateMasks"]
+[connection signal="timeout" from="MaskSpawnTimer" to="." method="SetPause" binds= [false]]
