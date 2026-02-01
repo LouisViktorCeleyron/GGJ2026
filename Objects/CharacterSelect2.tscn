@@ -1,0 +1,360 @@
+[gd_scene format=3 uid="uid://5gmgpghwdk0e"]
+
+[ext_resource type="Texture2D" uid="uid://dnvjyey85bdlu" path="res://Sprites/S_CharaSelect_001.png" id="1_0c2bm"]
+[ext_resource type="Texture2D" uid="uid://duvkvv1qa3y2o" path="res://Sprites/S_CharaSelect_002.png" id="2_tjjwu"]
+[ext_resource type="Texture2D" uid="uid://bfjpeixqnxh0u" path="res://Sprites/S_Flute_001.png" id="3_ty7dn"]
+[ext_resource type="Texture2D" uid="uid://bes8aku01yhfu" path="res://Sprites/S_Butt_001.png" id="4_nwcvb"]
+[ext_resource type="Texture2D" uid="uid://4f3qpvkg32fa" path="res://Sprites/S_Butt_002.png" id="5_n7q8i"]
+[ext_resource type="Texture2D" uid="uid://dbxps6gcluu7i" path="res://Sprites/S_MaskRoulette.png" id="6_y58pq"]
+[ext_resource type="Texture2D" uid="uid://cfjc71y1v26wb" path="res://Sprites/S_BottomMask_001.png" id="7_sshlk"]
+[ext_resource type="Texture2D" uid="uid://bynpvmhg2fviq" path="res://Sprites/S_BottomMask_002.png" id="8_okap6"]
+[ext_resource type="Texture2D" uid="uid://dlpeqwh24rxlg" path="res://Sprites/S_BottomMask_003.png" id="9_io25w"]
+[ext_resource type="Texture2D" uid="uid://bwfyypfmlsdg8" path="res://Sprites/S_BottomMask_004.png" id="10_rex33"]
+[ext_resource type="Texture2D" uid="uid://mq6kmxgsfycv" path="res://Sprites/S_TopMask_001.png" id="11_6yuuh"]
+[ext_resource type="Texture2D" uid="uid://y0tqiinbw7e6" path="res://Sprites/S_TopMask_002.png" id="12_em8j4"]
+[ext_resource type="Texture2D" uid="uid://8qc3jrkuaex7" path="res://Sprites/S_TopMask_003.png" id="13_2xxj1"]
+[ext_resource type="Texture2D" uid="uid://blb4j6dx4ksh1" path="res://Sprites/S_TopMask_004.png" id="14_g6dn6"]
+[ext_resource type="Texture2D" uid="uid://u0csxy6l2q76" path="res://Textures/T_Pattern_001.png" id="15_4b17v"]
+[ext_resource type="Texture2D" uid="uid://d1oeclm8vx3o0" path="res://Textures/T_Ground_001.png" id="16_ek4hc"]
+[ext_resource type="Texture2D" uid="uid://biil7tw36vvhe" path="res://Sprites/S_ButtonA_001.png" id="17_s0ctg"]
+
+[sub_resource type="Animation" id="Animation_yhjms"]
+resource_name = "CharacterSelection"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SButt001:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
+"update": 0,
+"values": [0.425, 1.0, 0.9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SButt001:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
+"update": 0,
+"values": [-31.49, -88.335, -83.55]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SButt001:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
+"update": 0,
+"values": [30.52, 47.99, 47.99]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFlute001:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5.9604645e-08, 0.30000007, 0.8),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
+"update": 0,
+"values": [0.425, 1.0, 0.9]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SFlute002:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(6.1190585e-05, 0.3000612, 0.80006117),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
+"update": 0,
+"values": [0.425, 1.0, 0.9]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SButt002:scale:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.29999995, 0.79999995),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
+"update": 0,
+"values": [0.425, 1.0, 0.9]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SButt002:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.29999995, 0.79999995),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
+"update": 0,
+"values": [31.49, 88.335, 83.55]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SButt002:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.29999995, 0.79999995),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
+"update": 0,
+"values": [30.52, 47.99, 47.99]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SMaskRoulette:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(3.999999, 1, 2.5491242),
+"update": 0,
+"values": [0.0, 3.141592653589793, 6.283185307179586]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("STopMask001:texture")
+tracks/9/interp = 0
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.46666667, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("11_6yuuh"), ExtResource("12_em8j4"), ExtResource("13_2xxj1"), ExtResource("14_g6dn6")]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("SBottomMask001:texture")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.1333, 0.3667, 0.59999996, 0.8333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("7_sshlk"), ExtResource("8_okap6"), ExtResource("9_io25w"), ExtResource("10_rex33")]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("STopMask001:position")
+tracks/11/interp = 0
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.23333335, 0.4666667, 0.70000005),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(15, -499), Vector2(7.735, -488.585), Vector2(-4.025, -524.28), Vector2(-35.265, -496.66)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("SBottomMask001:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.13333334, 0.36666667, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-3, -395), Vector2(-3, -395), Vector2(-3, -395)]
+}
+
+[sub_resource type="Animation" id="Animation_v7jm5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SButt001:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.995]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SButt001:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [43.000004]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SButt001:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-79.00001]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SMaskRoulette:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("STopMask001:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_6yuuh")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("STopMask001:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(15, -499)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SBottomMask001:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3, -395)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tehjf"]
+_data = {
+&"CharacterSelection": SubResource("Animation_yhjms"),
+&"RESET": SubResource("Animation_v7jm5")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_1hp0g"]
+font_size = 42
+
+[node name="Node2D" type="Node2D" unique_id=936254722]
+z_index = 8
+
+[node name="SCharaSelect001" type="Sprite2D" parent="." unique_id=1160430063]
+texture = ExtResource("1_0c2bm")
+
+[node name="SCharaSelect002" type="Sprite2D" parent="." unique_id=969705753]
+z_index = 1
+position = Vector2(0, 3)
+texture = ExtResource("2_tjjwu")
+
+[node name="SFlute001" type="Sprite2D" parent="." unique_id=1616097586]
+position = Vector2(-253.99998, -128)
+rotation = 1.9406583
+scale = Vector2(1, 0.9)
+texture = ExtResource("3_ty7dn")
+
+[node name="SFlute002" type="Sprite2D" parent="." unique_id=662526606]
+position = Vector2(268.00003, -133)
+rotation = 4.3866496
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_ty7dn")
+
+[node name="SButt001" type="Sprite2D" parent="." unique_id=1459178962]
+position = Vector2(-79.00001, 43.000004)
+scale = Vector2(1.995, 0.865)
+texture = ExtResource("4_nwcvb")
+
+[node name="SButt002" type="Sprite2D" parent="." unique_id=796604284]
+position = Vector2(83.55, 47.99)
+scale = Vector2(0.9, 0.8646956)
+texture = ExtResource("5_n7q8i")
+
+[node name="SMaskRoulette" type="Sprite2D" parent="." unique_id=2000569312]
+visible = false
+position = Vector2(0, -534)
+texture = ExtResource("6_y58pq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=634636907]
+libraries/ = SubResource("AnimationLibrary_tehjf")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1222352380]
+z_index = -1
+texture_repeat = 2
+offset_left = -893.0
+offset_top = -963.0
+offset_right = 931.0
+offset_bottom = 537.0
+texture = ExtResource("15_4b17v")
+stretch_mode = 1
+
+[node name="STopMask001" type="Sprite2D" parent="." unique_id=1537346429]
+position = Vector2(15, -499)
+texture = ExtResource("11_6yuuh")
+
+[node name="SBottomMask001" type="Sprite2D" parent="." unique_id=1240492084]
+position = Vector2(-3, -395)
+texture = ExtResource("9_io25w")
+
+[node name="TGround001" type="Sprite2D" parent="." unique_id=282463288]
+modulate = Color(0.028900003, 0.09474667, 0.17, 0.53333336)
+z_index = -1
+position = Vector2(55.000084, -209.50002)
+scale = Vector2(4.0625, 1.716797)
+texture = ExtResource("16_ek4hc")
+
+[node name="Label" type="Label" parent="." unique_id=958034942]
+visible = false
+z_index = 5
+offset_left = -304.0
+offset_top = 216.0
+offset_right = 525.0
+offset_bottom = 369.0
+text = "Press A to Start"
+label_settings = SubResource("LabelSettings_1hp0g")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=930001572]
+offset_left = -267.0
+offset_top = 166.0
+offset_right = 245.0
+offset_bottom = 678.0
+texture = ExtResource("17_s0ctg")
+
+[connection signal="ready" from="AnimationPlayer" to="AnimationPlayer" method="play" binds= ["CharacterSelection"]]
