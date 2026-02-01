@@ -23,6 +23,8 @@ public partial class PlayerRef : CharacterBody2D
 
 	[Export] private SpriteFrames _frames;
 	[Export] private AnimatedSprite2D _as;
+
+	private bool _pause = true;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -34,6 +36,10 @@ public partial class PlayerRef : CharacterBody2D
 		CallDeferred("CallPostReady");
 	}
 
+	private void SetPause(bool status)
+	{
+		_pause = status;
+	}
 	public float GetScaling()
 	{
 		return _scallable[0].Scale.X;
@@ -76,6 +82,10 @@ public partial class PlayerRef : CharacterBody2D
 
 	public override void _Input(InputEvent @event)
 	{
+		if (_pause)
+		{
+			return;
+		}
 		_movAxis = Input.GetVector(
 			"ui_left_"+_playerIndex, 
 			"ui_right_"+_playerIndex,
