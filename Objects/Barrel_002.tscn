@@ -1,15 +1,15 @@
-[gd_scene format=3 uid="uid://dmce73368y1b1"]
+[gd_scene format=3 uid="uid://cepi6ct5rbue5"]
 
-[ext_resource type="PackedScene" uid="uid://5ngaede2ag7e" path="res://Objects/Barrel_001.tscn" id="1_dj0ye"]
+[ext_resource type="PackedScene" uid="uid://csbh3twk2ycu1" path="res://Objects/Barrel_001.tscn" id="1_dj0ye"]
 [ext_resource type="Texture2D" uid="uid://biyjd72c14e3x" path="res://Sprites/S_Barrel_002.png" id="2_vxvoo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6oesx"]
-size = Vector2(281, 175)
+size = Vector2(245, 146)
 
 [node name="StaticBody2D" unique_id=1673683336 instance=ExtResource("1_dj0ye")]
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=870729504]
-position = Vector2(-4.5, -103.5)
+position = Vector2(-8, -88)
 shape = SubResource("RectangleShape2D_6oesx")
 
 [node name="SWall001" parent="." index="1" unique_id=1379828624]

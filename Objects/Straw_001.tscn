@@ -1,15 +1,15 @@
-[gd_scene format=3 uid="uid://2oa80neb3mar"]
+[gd_scene format=3 uid="uid://2se2v6jfe33w"]
 
 [ext_resource type="PackedScene" uid="uid://cp7rya56tr4e0" path="res://Objects/Obstacle.tscn" id="1_kwcui"]
 [ext_resource type="Texture2D" uid="uid://onj8rxj6c6v0" path="res://Sprites/S_Straw_001.png" id="2_bfekg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kq7l5"]
-size = Vector2(276, 114)
+size = Vector2(224, 114)
 
 [node name="StaticBody2D" unique_id=1673683336 instance=ExtResource("1_kwcui")]
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=870729504]
-position = Vector2(0, -68)
+position = Vector2(-7, -68)
 shape = SubResource("RectangleShape2D_kq7l5")
 
 [node name="SWall001" parent="." index="1" unique_id=1379828624]

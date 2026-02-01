@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ccbjtu65wdpvb"]
+[gd_scene format=3 uid="uid://be8n1bv2r6gwk"]
 
 [ext_resource type="PackedScene" uid="uid://bm7lfkl4twmhl" path="res://Objects/game_manager.tscn" id="1_kg1u7"]
 [ext_resource type="Texture2D" uid="uid://dmi8binjjp1ar" path="res://Temp/LeSol.png" id="1_lduwd"]
@@ -7,18 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://dqvay87d4v6g6" path="res://Objects/Wall_003.tscn" id="6_4ln0f"]
 [ext_resource type="Texture2D" uid="uid://d1oeclm8vx3o0" path="res://Textures/T_Ground_001.png" id="9_t0kd8"]
 [ext_resource type="Texture2D" uid="uid://c7ome75583blt" path="res://Sprites/S_Grass_001.png" id="10_xy48h"]
-[ext_resource type="PackedScene" uid="uid://3jm4f0vfep7" path="res://Objects/Tower_001.tscn" id="11_7vphi"]
+[ext_resource type="PackedScene" path="res://Objects/Tower_001.tscn" id="11_7vphi"]
 [ext_resource type="Texture2D" uid="uid://dtx87qwk6juxt" path="res://Textures/T_Grass_001.png" id="11_kg1u7"]
-[ext_resource type="PackedScene" uid="uid://dlp0jcvmv1jdx" path="res://Objects/Charette.tscn" id="11_t0kd8"]
-[ext_resource type="PackedScene" uid="uid://bc7qreoxwj654" path="res://Objects/Tower_003.tscn" id="12_rdcnd"]
+[ext_resource type="PackedScene" uid="uid://bpbyqa2wwguv" path="res://Objects/Charette.tscn" id="11_t0kd8"]
+[ext_resource type="PackedScene" path="res://Objects/Tower_003.tscn" id="12_rdcnd"]
 [ext_resource type="PackedScene" uid="uid://bbai0b1lwabkt" path="res://Objects/Well_001.tscn" id="12_xy48h"]
 [ext_resource type="Texture2D" uid="uid://dj5o04eopppbw" path="res://Sprites/S_Dirt_001.png" id="13_kg1u7"]
-[ext_resource type="PackedScene" uid="uid://cwp6gkgokojbl" path="res://Objects/Wall_001.tscn" id="13_uixek"]
-[ext_resource type="PackedScene" uid="uid://bleuxrsansyv5" path="res://Objects/Wall_002.tscn" id="14_j7u81"]
-[ext_resource type="PackedScene" path="res://Objects/SpawnPoint.tscn" id="16_uixek"]
-[ext_resource type="PackedScene" uid="uid://5ngaede2ag7e" path="res://Objects/Barrel_001.tscn" id="17_7g5k4"]
-[ext_resource type="PackedScene" uid="uid://dmce73368y1b1" path="res://Objects/Barrel_002.tscn" id="18_s4ppk"]
-[ext_resource type="PackedScene" uid="uid://2oa80neb3mar" path="res://Objects/Straw_001.tscn" id="19_s4ppk"]
+[ext_resource type="PackedScene" uid="uid://dv5vggydyrxvy" path="res://Objects/Wall_001.tscn" id="13_uixek"]
+[ext_resource type="PackedScene" path="res://Objects/Wall_002.tscn" id="14_j7u81"]
+[ext_resource type="PackedScene" uid="uid://b7pp74715uex" path="res://Objects/SpawnPoint.tscn" id="16_uixek"]
+[ext_resource type="PackedScene" uid="uid://csbh3twk2ycu1" path="res://Objects/Barrel_001.tscn" id="17_7g5k4"]
+[ext_resource type="PackedScene" uid="uid://cepi6ct5rbue5" path="res://Objects/Barrel_002.tscn" id="18_s4ppk"]
+[ext_resource type="PackedScene" uid="uid://2se2v6jfe33w" path="res://Objects/Straw_001.tscn" id="19_s4ppk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7vphi"]
 atlas = ExtResource("10_xy48h")
@@ -143,6 +143,7 @@ position = Vector2(0, 987.9999)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="DownWalls" type="Node2D" parent="Art" unique_id=986946365]
+z_index = 96
 position = Vector2(-1482, 974)
 
 [node name="DownBigTower_001" parent="Art/DownWalls" unique_id=1997715444 instance=ExtResource("11_7vphi")]
@@ -287,9 +288,11 @@ position = Vector2(46, -100)
 position = Vector2(39, 108)
 
 [node name="Bard2" parent="." unique_id=646171583 instance=ExtResource("2_ulm5l")]
+z_index = 22
 position = Vector2(-566, 284)
 
 [node name="Bard3" parent="." unique_id=1823047616 instance=ExtResource("2_ulm5l")]
+z_index = 38
 position = Vector2(1063, -172)
 _playerIndex = 1
 
@@ -308,10 +311,10 @@ position = Vector2(1165, -320)
 position = Vector2(1178, 706)
 
 [node name="StaticBody2D" parent="." unique_id=1051734606 instance=ExtResource("17_7g5k4")]
-position = Vector2(-1065, -162)
+position = Vector2(-905, -68)
 
 [node name="StaticBody2D2" parent="." unique_id=34115552 instance=ExtResource("18_s4ppk")]
 position = Vector2(945, 630)
 
 [node name="StaticBody2D3" parent="." unique_id=1297622738 instance=ExtResource("19_s4ppk")]
-position = Vector2(-991, 633)
+position = Vector2(-988, 633)

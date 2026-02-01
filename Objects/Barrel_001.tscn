@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://5ngaede2ag7e"]
+[gd_scene format=3 uid="uid://csbh3twk2ycu1"]
 
 [ext_resource type="PackedScene" uid="uid://cp7rya56tr4e0" path="res://Objects/Obstacle.tscn" id="1_85msy"]
 [ext_resource type="Texture2D" uid="uid://cme807ies0mcb" path="res://Sprites/S_Barrel_001.png" id="2_jspy8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85msy"]
-size = Vector2(196, 189)
+size = Vector2(148, 189)
 
 [node name="StaticBody2D" unique_id=1673683336 instance=ExtResource("1_85msy")]
 
