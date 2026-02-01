@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cv5jowu5ue4w3"]
+
+[ext_resource type="PackedScene" uid="uid://cp7rya56tr4e0" path="res://Objects/Obstacle.tscn" id="1_0bl18"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_742rp"]
+size = Vector2(413, 329)
+
+[node name="StaticBody2D" unique_id=1673683336 instance=ExtResource("1_0bl18")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=870729504]
+visible = true
+position = Vector2(2.5, 88.5)
+shape = SubResource("RectangleShape2D_742rp")
