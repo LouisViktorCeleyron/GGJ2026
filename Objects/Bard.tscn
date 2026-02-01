@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://ctjb1eughues3" path="res://Scripts/PlayerRef.cs" id="1_6cr34"]
 [ext_resource type="Script" uid="uid://dsxgn7ujeotov" path="res://Scripts/MovementModule.cs" id="2_hj2n3"]
 [ext_resource type="SpriteFrames" uid="uid://0pwfb2bexl30" path="res://Sprites/chara_sprite_frame.tres" id="2_vycds"]
+[ext_resource type="Texture2D" uid="uid://g3fccqaeycpr" path="res://Sprites/S_Character_002.png" id="3_efr62"]
 [ext_resource type="SpriteFrames" uid="uid://cu0xntdpb5j1j" path="res://Sprites/Trumpet.tres" id="3_f4fd3"]
 [ext_resource type="Script" uid="uid://x2fqao1t4e3d" path="res://Scripts/ShooterModule.cs" id="3_j35rj"]
+[ext_resource type="Texture2D" uid="uid://qpjeyq56y2oy" path="res://Sprites/S_Character.png" id="4_pv0n8"]
 [ext_resource type="Script" uid="uid://idi63dk6617h" path="res://Scripts/DeathModule.cs" id="6_vycds"]
 [ext_resource type="Script" uid="uid://jabjt1w4hat0" path="res://Scripts/ScoreModule.cs" id="7_m75ex"]
 [ext_resource type="PackedScene" uid="uid://btxcu3ocmec0l" path="res://Objects/Mask/Top/SizeManagementTop.tscn" id="8_gu161"]
@@ -18,13 +20,126 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7ih7"]
 size = Vector2(256, 256)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_maamg"]
+atlas = ExtResource("3_efr62")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xibd"]
+atlas = ExtResource("3_efr62")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dptvt"]
+atlas = ExtResource("3_efr62")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vh5un"]
+atlas = ExtResource("3_efr62")
+region = Rect2(0, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx3me"]
+atlas = ExtResource("3_efr62")
+region = Rect2(256, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwejx"]
+atlas = ExtResource("3_efr62")
+region = Rect2(512, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m3il"]
+atlas = ExtResource("4_pv0n8")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n85p8"]
+atlas = ExtResource("4_pv0n8")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g67vh"]
+atlas = ExtResource("4_pv0n8")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4scbk"]
+atlas = ExtResource("4_pv0n8")
+region = Rect2(0, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u143s"]
+atlas = ExtResource("4_pv0n8")
+region = Rect2(256, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty8tm"]
+atlas = ExtResource("4_pv0n8")
+region = Rect2(512, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmrbn"]
+atlas = ExtResource("4_pv0n8")
+region = Rect2(0, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk4rk"]
+atlas = ExtResource("4_pv0n8")
+region = Rect2(256, 512, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wkj15"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_maamg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xibd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dptvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vh5un")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx3me")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwejx")
+}],
+"loop": true,
+"name": &"Iddle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7m3il")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n85p8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g67vh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4scbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u143s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty8tm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmrbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uk4rk")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
 [sub_resource type="LabelSettings" id="LabelSettings_l63ou"]
 font_size = 46
 
-[node name="Bard" type="CharacterBody2D" unique_id=646171583 node_paths=PackedStringArray("_scallable")]
+[node name="Bard" type="CharacterBody2D" unique_id=646171583 node_paths=PackedStringArray("_scallable", "_as")]
 process_priority = 1
 script = ExtResource("1_6cr34")
 _scallable = [NodePath("CollisionShape2D"), NodePath("Scaler")]
+_frames = ExtResource("2_vycds")
+_as = NodePath("Scaler/AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1916308384]
 shape = SubResource("RectangleShape2D_j7ih7")
@@ -40,10 +155,8 @@ position = Vector2(64, -64)
 scale = Vector2(1.5, 1.5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Scaler" unique_id=210915665]
-sprite_frames = ExtResource("2_vycds")
-animation = &"Walk"
-autoplay = "Walk"
-frame_progress = 0.56987375
+sprite_frames = SubResource("SpriteFrames_wkj15")
+animation = &"Iddle"
 
 [node name="Node2D" type="Node2D" parent="." unique_id=449125132]
 
@@ -98,6 +211,10 @@ autostart = true
 
 [connection signal="animation_finished" from="Node2D/Trumpet" to="ShooterModule" method="CreateBullet"]
 [connection signal="timeout" from="ShootReset" to="ShooterModule" method="ResetShoot"]
+[connection signal="Flip" from="MovementModule" to="Scaler/AnimatedSprite2D" method="set_flip_h"]
+[connection signal="Flip" from="MovementModule" to="MaskManagerModule" method="MaskFlip"]
+[connection signal="Iddle" from="MovementModule" to="Scaler/AnimatedSprite2D" method="play" binds= ["Iddle"]]
+[connection signal="Walking" from="MovementModule" to="Scaler/AnimatedSprite2D" method="play" binds= ["Walking"]]
 [connection signal="OnShoot" from="ShooterModule" to="Node2D/Trumpet" method="play"]
 [connection signal="ChangeScore" from="ScoreModule" to="Label" method="set_text"]
 [connection signal="timeout" from="MaskSpawnTimer" to="MaskManagerModule" method="GenerateMasks"]

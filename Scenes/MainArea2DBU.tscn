@@ -1,16 +1,15 @@
 [gd_scene format=3 uid="uid://bp4gi6dxgkhg7"]
 
-[ext_resource type="Script" uid="uid://daub10c41cmtp" path="res://Scripts/GameManager.cs" id="1_omw78"]
+[ext_resource type="PackedScene" uid="uid://bm7lfkl4twmhl" path="res://Objects/game_manager.tscn" id="1_omw78"]
 [ext_resource type="Texture2D" uid="uid://dmi8binjjp1ar" path="res://Temp/LeSol.png" id="2_i0quh"]
 [ext_resource type="PackedScene" uid="uid://cieemcbemdyu1" path="res://Objects/Bard.tscn" id="3_64kvy"]
+[ext_resource type="SpriteFrames" uid="uid://dh5fk4gnh2o8a" path="res://Sprites/chara_sprite_frame2.tres" id="4_i0quh"]
 [ext_resource type="PackedScene" uid="uid://b7pp74715uex" path="res://Objects/SpawnPoint.tscn" id="5_ndu42"]
 [ext_resource type="PackedScene" uid="uid://cp7rya56tr4e0" path="res://Objects/Obstacle.tscn" id="5_omw78"]
 
 [node name="MainArea2d" type="Node2D" unique_id=661939480]
 
-[node name="GameManager" type="Node" parent="." unique_id=106667780 node_paths=PackedStringArray("_spawnPoints")]
-script = ExtResource("1_omw78")
-_spawnPoints = [NodePath("../SpawnPoints/SpawnPoint"), NodePath("../SpawnPoints/SpawnPoint2"), NodePath("../SpawnPoints/SpawnPoint3"), NodePath("../SpawnPoints/SpawnPoint4")]
+[node name="GameManager" parent="." unique_id=529569245 instance=ExtResource("1_omw78")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=708613885]
 
@@ -26,6 +25,7 @@ scale = Vector2(0.75, 0.75)
 position = Vector2(469.00003, -136)
 scale = Vector2(0.75, 0.75)
 _playerIndex = 1
+_frames = ExtResource("4_i0quh")
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=795250622]
 

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bm7lfkl4twmhl"]
+
+[ext_resource type="Script" uid="uid://daub10c41cmtp" path="res://Scripts/GameManager.cs" id="1_yrffa"]
+
+[node name="GameManager" type="Node" unique_id=529569245 node_paths=PackedStringArray("_spawnPoints")]
+script = ExtResource("1_yrffa")
+_spawnPoints = [NodePath(""), NodePath(""), NodePath(""), NodePath("")]
