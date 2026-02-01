@@ -1,17 +1,21 @@
-[gd_scene format=3 uid="uid://ccbjtu65wdpvb"]
+[gd_scene format=3 uid="uid://be8n1bv2r6gwk"]
 
+[ext_resource type="PackedScene" uid="uid://bm7lfkl4twmhl" path="res://Objects/game_manager.tscn" id="1_kg1u7"]
 [ext_resource type="Texture2D" uid="uid://dmi8binjjp1ar" path="res://Temp/LeSol.png" id="1_lduwd"]
 [ext_resource type="PackedScene" uid="uid://cieemcbemdyu1" path="res://Objects/Bard.tscn" id="2_ulm5l"]
+[ext_resource type="SpriteFrames" uid="uid://dh5fk4gnh2o8a" path="res://Sprites/SF_P1.tres" id="4_7vphi"]
+[ext_resource type="SpriteFrames" uid="uid://tp3kabu2lqyi" path="res://Sprites/SF_P2.tres" id="5_rdcnd"]
 [ext_resource type="PackedScene" uid="uid://dqvay87d4v6g6" path="res://Objects/Wall_003.tscn" id="6_4ln0f"]
 [ext_resource type="Texture2D" uid="uid://d1oeclm8vx3o0" path="res://Textures/T_Ground_001.png" id="9_t0kd8"]
 [ext_resource type="Texture2D" uid="uid://c7ome75583blt" path="res://Sprites/S_Grass_001.png" id="10_xy48h"]
-[ext_resource type="PackedScene" uid="uid://3jm4f0vfep7" path="res://Objects/Tower_001.tscn" id="11_7vphi"]
+[ext_resource type="PackedScene" path="res://Objects/Tower_001.tscn" id="11_7vphi"]
 [ext_resource type="Texture2D" uid="uid://dtx87qwk6juxt" path="res://Textures/T_Grass_001.png" id="11_kg1u7"]
-[ext_resource type="PackedScene" uid="uid://dlp0jcvmv1jdx" path="res://Objects/Charette.tscn" id="11_t0kd8"]
-[ext_resource type="PackedScene" uid="uid://bc7qreoxwj654" path="res://Objects/Tower_003.tscn" id="12_rdcnd"]
+[ext_resource type="PackedScene" path="res://Objects/Charette.tscn" id="11_t0kd8"]
+[ext_resource type="PackedScene" path="res://Objects/Tower_003.tscn" id="12_rdcnd"]
 [ext_resource type="PackedScene" uid="uid://bbai0b1lwabkt" path="res://Objects/Well_001.tscn" id="12_xy48h"]
-[ext_resource type="PackedScene" uid="uid://cwp6gkgokojbl" path="res://Objects/Wall_001.tscn" id="13_uixek"]
-[ext_resource type="PackedScene" uid="uid://bleuxrsansyv5" path="res://Objects/Wall_002.tscn" id="14_j7u81"]
+[ext_resource type="PackedScene" path="res://Objects/Wall_001.tscn" id="13_uixek"]
+[ext_resource type="PackedScene" path="res://Objects/Wall_002.tscn" id="14_j7u81"]
+[ext_resource type="PackedScene" uid="uid://b7pp74715uex" path="res://Objects/SpawnPoint.tscn" id="16_uixek"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7vphi"]
 atlas = ExtResource("10_xy48h")
@@ -27,9 +31,6 @@ visible = false
 modulate = Color(0.18326035, 0.40376717, 0.3722785, 1)
 scale = Vector2(2.447, 2.451)
 texture = ExtResource("1_lduwd")
-
-[node name="Bard" parent="." unique_id=646171583 instance=ExtResource("2_ulm5l")]
-position = Vector2(-566, 284)
 
 [node name="Art" type="Node2D" parent="." unique_id=25068648]
 position = Vector2(-98.38, -145.535)
@@ -231,7 +232,35 @@ z_index = 2
 position = Vector2(2290, -17)
 
 [node name="StaticBody2D" parent="." unique_id=1805333026 instance=ExtResource("11_t0kd8")]
-position = Vector2(46, -185)
+position = Vector2(-440, -108)
 
 [node name="StaticBody2D2" parent="." unique_id=905888063 instance=ExtResource("12_xy48h")]
-position = Vector2(-374, 124)
+position = Vector2(-381, 516)
+
+[node name="GameManager" parent="." unique_id=529569245 node_paths=PackedStringArray("_spawnPoints") instance=ExtResource("1_kg1u7")]
+_spawnPoints = [NodePath("../SpawnPoints/SpawnPoint"), NodePath("../SpawnPoints/SpawnPoint2"), NodePath("../SpawnPoints/SpawnPoint4"), NodePath("../SpawnPoints/SpawnPoint4")]
+
+[node name="Bard" parent="." unique_id=646171583 node_paths=PackedStringArray("_scallable") instance=ExtResource("2_ulm5l")]
+position = Vector2(-940, 408)
+_scallable = [null, null]
+_frames = ExtResource("4_7vphi")
+
+[node name="Bard2" parent="." unique_id=198076300 node_paths=PackedStringArray("_scallable") instance=ExtResource("2_ulm5l")]
+position = Vector2(689, -48)
+_playerIndex = 1
+_scallable = [null, null]
+_frames = ExtResource("5_rdcnd")
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=229334703]
+
+[node name="SpawnPoint" parent="SpawnPoints" unique_id=2027480021 instance=ExtResource("16_uixek")]
+position = Vector2(-1144, -251)
+
+[node name="SpawnPoint2" parent="SpawnPoints" unique_id=1611707140 instance=ExtResource("16_uixek")]
+position = Vector2(-1136, 711)
+
+[node name="SpawnPoint3" parent="SpawnPoints" unique_id=481704791 instance=ExtResource("16_uixek")]
+position = Vector2(1103, -248)
+
+[node name="SpawnPoint4" parent="SpawnPoints" unique_id=649778318 instance=ExtResource("16_uixek")]
+position = Vector2(1115, 630)

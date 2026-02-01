@@ -1,7 +1,9 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://tp3kabu2lqyi"]
 
 [ext_resource type="Texture2D" uid="uid://g3fccqaeycpr" path="res://Sprites/S_Character_002.png" id="1_uuyoi"]
+[ext_resource type="Texture2D" uid="uid://1m3ga8cku42" path="res://Sprites/S_Butt_003.png" id="2_4lqux"]
 [ext_resource type="Texture2D" uid="uid://cfvclsvnoyv88" path="res://Sprites/S_Character2_walk.png" id="2_xl3w0"]
+[ext_resource type="Texture2D" uid="uid://4f3qpvkg32fa" path="res://Sprites/S_Butt_002.png" id="4_r5bx5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_maamg"]
 atlas = ExtResource("1_uuyoi")
@@ -86,6 +88,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_4lqux")
+}],
+"loop": true,
+"name": &"Lose",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_n85p8")
 }, {
 "duration": 1.0,
@@ -111,5 +121,13 @@ animations = [{
 }],
 "loop": true,
 "name": &"Walking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_r5bx5")
+}],
+"loop": true,
+"name": &"Win",
 "speed": 5.0
 }]

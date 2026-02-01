@@ -36,7 +36,7 @@ public partial class PlayerRef : CharacterBody2D
 		CallDeferred("CallPostReady");
 	}
 
-	private void SetPause(bool status)
+	public void SetPause(bool status)
 	{
 		_pause = status;
 	}

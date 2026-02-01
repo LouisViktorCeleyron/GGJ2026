@@ -9,3 +9,6 @@ Integrer masque centré
 UI/Compteur de score
 Tweak de perso
 Integrer sons/musiques
+
+generation d'objet
+Option

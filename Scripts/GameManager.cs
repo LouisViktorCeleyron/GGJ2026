@@ -9,9 +9,29 @@ public partial class GameManager : Node
 {
 
 	public static GameManager Instance;
-	private Array<PlayerRef> _score;
+	private Array<PlayerRef> _players;
 
 	[Export] private Array<SpawnPoint> _spawnPoints;
+	[Signal]
+	public delegate void EndGameSignalEventHandler(PlayerRef winner);
+
+	public int BestOf = 3;
+
+	private void StartGame()
+	{
+		GD.Print(_players);
+		foreach (var player in _players)
+		{
+			var pos = _spawnPoints.PickRandom();
+			while (pos.IsOccupied)
+			{
+				pos = _spawnPoints.PickRandom();
+			}
+
+			player.Position = pos.Position;
+			pos.IsOccupied = true;
+		}
+	}
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -24,15 +44,30 @@ public partial class GameManager : Node
 		{
 			Free();
 		}
+
+		CallDeferred("StartGame");
 	}
 
+	public void EndGame(PlayerRef winner)
+	{
+		foreach (var player in _players)
+		{
+			player.SetPause(true);
+			if (player == winner)
+			{
+				continue;
+			}
+			player.GetModule<DeathModule>().Defeat();
+		}
+		EmitSignalEndGameSignal(winner);
+	}
 	public void AddPlayerRef(PlayerRef pr)
 	{
-		if (_score is null)
+		if (_players is null)
 		{
-			_score = new Array<PlayerRef>();
+			_players = new Array<PlayerRef>();
 		}
-		_score.Add(pr);
+		_players.Add(pr);
 	}
 
 	public PlayerRef FindRandomPlayer(PlayerRef exclude = null)
@@ -40,7 +75,7 @@ public partial class GameManager : Node
 		PlayerRef ret = null;
 		while (ret is null || ret == exclude)
 		{
-			ret = _score.PickRandom();
+			ret = _players.PickRandom();
 		}
 		return ret;
 	}
