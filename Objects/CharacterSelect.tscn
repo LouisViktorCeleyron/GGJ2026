@@ -16,8 +16,8 @@ tracks/0/path = NodePath("SButt001:scale:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 1),
-"transitions": PackedFloat32Array(16.564165, 16.564165, 16.564165),
+"times": PackedFloat32Array(0, 0.3, 0.8),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
 "update": 0,
 "values": [0.425, 1.0, 0.9]
 }
@@ -28,8 +28,8 @@ tracks/1/path = NodePath("SButt001:position:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 1),
-"transitions": PackedFloat32Array(16.564165, 16.564165, 16.564165),
+"times": PackedFloat32Array(0, 0.3, 0.8),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
 "update": 0,
 "values": [-31.49, -88.335, -83.55]
 }
@@ -40,8 +40,68 @@ tracks/2/path = NodePath("SButt001:position:y")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3, 1),
-"transitions": PackedFloat32Array(16.564165, 16.564165, 16.564165),
+"times": PackedFloat32Array(0, 0.3, 0.8),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
+"update": 0,
+"values": [30.52, 47.99, 47.99]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFlute001:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5.9604645e-08, 0.30000007, 0.8),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
+"update": 0,
+"values": [0.425, 1.0, 0.9]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SFlute002:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(6.1190585e-05, 0.3000612, 0.80006117),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
+"update": 0,
+"values": [0.425, 1.0, 0.9]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SButt002:scale:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.29999995, 0.79999995),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
+"update": 0,
+"values": [0.425, 1.0, 0.9]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SButt002:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.29999995, 0.79999995),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
+"update": 0,
+"values": [31.49, 88.335, 83.55]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SButt002:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.29999995, 0.79999995),
+"transitions": PackedFloat32Array(6.9643764, 0.03589664, 0.5743468),
 "update": 0,
 "values": [30.52, 47.99, 47.99]
 }
@@ -103,15 +163,16 @@ texture = ExtResource("2_iu5uj")
 
 [node name="SFlute001" type="Sprite2D" parent="." unique_id=1616097586]
 z_index = -1
-position = Vector2(-255.99998, -126.38541)
+position = Vector2(-253.99998, -128)
 rotation = 1.9406583
+scale = Vector2(1, 0.50772715)
 texture = ExtResource("3_qckux")
 
 [node name="SFlute002" type="Sprite2D" parent="." unique_id=662526606]
 z_index = -1
-position = Vector2(297.99994, -93.999985)
+position = Vector2(268.00003, -133)
 rotation = 4.3866496
-scale = Vector2(0.9, 1)
+scale = Vector2(0.9, 0.5078473)
 texture = ExtResource("3_qckux")
 
 [node name="SButt001" type="Sprite2D" parent="." unique_id=1459178962]
@@ -120,8 +181,8 @@ scale = Vector2(1.995, 0.865)
 texture = ExtResource("4_2fimi")
 
 [node name="SButt002" type="Sprite2D" parent="." unique_id=796604284]
-position = Vector2(90, 46)
-scale = Vector2(0.8646956, 0.8646956)
+position = Vector2(40.55688, 33.562614)
+scale = Vector2(0.507727, 0.8646956)
 texture = ExtResource("5_jpgin")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=634636907]

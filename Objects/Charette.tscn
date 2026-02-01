@@ -4,13 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://bf8ak486vddjl" path="res://Sprites/S_Charette_001.png" id="2_1r6xg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqv18"]
-size = Vector2(440, 222)
+size = Vector2(440, 204)
 
 [node name="StaticBody2D" unique_id=1673683336 instance=ExtResource("1_bhjra")]
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=870729504]
-position = Vector2(-2, -15)
+position = Vector2(-2, 14)
+scale = Vector2(1.2967604, 1)
 shape = SubResource("RectangleShape2D_eqv18")
 
 [node name="SWall001" parent="." index="1" unique_id=1379828624]
+scale = Vector2(1.3193474, 1.3193474)
 texture = ExtResource("2_1r6xg")
