@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c7imgtxwka71f"]
+
+[ext_resource type="PackedScene" uid="uid://bsnb1s6qpl11k" path="res://Objects/Bulet/PrimaryBullet.tscn" id="1_xn23m"]
+[ext_resource type="Script" uid="uid://bjeukjjs2garb" path="res://Scripts/Extentions/RecoilBullet.cs" id="2_8s2f3"]
+
+[node name="RecoilBullet" unique_id=383007295 instance=ExtResource("1_xn23m")]
+modulate = Color(0.64469343, 0.68633497, 0.42974433, 1)
+script = ExtResource("2_8s2f3")
+_impulseForce = 300.0

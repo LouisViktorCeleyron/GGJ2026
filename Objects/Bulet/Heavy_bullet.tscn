@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://jbw7kueq0yg"]
+
+[ext_resource type="PackedScene" uid="uid://bsnb1s6qpl11k" path="res://Objects/Bulet/PrimaryBullet.tscn" id="1_w8jxn"]
+
+[node name="HeavyBullet" unique_id=383007295 instance=ExtResource("1_w8jxn")]
+_bulletSpeed = 15.0
+
+[node name="Area2D" parent="." index="0" unique_id=1591744049]
+modulate = Color(0.3473, 0.14455643, 0.18420371, 1)
+
+[node name="Timer" parent="." index="1" unique_id=1078268870]
+wait_time = 4.0

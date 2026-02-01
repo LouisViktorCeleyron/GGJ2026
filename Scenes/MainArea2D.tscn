@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ccbjtu65wdpvb"]
+[gd_scene format=3 uid="uid://be8n1bv2r6gwk"]
 
 [ext_resource type="Texture2D" uid="uid://dmi8binjjp1ar" path="res://Temp/LeSol.png" id="1_lduwd"]
 [ext_resource type="PackedScene" uid="uid://cieemcbemdyu1" path="res://Objects/Bard.tscn" id="2_ulm5l"]

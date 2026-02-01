@@ -9,7 +9,7 @@ public partial class GameManager : Node
 {
 
 	public static GameManager Instance;
-	private List<PlayerRef> _score;
+	private Array<PlayerRef> _score;
 
 	[Export] private Array<SpawnPoint> _spawnPoints;
 	
@@ -26,15 +26,23 @@ public partial class GameManager : Node
 		}
 	}
 
+	public void AddPlayerRef(PlayerRef pr)
+	{
+		if (_score is null)
+		{
+			_score = new Array<PlayerRef>();
+		}
+		_score.Add(pr);
+	}
+
 	public PlayerRef FindRandomPlayer(PlayerRef exclude = null)
 	{
 		PlayerRef ret = null;
-		while (ret is null || ret != exclude)
+		while (ret is null || ret == exclude)
 		{
-			
+			ret = _score.PickRandom();
 		}
-
-		return null;
+		return ret;
 	}
 
 	public void SpawnPlayerAtPoint(PlayerRef player)

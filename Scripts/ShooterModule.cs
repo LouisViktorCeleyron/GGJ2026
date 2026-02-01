@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class ShooterModule : Module
 {
@@ -7,10 +8,10 @@ public partial class ShooterModule : Module
 	[Export] private Timer _shootTimer;
 	[Export]
 	private Node2D _canon;
-	[Export] private BotMask _botMask;
 
 	private bool _canShoot=true;
-
+	private System.Func<bool> _additionalCheck;
+	
 	public void ResetShoot()
 	{
 		_canShoot = true;
@@ -20,17 +21,32 @@ public partial class ShooterModule : Module
 	{
 		if (_owner.Shoot)
 		{
-			Shoot();
+			var shouldShoot = true;
+			if (_additionalCheck is not null && _additionalCheck.GetInvocationList().Length > 0)
+			{
+				shouldShoot = _additionalCheck.Invoke();
+			}
+
+			if (shouldShoot)
+			{
+				Shoot();
+			}
 		}
 	}
 
+	public void AddCondition(Func<bool> condition)
+	{
+		_additionalCheck += condition;
+	}
 	private void Shoot()
 	{
 		if (!_canShoot)
 		{
 			return;
 		}
-		if (_botMask.BulletToSpawn.Instantiate() is BulletBody spawnedBullet)
+
+		var botMask = _owner.GetModule<BotMask>();
+		if (botMask.BulletToSpawn.Instantiate() is BulletBody spawnedBullet)
 		{
 			_canShoot = false;
 			AddChild(spawnedBullet);

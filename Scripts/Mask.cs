@@ -2,15 +2,11 @@ using Godot;
 using System;
 
 [GlobalClass]
-public partial class Mask : Node2D
+public partial class Mask : Module
 {
-	private PlayerRef _owner;
-	public override void _Ready()
-	{
-		_owner = GetParent<PlayerRef>();
-	}
-	
-	public override void _Process(double delta)
-	{
-	}
+    public override void _Ready()
+    {
+        _owner = GetParent().GetParent().GetParent<PlayerRef>();
+        _owner.AddModule(this);
+    }
 }

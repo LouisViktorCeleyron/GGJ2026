@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://duegd7sb1lahr"]
+
+[ext_resource type="PackedScene" uid="uid://clad4bcpv8bu7" path="res://Objects/Mask/TopMaskBase.tscn" id="1_2buga"]
+[ext_resource type="Script" uid="uid://b7jpvs86et7i7" path="res://Scripts/Extentions/TopChangeShooting.cs" id="2_au1p8"]
+
+[node name="Mask" unique_id=1561778943 instance=ExtResource("1_2buga")]
+script = ExtResource("2_au1p8")
