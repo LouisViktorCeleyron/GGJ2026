@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dmi8binjjp1ar" path="res://Temp/LeSol.png" id="1_lduwd"]
 [ext_resource type="PackedScene" uid="uid://cieemcbemdyu1" path="res://Objects/Bard.tscn" id="2_ulm5l"]
 [ext_resource type="PackedScene" uid="uid://bw3cnu3ajpejh" path="res://Objects/CharacterSelect.tscn" id="3_uixek"]
-[ext_resource type="Texture2D" uid="uid://dlpeqwh24rxlg" path="res://Sprites/S_BottomMask_003.png" id="4_csgkp"]
+[ext_resource type="Texture2D" uid="uid://bwfyypfmlsdg8" path="res://Sprites/S_BottomMask_004.png" id="4_m74dh"]
 [ext_resource type="PackedScene" uid="uid://dqvay87d4v6g6" path="res://Objects/Wall_003.tscn" id="6_4ln0f"]
 [ext_resource type="Texture2D" uid="uid://d1oeclm8vx3o0" path="res://Textures/T_Ground_001.png" id="9_t0kd8"]
 [ext_resource type="Texture2D" uid="uid://c7ome75583blt" path="res://Sprites/S_Grass_001.png" id="10_xy48h"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://cepi6ct5rbue5" path="res://Objects/Barrel_002.tscn" id="18_s4ppk"]
 [ext_resource type="PackedScene" uid="uid://2se2v6jfe33w" path="res://Objects/Straw_001.tscn" id="19_s4ppk"]
 [ext_resource type="PackedScene" path="res://Objects/Chval_001.tscn" id="24_4t8pf"]
+[ext_resource type="AudioStream" uid="uid://be3fwqikv6rh8" path="res://Audio/MUSIQUE IN GAME.wav" id="25_csgkp"]
+[ext_resource type="PackedScene" uid="uid://ce5nt6vldt8wy" path="res://UI/MainUI.tscn" id="25_m74dh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7vphi"]
 atlas = ExtResource("10_xy48h")
@@ -59,17 +61,17 @@ position = Vector2(0, 233)
 scale = Vector2(2.036, 2.036)
 
 [node name="SFlute001" parent="Character Select" index="2" unique_id=1616097586]
-scale = Vector2(1, 0.9)
+scale = Vector2(1, 0.5080887)
 
 [node name="SFlute002" parent="Character Select" index="3" unique_id=662526606]
-scale = Vector2(0.9, 0.9)
+scale = Vector2(0.9, 0.5082091)
 
 [node name="SButt002" parent="Character Select" index="5" unique_id=796604284]
-position = Vector2(83.55, 47.99)
-scale = Vector2(0.9, 0.8646956)
+position = Vector2(40.59651, 33.575912)
+scale = Vector2(0.5080886, 0.8646956)
 
 [node name="SBottomMask001" parent="Character Select" index="11" unique_id=1240492084]
-texture = ExtResource("4_csgkp")
+texture = ExtResource("4_m74dh")
 
 [node name="Art" type="Node2D" parent="." unique_id=25068648]
 
@@ -341,6 +343,7 @@ position = Vector2(1178, 706)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2136693153]
 stream = ExtResource("17_j7u81")
 script = ExtResource("18_7g5k4")
+_musicInGame = ExtResource("25_csgkp")
 
 [node name="Colliders" type="Node2D" parent="." unique_id=1244454947]
 
@@ -362,4 +365,22 @@ position = Vector2(-988, 633)
 [node name="StaticBody2D4" parent="Colliders" unique_id=47157491 instance=ExtResource("24_4t8pf")]
 position = Vector2(539, -170)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=121032344]
+visible = false
+follow_viewport_enabled = true
+
+[node name="MainUi" parent="CanvasLayer" unique_id=2139807447 instance=ExtResource("25_m74dh")]
+offset_left = -1320.0
+offset_top = -926.0
+offset_right = -40.0
+offset_bottom = -206.0
+
+[connection signal="StartGameSignal" from="GameManager" to="Character Select" method="queue_free"]
+[connection signal="StartGameSignal" from="GameManager" to="AudioStreamPlayer2D" method="LaunchGameMusic"]
+[connection signal="StartGameSignal" from="GameManager" to="CanvasLayer" method="set_visible" binds= [true]]
+[connection signal="OnScoreChanged" from="Bard2" to="CanvasLayer/MainUi/HBoxContainer2" method="SetScore"]
+[connection signal="OnScoreChanged" from="Bard3" to="CanvasLayer/MainUi/HBoxContainer3" method="SetScore"]
+
 [editable path="Character Select"]
+[editable path="CanvasLayer/MainUi"]
+[editable path="CanvasLayer/MainUi/HBoxContainer3"]
