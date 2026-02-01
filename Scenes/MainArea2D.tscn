@@ -16,10 +16,6 @@
 atlas = ExtResource("10_xy48h")
 region = Rect2(0, 2, 256, 43)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rdcnd"]
-atlas = ExtResource("10_xy48h")
-region = Rect2(0, 64, 256, 34)
-
 [node name="MainArea2d" type="Node2D" unique_id=661939480]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=708613885]
@@ -43,19 +39,63 @@ position = Vector2(-18, 209.00002)
 scale = Vector2(5.507184, 3.1538699)
 texture = ExtResource("9_t0kd8")
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1120311984]
-z_index = 1
-position = Vector2(-1010, -468)
+[node name="SmallGrass" type="Node2D" parent="." unique_id=240311620]
+position = Vector2(-1244, -477.00003)
+scale = Vector2(1, 1.4)
+
+[node name="Sprite2D2" type="Sprite2D" parent="SmallGrass" unique_id=1120311984]
+z_index = 2
 texture = SubResource("AtlasTexture_7vphi")
 
-[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1259402453]
-z_index = 1
-position = Vector2(-756, -468)
+[node name="Sprite2D3" type="Sprite2D" parent="SmallGrass" unique_id=1346195621]
+z_index = 2
+position = Vector2(252, 0)
 texture = SubResource("AtlasTexture_7vphi")
 
-[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=246176849]
-position = Vector2(-282, 391)
-texture = SubResource("AtlasTexture_rdcnd")
+[node name="Sprite2D4" type="Sprite2D" parent="SmallGrass" unique_id=1529875999]
+z_index = 2
+position = Vector2(504, 0)
+texture = SubResource("AtlasTexture_7vphi")
+
+[node name="Sprite2D5" type="Sprite2D" parent="SmallGrass" unique_id=827739879]
+z_index = 2
+position = Vector2(754, 0)
+texture = SubResource("AtlasTexture_7vphi")
+
+[node name="Sprite2D6" type="Sprite2D" parent="SmallGrass" unique_id=216255335]
+z_index = 2
+position = Vector2(1007, 0)
+texture = SubResource("AtlasTexture_7vphi")
+
+[node name="Sprite2D7" type="Sprite2D" parent="SmallGrass" unique_id=273461744]
+z_index = 2
+position = Vector2(1255, 0)
+texture = SubResource("AtlasTexture_7vphi")
+
+[node name="Sprite2D8" type="Sprite2D" parent="SmallGrass" unique_id=757451798]
+z_index = 2
+position = Vector2(1503, 0)
+texture = SubResource("AtlasTexture_7vphi")
+
+[node name="Sprite2D9" type="Sprite2D" parent="SmallGrass" unique_id=1683828631]
+z_index = 2
+position = Vector2(1752, 0)
+texture = SubResource("AtlasTexture_7vphi")
+
+[node name="Sprite2D10" type="Sprite2D" parent="SmallGrass" unique_id=996242384]
+z_index = 2
+position = Vector2(2005, 0)
+texture = SubResource("AtlasTexture_7vphi")
+
+[node name="Sprite2D11" type="Sprite2D" parent="SmallGrass" unique_id=1134161236]
+z_index = 2
+position = Vector2(2253, 0)
+texture = SubResource("AtlasTexture_7vphi")
+
+[node name="Sprite2D12" type="Sprite2D" parent="SmallGrass" unique_id=1392834882]
+z_index = 2
+position = Vector2(2497, 0)
+texture = SubResource("AtlasTexture_7vphi")
 
 [node name="Grass" type="TextureRect" parent="." unique_id=338291629]
 offset_left = -1715.0
