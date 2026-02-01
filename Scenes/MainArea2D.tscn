@@ -44,9 +44,9 @@ scale = Vector2(2.447, 2.451)
 texture = ExtResource("1_lduwd")
 
 [node name="Character Select" parent="." unique_id=936254722 instance=ExtResource("3_uixek")]
-visible = false
-z_index = 3
-scale = Vector2(2.6759825, 2.6759825)
+z_index = 5
+position = Vector2(0, 233)
+scale = Vector2(2.036, 2.036)
 
 [node name="Art" type="Node2D" parent="." unique_id=25068648]
 
