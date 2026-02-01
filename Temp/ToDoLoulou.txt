@@ -1,18 +1,21 @@
 envoyer mail Labo 
 UI et score des joueurs
 
-tu t'arrete pour tirer
-balle qui font reculer
 personne qui traversent les murs
-controle inversé
-deplacer mur/paroi
-Deplacement qui change la taille
 Changer tire rate sur les masque
+deplacer mur/paroi  
 
 
 Balle d'une seconde 
-Balle super LENTE
+Generation de mask Polish
 
+
+//  Deplacement qui change la taille
+// controle inversé 
+//balle qui font reculer
+//Balle super LENTE
+//tu t'arrete pour tirer
+//Generation de mask
 // Ajout de mask du bas pour changer les balles 
 //Balle rebondissante
 //Balle qui clignotte

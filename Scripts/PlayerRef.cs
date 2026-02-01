@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using Godot.Collections;
 
 public partial class PlayerRef : CharacterBody2D
 {
@@ -17,11 +18,35 @@ public partial class PlayerRef : CharacterBody2D
 	private bool _shoot;
 	public bool Shoot => _shoot;
 	
+	[Export]
+	private Array<Node2D> _scallable;
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		base._Ready();
 		GameManager.Instance.AddPlayerRef(this);
+		CallDeferred("CallPostReady");
+	}
+
+	public float GetScaling()
+	{
+		return _scallable[0].Scale.X;
+	}
+	public void Scaling(float scale)
+	{
+		foreach (var scalable in _scallable)
+		{
+			scalable.Scale = Vector2.One * scale;
+		}
+	}
+
+	private void CallPostReady()
+	{
+		foreach (var module in _modules)
+		{
+			module.PostReady();
+		}
 	}
 	public void AddModule(Module module)
 	{

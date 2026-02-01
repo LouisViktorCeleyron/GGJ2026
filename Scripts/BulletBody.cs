@@ -26,7 +26,7 @@ public partial class BulletBody : RigidBody2D
 		
 	}
 
-	public void Launch(PlayerRef owner)
+	public virtual void Launch(PlayerRef owner)
 	{
 		_owner = owner;
 		LinearVelocity = Transform.Y*_bulletSpeed;

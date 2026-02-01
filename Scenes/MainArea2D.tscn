@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://ccbjtu65wdpvb"]
+[gd_scene format=3 uid="uid://be8n1bv2r6gwk"]
 
 [ext_resource type="Texture2D" uid="uid://dmi8binjjp1ar" path="res://Temp/LeSol.png" id="1_lduwd"]
 [ext_resource type="PackedScene" uid="uid://cieemcbemdyu1" path="res://Objects/Bard.tscn" id="2_ulm5l"]
-[ext_resource type="PackedScene" path="res://Objects/Obstacle.tscn" id="3_ajca5"]
+[ext_resource type="PackedScene" uid="uid://cp7rya56tr4e0" path="res://Objects/Obstacle.tscn" id="3_ajca5"]
 [ext_resource type="Texture2D" uid="uid://bfv70cb81hx0k" path="res://Sprites/S_Tower_003.png" id="4_50x82"]
 [ext_resource type="Texture2D" uid="uid://58311enhn36i" path="res://Sprites/S_Tower_002.png" id="4_ahpr3"]
 [ext_resource type="Texture2D" uid="uid://bmh7yd61xfcbd" path="res://Sprites/S_Wall_002.png" id="4_gg7im"]
