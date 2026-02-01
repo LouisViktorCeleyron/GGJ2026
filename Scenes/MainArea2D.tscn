@@ -8,6 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://bmh7yd61xfcbd" path="res://Sprites/S_Wall_002.png" id="4_gg7im"]
 [ext_resource type="Texture2D" uid="uid://bhvjklvuqpc5" path="res://Sprites/S_Tower_001.png" id="5_50x82"]
 [ext_resource type="Texture2D" uid="uid://8s6mt3o43mjy" path="res://Sprites/S_Wall_003.png" id="8_e3ne5"]
+[ext_resource type="Texture2D" uid="uid://d1oeclm8vx3o0" path="res://Textures/T_Ground_001.png" id="9_t0kd8"]
+[ext_resource type="Texture2D" uid="uid://c7ome75583blt" path="res://Sprites/S_Grass_001.png" id="10_xy48h"]
+[ext_resource type="Texture2D" uid="uid://dtx87qwk6juxt" path="res://Textures/T_Grass_001.png" id="11_kg1u7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vphi"]
+atlas = ExtResource("10_xy48h")
+region = Rect2(0, 2, 256, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdcnd"]
+atlas = ExtResource("10_xy48h")
+region = Rect2(0, 64, 256, 34)
 
 [node name="MainArea2d" type="Node2D" unique_id=661939480]
 
@@ -15,6 +26,7 @@
 zoom = Vector2(0.38, 0.38)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=565141892]
+visible = false
 modulate = Color(0.18326035, 0.40376717, 0.3722785, 1)
 scale = Vector2(2.447, 2.451)
 texture = ExtResource("1_lduwd")
@@ -48,7 +60,7 @@ texture = ExtResource("4_50x82")
 
 [node name="UpSmallTower_002" parent="Art" unique_id=1918902399 instance=ExtResource("3_ajca5")]
 z_index = 1
-position = Vector2(1015, -561)
+position = Vector2(1124.38, -561.46497)
 
 [node name="SWall001" parent="Art/UpSmallTower_002" index="1" unique_id=1379828624]
 texture = ExtResource("4_50x82")
@@ -214,6 +226,34 @@ position = Vector2(1590, 1099)
 [node name="SWall001" parent="Art/DownBigTower_002" index="1" unique_id=1379828624]
 position = Vector2(0, 23.999998)
 texture = ExtResource("4_ahpr3")
+
+[node name="TGround001" type="Sprite2D" parent="." unique_id=1605823688]
+z_index = -1
+position = Vector2(-18, 209.00002)
+scale = Vector2(5.507184, 3.1538699)
+texture = ExtResource("9_t0kd8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1120311984]
+z_index = 1
+position = Vector2(-1010, -468)
+texture = SubResource("AtlasTexture_7vphi")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1259402453]
+z_index = 1
+position = Vector2(-756, -468)
+texture = SubResource("AtlasTexture_7vphi")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=246176849]
+position = Vector2(-282, 391)
+texture = SubResource("AtlasTexture_rdcnd")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=338291629]
+offset_left = -1402.0
+offset_top = -469.0
+offset_right = 898.0
+offset_bottom = 43.0
+texture = ExtResource("11_kg1u7")
+stretch_mode = 1
 
 [editable path="Art/UpBigTower_001"]
 [editable path="Art/UpBigTower_002"]
