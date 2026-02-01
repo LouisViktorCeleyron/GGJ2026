@@ -4,29 +4,35 @@
 [ext_resource type="Texture2D" uid="uid://dmi8binjjp1ar" path="res://Temp/LeSol.png" id="1_lduwd"]
 [ext_resource type="PackedScene" uid="uid://cieemcbemdyu1" path="res://Objects/Bard.tscn" id="2_ulm5l"]
 [ext_resource type="PackedScene" uid="uid://bw3cnu3ajpejh" path="res://Objects/CharacterSelect.tscn" id="3_uixek"]
-[ext_resource type="Texture2D" uid="uid://cfjc71y1v26wb" path="res://Sprites/S_BottomMask_001.png" id="4_a0v8m"]
+[ext_resource type="Texture2D" uid="uid://bwfyypfmlsdg8" path="res://Sprites/S_BottomMask_004.png" id="4_x7m3d"]
 [ext_resource type="PackedScene" uid="uid://dqvay87d4v6g6" path="res://Objects/Wall_003.tscn" id="6_4ln0f"]
 [ext_resource type="Texture2D" uid="uid://d1oeclm8vx3o0" path="res://Textures/T_Ground_001.png" id="9_t0kd8"]
 [ext_resource type="Texture2D" uid="uid://c7ome75583blt" path="res://Sprites/S_Grass_001.png" id="10_xy48h"]
-[ext_resource type="PackedScene" path="res://Objects/Tower_001.tscn" id="11_7vphi"]
+[ext_resource type="PackedScene" uid="uid://3jm4f0vfep7" path="res://Objects/Tower_001.tscn" id="11_7vphi"]
 [ext_resource type="Texture2D" uid="uid://dtx87qwk6juxt" path="res://Textures/T_Grass_001.png" id="11_kg1u7"]
 [ext_resource type="PackedScene" uid="uid://bpbyqa2wwguv" path="res://Objects/Charette.tscn" id="11_t0kd8"]
-[ext_resource type="PackedScene" path="res://Objects/Tower_003.tscn" id="12_rdcnd"]
+[ext_resource type="PackedScene" uid="uid://bc7qreoxwj654" path="res://Objects/Tower_003.tscn" id="12_rdcnd"]
 [ext_resource type="PackedScene" uid="uid://bbai0b1lwabkt" path="res://Objects/Well_001.tscn" id="12_xy48h"]
 [ext_resource type="Texture2D" uid="uid://dj5o04eopppbw" path="res://Sprites/S_Dirt_001.png" id="13_kg1u7"]
 [ext_resource type="PackedScene" uid="uid://dv5vggydyrxvy" path="res://Objects/Wall_001.tscn" id="13_uixek"]
-[ext_resource type="PackedScene" path="res://Objects/Wall_002.tscn" id="14_j7u81"]
-[ext_resource type="SpriteFrames" uid="uid://dh5fk4gnh2o8a" path="res://Sprites/SF_P1.tres" id="16_a0v8m"]
-[ext_resource type="PackedScene" uid="uid://b7pp74715uex" path="res://Objects/SpawnPoint.tscn" id="16_uixek"]
-[ext_resource type="SpriteFrames" uid="uid://tp3kabu2lqyi" path="res://Sprites/SF_P2.tres" id="17_4t8pf"]
+[ext_resource type="PackedScene" uid="uid://bleuxrsansyv5" path="res://Objects/Wall_002.tscn" id="14_j7u81"]
+[ext_resource type="SpriteFrames" path="res://Sprites/SF_P1.tres" id="16_a0v8m"]
+[ext_resource type="PackedScene" path="res://Objects/SpawnPoint.tscn" id="16_uixek"]
+[ext_resource type="SpriteFrames" path="res://Sprites/SF_P2.tres" id="17_4t8pf"]
 [ext_resource type="PackedScene" uid="uid://csbh3twk2ycu1" path="res://Objects/Barrel_001.tscn" id="17_7g5k4"]
 [ext_resource type="AudioStream" uid="uid://brptmidl6fts6" path="res://Audio/MUSIQUE MENU PRINCIPAL_Loop Début.wav" id="17_j7u81"]
 [ext_resource type="Script" uid="uid://8k4wclcys2qv" path="res://Scripts/Extentions/BGSound.cs" id="18_7g5k4"]
-[ext_resource type="PackedScene" uid="uid://cepi6ct5rbue5" path="res://Objects/Barrel_002.tscn" id="18_s4ppk"]
-[ext_resource type="PackedScene" uid="uid://2se2v6jfe33w" path="res://Objects/Straw_001.tscn" id="19_s4ppk"]
-[ext_resource type="PackedScene" path="res://Objects/Chval_001.tscn" id="24_4t8pf"]
-[ext_resource type="AudioStream" uid="uid://be3fwqikv6rh8" path="res://Audio/MUSIQUE IN GAME.wav" id="25_csgkp"]
+[ext_resource type="Texture2D" uid="uid://5h5ku68ei7vh" path="res://Sprites/S_Clouds.png" id="18_m74dh"]
+[ext_resource type="PackedScene" uid="uid://dmce73368y1b1" path="res://Objects/Barrel_002.tscn" id="18_s4ppk"]
+[ext_resource type="PackedScene" uid="uid://2oa80neb3mar" path="res://Objects/Straw_001.tscn" id="19_s4ppk"]
+[ext_resource type="AudioStream" uid="uid://be3fwqikv6rh8" path="res://Audio/MUSIQUE IN GAME.wav" id="22_ya8vd"]
+[ext_resource type="PackedScene" uid="uid://cpg0cnr62ba2k" path="res://Objects/Chval_001.tscn" id="24_4t8pf"]
+[ext_resource type="SpriteFrames" uid="uid://pt1f6ed8ei2u" path="res://Sprites/SF_Sun_001.tres" id="25_csgkp"]
 [ext_resource type="PackedScene" uid="uid://ce5nt6vldt8wy" path="res://UI/MainUI.tscn" id="25_m74dh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bcxb"]
+atlas = ExtResource("18_m74dh")
+region = Rect2(11, 39, 318, 119)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7vphi"]
 atlas = ExtResource("10_xy48h")
@@ -55,22 +61,23 @@ scale = Vector2(2.447, 2.451)
 texture = ExtResource("1_lduwd")
 
 [node name="Character Select" parent="." unique_id=936254722 instance=ExtResource("3_uixek")]
+visible = false
 z_index = 176
 position = Vector2(0, 233)
 scale = Vector2(2.036, 2.036)
 
 [node name="SFlute001" parent="Character Select" index="2" unique_id=1616097586]
-scale = Vector2(1, 0.7269838)
+scale = Vector2(1, 0.4250768)
 
 [node name="SFlute002" parent="Character Select" index="3" unique_id=662526606]
-scale = Vector2(0.9, 0.72651404)
+scale = Vector2(0.9, 0.4250764)
 
 [node name="SButt002" parent="Character Select" index="5" unique_id=796604284]
-position = Vector2(61.344467, 39.695084)
-scale = Vector2(0.7269847, 0.8646956)
+position = Vector2(31.497593, 30.522333)
+scale = Vector2(0.4250768, 0.8646956)
 
 [node name="SBottomMask001" parent="Character Select" index="11" unique_id=1240492084]
-texture = ExtResource("4_a0v8m")
+texture = ExtResource("4_x7m3d")
 
 [node name="Art" type="Node2D" parent="." unique_id=25068648]
 
@@ -81,7 +88,28 @@ scale = Vector2(5.507184, 3.1538699)
 texture = ExtResource("9_t0kd8")
 metadata/_edit_lock_ = true
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Art" unique_id=1991674655]
+position = Vector2(-1215, -765)
+scale = Vector2(1.1771791, 1.1771791)
+sprite_frames = ExtResource("25_csgkp")
+animation = &"Idle"
+frame = 8
+frame_progress = 0.2743933
+
+[node name="Dirt6" type="Sprite2D" parent="Art" unique_id=1465504679]
+z_index = 1
+position = Vector2(-627, -882.9999)
+scale = Vector2(1.6222445, 1.3926554)
+texture = SubResource("AtlasTexture_8bcxb")
+
+[node name="Dirt7" type="Sprite2D" parent="Art" unique_id=1683250803]
+z_index = 1
+position = Vector2(916.9999, -882.99994)
+scale = Vector2(1.6222445, 1.3926554)
+texture = SubResource("AtlasTexture_8bcxb")
+
 [node name="Grass" type="TextureRect" parent="Art" unique_id=338291629]
+z_index = -1
 offset_left = -1715.0
 offset_top = -970.0
 offset_right = 1685.0
@@ -286,6 +314,13 @@ position = Vector2(2497, 0)
 texture = SubResource("AtlasTexture_7vphi")
 metadata/_edit_lock_ = true
 
+[node name="TGround002" type="Sprite2D" parent="Art" unique_id=916938657]
+modulate = Color(0.44499996, 1.8090006, 4.165, 1)
+z_index = -1
+position = Vector2(-611, -734)
+scale = Vector2(9.16, 1)
+texture = ExtResource("9_t0kd8")
+
 [node name="Dirt" type="Node2D" parent="Art" unique_id=1688586052]
 
 [node name="Dirt" type="Sprite2D" parent="Art/Dirt" unique_id=703061315]
@@ -342,7 +377,7 @@ position = Vector2(1178, 706)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2136693153]
 stream = ExtResource("17_j7u81")
 script = ExtResource("18_7g5k4")
-_musicInGame = ExtResource("25_csgkp")
+_musicInGame = ExtResource("22_ya8vd")
 
 [node name="Colliders" type="Node2D" parent="." unique_id=1244454947]
 
@@ -373,12 +408,6 @@ offset_left = -1320.0
 offset_top = -926.0
 offset_right = -40.0
 offset_bottom = -206.0
-
-[connection signal="StartGameSignal" from="GameManager" to="Character Select" method="queue_free"]
-[connection signal="StartGameSignal" from="GameManager" to="AudioStreamPlayer2D" method="LaunchGameMusic"]
-[connection signal="StartGameSignal" from="GameManager" to="CanvasLayer" method="set_visible" binds= [true]]
-[connection signal="OnScoreChanged" from="Bard2" to="CanvasLayer/MainUi/HBoxContainer2" method="SetScore"]
-[connection signal="OnScoreChanged" from="Bard3" to="CanvasLayer/MainUi/HBoxContainer3" method="SetScore"]
 
 [editable path="Character Select"]
 [editable path="CanvasLayer/MainUi"]
