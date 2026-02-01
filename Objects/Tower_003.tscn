@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bc7qreoxwj654"]
+
+[ext_resource type="PackedScene" uid="uid://cp7rya56tr4e0" path="res://Objects/Obstacle.tscn" id="1_w7q7b"]
+[ext_resource type="Texture2D" uid="uid://bfv70cb81hx0k" path="res://Sprites/S_Tower_003.png" id="2_axjxq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eovea"]
+size = Vector2(102, 308)
+
+[node name="StaticBody2D" unique_id=1673683336 instance=ExtResource("1_w7q7b")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=870729504]
+position = Vector2(0, 99)
+shape = SubResource("RectangleShape2D_eovea")
+
+[node name="SWall001" parent="." index="1" unique_id=1379828624]
+texture = ExtResource("2_axjxq")
