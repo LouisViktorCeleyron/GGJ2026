@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bsnb1s6qpl11k"]
 
 [ext_resource type="Script" uid="uid://dg1ihpi6j1315" path="res://Scripts/BulletBody.cs" id="1_w2fdd"]
-[ext_resource type="Texture2D" uid="uid://buyutk1q1paut" path="res://Temp/Circle100.png" id="2_6gk0t"]
+[ext_resource type="Texture2D" uid="uid://ctju311js4yiv" path="res://Sprites/S_Ball_001.png" id="2_7hjsd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w2fdd"]
 radius = 50.0
@@ -20,7 +20,8 @@ shape = SubResource("CircleShape2D_w2fdd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D/CollisionShape2D" unique_id=1558127251]
 texture_filter = 1
-texture = ExtResource("2_6gk0t")
+position = Vector2(-9.999999, 0)
+texture = ExtResource("2_7hjsd")
 
 [node name="Timer" type="Timer" parent="." unique_id=1078268870]
 wait_time = 1.5

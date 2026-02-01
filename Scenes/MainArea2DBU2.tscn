@@ -25,15 +25,6 @@ region = Rect2(0, 2, 256, 43)
 [node name="GameManager" parent="." unique_id=529569245 node_paths=PackedStringArray("_spawnPoints") instance=ExtResource("1_asjsx")]
 _spawnPoints = [NodePath("../SpawnPoints/SpawnPoint"), NodePath("../SpawnPoints/SpawnPoint2"), NodePath("../SpawnPoints/SpawnPoint3"), NodePath("../SpawnPoints/SpawnPoint4")]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=708613885]
-zoom = Vector2(0.38, 0.38)
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=565141892]
-visible = false
-modulate = Color(0.18326035, 0.40376717, 0.3722785, 1)
-scale = Vector2(2.447, 2.451)
-texture = ExtResource("2_s1hs5")
-
 [node name="Bard" parent="." unique_id=646171583 instance=ExtResource("3_ul7l7")]
 position = Vector2(-566, 284)
 _frames = ExtResource("4_gxhdn")
@@ -42,6 +33,29 @@ _frames = ExtResource("4_gxhdn")
 position = Vector2(1063, -172)
 _playerIndex = 1
 _frames = ExtResource("5_66fom")
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=210547721]
+
+[node name="SpawnPoint" parent="SpawnPoints" unique_id=2027480021 instance=ExtResource("15_77mk4")]
+position = Vector2(-1267, -357)
+
+[node name="SpawnPoint2" parent="SpawnPoints" unique_id=1706730660 instance=ExtResource("15_77mk4")]
+position = Vector2(-1281, 758)
+
+[node name="SpawnPoint3" parent="SpawnPoints" unique_id=2102116466 instance=ExtResource("15_77mk4")]
+position = Vector2(1240, -378)
+
+[node name="SpawnPoint4" parent="SpawnPoints" unique_id=1087441727 instance=ExtResource("15_77mk4")]
+position = Vector2(1274, 748)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=708613885]
+zoom = Vector2(0.38, 0.38)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=565141892]
+visible = false
+modulate = Color(0.18326035, 0.40376717, 0.3722785, 1)
+scale = Vector2(2.447, 2.451)
+texture = ExtResource("2_s1hs5")
 
 [node name="Art" type="Node2D" parent="." unique_id=25068648]
 position = Vector2(-98.38, -145.535)
@@ -245,17 +259,3 @@ position = Vector2(2290, -17)
 
 [node name="StaticBody2D" parent="." unique_id=1805333026 instance=ExtResource("14_1jq2b")]
 position = Vector2(46, -185)
-
-[node name="SpawnPoints" type="Node2D" parent="." unique_id=210547721]
-
-[node name="SpawnPoint" parent="SpawnPoints" unique_id=2027480021 instance=ExtResource("15_77mk4")]
-position = Vector2(-1267, -357)
-
-[node name="SpawnPoint2" parent="SpawnPoints" unique_id=1706730660 instance=ExtResource("15_77mk4")]
-position = Vector2(-1281, 758)
-
-[node name="SpawnPoint3" parent="SpawnPoints" unique_id=2102116466 instance=ExtResource("15_77mk4")]
-position = Vector2(1240, -378)
-
-[node name="SpawnPoint4" parent="SpawnPoints" unique_id=1087441727 instance=ExtResource("15_77mk4")]
-position = Vector2(1274, 748)
