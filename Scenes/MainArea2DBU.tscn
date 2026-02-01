@@ -23,7 +23,7 @@ position = Vector2(-566, 284)
 scale = Vector2(0.75, 0.75)
 
 [node name="Bard2" parent="." unique_id=1018851117 instance=ExtResource("3_64kvy")]
-position = Vector2(469, -135)
+position = Vector2(469.00003, -136)
 scale = Vector2(0.75, 0.75)
 _playerIndex = 1
 
@@ -42,4 +42,4 @@ position = Vector2(-545, 274)
 position = Vector2(512, 251)
 
 [node name="StaticBody2D" parent="." unique_id=1673683336 instance=ExtResource("5_omw78")]
-position = Vector2(-378, -283)
+position = Vector2(-412, -494)
