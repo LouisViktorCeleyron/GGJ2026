@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dqvay87d4v6g6"]
+
+[ext_resource type="PackedScene" uid="uid://cp7rya56tr4e0" path="res://Objects/Obstacle.tscn" id="1_j8qd6"]
+[ext_resource type="Texture2D" uid="uid://8s6mt3o43mjy" path="res://Sprites/S_Wall_003.png" id="2_j8qd6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yujnw"]
+size = Vector2(228, 512)
+
+[node name="StaticBody2D" unique_id=1673683336 instance=ExtResource("1_j8qd6")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=870729504]
+shape = SubResource("RectangleShape2D_yujnw")
+
+[node name="SWall001" parent="." index="1" unique_id=1379828624]
+texture = ExtResource("2_j8qd6")

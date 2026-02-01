@@ -1,16 +1,16 @@
-[gd_scene format=3 uid="uid://be8n1bv2r6gwk"]
+[gd_scene format=3 uid="uid://ccbjtu65wdpvb"]
 
 [ext_resource type="Texture2D" uid="uid://dmi8binjjp1ar" path="res://Temp/LeSol.png" id="1_lduwd"]
 [ext_resource type="PackedScene" uid="uid://cieemcbemdyu1" path="res://Objects/Bard.tscn" id="2_ulm5l"]
-[ext_resource type="PackedScene" uid="uid://cp7rya56tr4e0" path="res://Objects/Obstacle.tscn" id="3_ajca5"]
-[ext_resource type="Texture2D" uid="uid://bfv70cb81hx0k" path="res://Sprites/S_Tower_003.png" id="4_50x82"]
-[ext_resource type="Texture2D" uid="uid://58311enhn36i" path="res://Sprites/S_Tower_002.png" id="4_ahpr3"]
-[ext_resource type="Texture2D" uid="uid://bmh7yd61xfcbd" path="res://Sprites/S_Wall_002.png" id="4_gg7im"]
-[ext_resource type="Texture2D" uid="uid://bhvjklvuqpc5" path="res://Sprites/S_Tower_001.png" id="5_50x82"]
-[ext_resource type="Texture2D" uid="uid://8s6mt3o43mjy" path="res://Sprites/S_Wall_003.png" id="8_e3ne5"]
+[ext_resource type="PackedScene" uid="uid://dqvay87d4v6g6" path="res://Objects/Wall_003.tscn" id="6_4ln0f"]
 [ext_resource type="Texture2D" uid="uid://d1oeclm8vx3o0" path="res://Textures/T_Ground_001.png" id="9_t0kd8"]
 [ext_resource type="Texture2D" uid="uid://c7ome75583blt" path="res://Sprites/S_Grass_001.png" id="10_xy48h"]
+[ext_resource type="PackedScene" uid="uid://3jm4f0vfep7" path="res://Objects/Tower_001.tscn" id="11_7vphi"]
 [ext_resource type="Texture2D" uid="uid://dtx87qwk6juxt" path="res://Textures/T_Grass_001.png" id="11_kg1u7"]
+[ext_resource type="PackedScene" uid="uid://dlp0jcvmv1jdx" path="res://Objects/Charette.tscn" id="11_t0kd8"]
+[ext_resource type="PackedScene" uid="uid://bc7qreoxwj654" path="res://Objects/Tower_003.tscn" id="12_rdcnd"]
+[ext_resource type="PackedScene" uid="uid://cwp6gkgokojbl" path="res://Objects/Wall_001.tscn" id="13_uixek"]
+[ext_resource type="PackedScene" uid="uid://bleuxrsansyv5" path="res://Objects/Wall_002.tscn" id="14_j7u81"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7vphi"]
 atlas = ExtResource("10_xy48h")
@@ -37,196 +37,6 @@ position = Vector2(-566, 284)
 [node name="Art" type="Node2D" parent="." unique_id=25068648]
 position = Vector2(-98.38, -145.535)
 
-[node name="UpBigTower_001" parent="Art" unique_id=1872636436 instance=ExtResource("3_ajca5")]
-z_index = 1
-position = Vector2(-1383, -561)
-
-[node name="SWall001" parent="Art/UpBigTower_001" index="1" unique_id=1379828624]
-texture = ExtResource("5_50x82")
-
-[node name="UpBigTower_002" parent="Art" unique_id=262608573 instance=ExtResource("3_ajca5")]
-z_index = 1
-position = Vector2(1591, -561)
-
-[node name="SWall001" parent="Art/UpBigTower_002" index="1" unique_id=1379828624]
-texture = ExtResource("4_ahpr3")
-
-[node name="UpSmallTower_001" parent="Art" unique_id=1714256576 instance=ExtResource("3_ajca5")]
-z_index = 1
-position = Vector2(-894, -561)
-
-[node name="SWall001" parent="Art/UpSmallTower_001" index="1" unique_id=1379828624]
-texture = ExtResource("4_50x82")
-
-[node name="UpSmallTower_002" parent="Art" unique_id=1918902399 instance=ExtResource("3_ajca5")]
-z_index = 1
-position = Vector2(1124.38, -561.46497)
-
-[node name="SWall001" parent="Art/UpSmallTower_002" index="1" unique_id=1379828624]
-texture = ExtResource("4_50x82")
-
-[node name="UpWall_001" parent="Art" unique_id=1673683336 instance=ExtResource("3_ajca5")]
-position = Vector2(-1100, -561)
-
-[node name="UpWall_002" parent="Art" unique_id=627966768 instance=ExtResource("3_ajca5")]
-position = Vector2(-614, -561)
-
-[node name="SWall001" parent="Art/UpWall_002" index="1" unique_id=1379828624]
-position = Vector2(-23.999992, 0)
-texture = ExtResource("4_gg7im")
-
-[node name="UpWall_003" parent="Art" unique_id=1481113291 instance=ExtResource("3_ajca5")]
-position = Vector2(-104, -561)
-
-[node name="SWall001" parent="Art/UpWall_003" index="1" unique_id=1379828624]
-position = Vector2(-23.999992, 0)
-texture = ExtResource("4_gg7im")
-
-[node name="UpWall_004" parent="Art" unique_id=1718006287 instance=ExtResource("3_ajca5")]
-position = Vector2(402, -561)
-
-[node name="SWall001" parent="Art/UpWall_004" index="1" unique_id=1379828624]
-position = Vector2(-20, 0)
-texture = ExtResource("4_gg7im")
-
-[node name="UpWall_005" parent="Art" unique_id=90856849 instance=ExtResource("3_ajca5")]
-position = Vector2(910, -561)
-
-[node name="SWall001" parent="Art/UpWall_005" index="1" unique_id=1379828624]
-position = Vector2(-20, 0)
-texture = ExtResource("4_gg7im")
-
-[node name="UpWall_006" parent="Art" unique_id=636636908 instance=ExtResource("3_ajca5")]
-position = Vector2(1335, -561)
-
-[node name="DownSmallTower_001" parent="Art" unique_id=1923471301 instance=ExtResource("3_ajca5")]
-modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
-z_index = 1
-position = Vector2(-912, 1124)
-
-[node name="SWall001" parent="Art/DownSmallTower_001" index="1" unique_id=1379828624]
-texture = ExtResource("4_50x82")
-
-[node name="DownSmallTower_002" parent="Art" unique_id=381374428 instance=ExtResource("3_ajca5")]
-modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
-z_index = 1
-position = Vector2(1138, 1127)
-
-[node name="SWall001" parent="Art/DownSmallTower_002" index="1" unique_id=1379828624]
-texture = ExtResource("4_50x82")
-
-[node name="DownWall_001" parent="Art" unique_id=1368323776 instance=ExtResource("3_ajca5")]
-modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
-position = Vector2(-1103, 1122)
-
-[node name="DownWall_002" parent="Art" unique_id=981335885 instance=ExtResource("3_ajca5")]
-modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
-position = Vector2(-627, 1122)
-
-[node name="SWall001" parent="Art/DownWall_002" index="1" unique_id=1379828624]
-position = Vector2(-23.999992, 0)
-texture = ExtResource("4_gg7im")
-
-[node name="DownWall_003" parent="Art" unique_id=1760289043 instance=ExtResource("3_ajca5")]
-modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
-position = Vector2(-117, 1122)
-
-[node name="SWall001" parent="Art/DownWall_003" index="1" unique_id=1379828624]
-position = Vector2(-23.999992, 0)
-texture = ExtResource("4_gg7im")
-
-[node name="DownWall_004" parent="Art" unique_id=1564022032 instance=ExtResource("3_ajca5")]
-modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
-position = Vector2(386, 1122)
-
-[node name="SWall001" parent="Art/DownWall_004" index="1" unique_id=1379828624]
-position = Vector2(-20, 0)
-texture = ExtResource("4_gg7im")
-
-[node name="DownWall_005" parent="Art" unique_id=931548437 instance=ExtResource("3_ajca5")]
-modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
-position = Vector2(896, 1122)
-
-[node name="SWall001" parent="Art/DownWall_005" index="1" unique_id=1379828624]
-position = Vector2(-20, 0)
-texture = ExtResource("4_gg7im")
-
-[node name="DownWall_006" parent="Art" unique_id=706130363 instance=ExtResource("3_ajca5")]
-modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
-position = Vector2(1323.84, 1122)
-
-[node name="RWall_001" parent="Art" unique_id=1673427982 instance=ExtResource("3_ajca5")]
-z_index = 2
-position = Vector2(1613, -266)
-scale = Vector2(0.83999515, 1)
-
-[node name="SWall001" parent="Art/RWall_001" index="1" unique_id=1379828624]
-position = Vector2(-23.999992, 0)
-texture = ExtResource("8_e3ne5")
-
-[node name="RWall_002" parent="Art" unique_id=898838305 instance=ExtResource("3_ajca5")]
-z_index = 2
-position = Vector2(1613, 239)
-scale = Vector2(0.83999515, 1)
-
-[node name="SWall001" parent="Art/RWall_002" index="1" unique_id=1379828624]
-position = Vector2(-23.999992, 0)
-texture = ExtResource("8_e3ne5")
-
-[node name="RWall_003" parent="Art" unique_id=399284520 instance=ExtResource("3_ajca5")]
-z_index = 2
-position = Vector2(1613, 743)
-scale = Vector2(0.83999515, 1)
-
-[node name="SWall001" parent="Art/RWall_003" index="1" unique_id=1379828624]
-position = Vector2(-23.999992, 0)
-texture = ExtResource("8_e3ne5")
-
-[node name="LWall_001" parent="Art" unique_id=945322596 instance=ExtResource("3_ajca5")]
-z_index = 2
-position = Vector2(-1364, -266)
-scale = Vector2(0.83999515, 1)
-
-[node name="SWall001" parent="Art/LWall_001" index="1" unique_id=1379828624]
-position = Vector2(-23.999992, 0)
-texture = ExtResource("8_e3ne5")
-
-[node name="LWall_002" parent="Art" unique_id=1076514946 instance=ExtResource("3_ajca5")]
-z_index = 2
-position = Vector2(-1364, 239)
-scale = Vector2(0.83999515, 1)
-
-[node name="SWall001" parent="Art/LWall_002" index="1" unique_id=1379828624]
-position = Vector2(-23.999992, 0)
-texture = ExtResource("8_e3ne5")
-
-[node name="LWall_003" parent="Art" unique_id=789403708 instance=ExtResource("3_ajca5")]
-z_index = 2
-position = Vector2(-1364, 743)
-scale = Vector2(0.83999515, 1)
-
-[node name="SWall001" parent="Art/LWall_003" index="1" unique_id=1379828624]
-position = Vector2(-23.999992, 0)
-texture = ExtResource("8_e3ne5")
-
-[node name="DownBigTower_001" parent="Art" unique_id=168445550 instance=ExtResource("3_ajca5")]
-modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
-z_index = 3
-position = Vector2(-1383, 1098)
-
-[node name="SWall001" parent="Art/DownBigTower_001" index="1" unique_id=1379828624]
-position = Vector2(-3.000002, 23.999996)
-texture = ExtResource("4_ahpr3")
-
-[node name="DownBigTower_002" parent="Art" unique_id=5963247 instance=ExtResource("3_ajca5")]
-modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
-z_index = 3
-position = Vector2(1590, 1099)
-
-[node name="SWall001" parent="Art/DownBigTower_002" index="1" unique_id=1379828624]
-position = Vector2(0, 23.999998)
-texture = ExtResource("4_ahpr3")
-
 [node name="TGround001" type="Sprite2D" parent="." unique_id=1605823688]
 z_index = -1
 position = Vector2(-18, 209.00002)
@@ -247,7 +57,7 @@ texture = SubResource("AtlasTexture_7vphi")
 position = Vector2(-282, 391)
 texture = SubResource("AtlasTexture_rdcnd")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=338291629]
+[node name="Grass" type="TextureRect" parent="." unique_id=338291629]
 offset_left = -1402.0
 offset_top = -469.0
 offset_right = 898.0
@@ -255,25 +65,129 @@ offset_bottom = 43.0
 texture = ExtResource("11_kg1u7")
 stretch_mode = 1
 
-[editable path="Art/UpBigTower_001"]
-[editable path="Art/UpBigTower_002"]
-[editable path="Art/UpSmallTower_001"]
-[editable path="Art/UpSmallTower_002"]
-[editable path="Art/UpWall_002"]
-[editable path="Art/UpWall_003"]
-[editable path="Art/UpWall_004"]
-[editable path="Art/UpWall_005"]
-[editable path="Art/DownSmallTower_001"]
-[editable path="Art/DownSmallTower_002"]
-[editable path="Art/DownWall_002"]
-[editable path="Art/DownWall_003"]
-[editable path="Art/DownWall_004"]
-[editable path="Art/DownWall_005"]
-[editable path="Art/RWall_001"]
-[editable path="Art/RWall_002"]
-[editable path="Art/RWall_003"]
-[editable path="Art/LWall_001"]
-[editable path="Art/LWall_002"]
-[editable path="Art/LWall_003"]
-[editable path="Art/DownBigTower_001"]
-[editable path="Art/DownBigTower_002"]
+[node name="LWalls" type="Node2D" parent="." unique_id=2048001889]
+position = Vector2(-1485.0001, -354)
+scale = Vector2(0.84, 1)
+
+[node name="LWall_001" parent="LWalls" unique_id=1673683336 instance=ExtResource("6_4ln0f")]
+z_index = 2
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="LWall_002" parent="LWalls" unique_id=986044545 instance=ExtResource("6_4ln0f")]
+z_index = 2
+position = Vector2(0, 510.99994)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="LWall_003" parent="LWalls" unique_id=1822487081 instance=ExtResource("6_4ln0f")]
+z_index = 2
+position = Vector2(0, 987.9999)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="RWalls" type="Node2D" parent="." unique_id=561746965]
+position = Vector2(1493.0001, -354)
+scale = Vector2(0.84, 1)
+
+[node name="RWall_001" parent="RWalls" unique_id=1998678940 instance=ExtResource("6_4ln0f")]
+z_index = 2
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="RWall_002" parent="RWalls" unique_id=2033377341 instance=ExtResource("6_4ln0f")]
+z_index = 2
+position = Vector2(0, 510.99994)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="RWall_003" parent="RWalls" unique_id=987121492 instance=ExtResource("6_4ln0f")]
+z_index = 2
+position = Vector2(0, 987.9999)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="UpWalls" type="Node2D" parent="." unique_id=1408614019]
+position = Vector2(-1482, -691)
+
+[node name="UpBigTower_001" parent="UpWalls" unique_id=1097504472 instance=ExtResource("11_7vphi")]
+z_index = 1
+
+[node name="UpBigTower_002" parent="UpWalls" unique_id=1576727673 instance=ExtResource("11_7vphi")]
+z_index = 1
+position = Vector2(2973, 0)
+
+[node name="UpSmallTower_001" parent="UpWalls" unique_id=773432651 instance=ExtResource("12_rdcnd")]
+z_index = 1
+position = Vector2(490, -17)
+
+[node name="UpSmallTower_002" parent="UpWalls" unique_id=1918858046 instance=ExtResource("12_rdcnd")]
+z_index = 1
+position = Vector2(2508, -17)
+
+[node name="UpWall_001" parent="UpWalls" unique_id=2008620628 instance=ExtResource("13_uixek")]
+position = Vector2(284, -16)
+
+[node name="UpWall_006" parent="UpWalls" unique_id=1078558335 instance=ExtResource("13_uixek")]
+position = Vector2(2733, -16)
+
+[node name="UpWall_002" parent="UpWalls" unique_id=1214891567 instance=ExtResource("14_j7u81")]
+position = Vector2(758, -16)
+
+[node name="UpWall_003" parent="UpWalls" unique_id=792312377 instance=ExtResource("14_j7u81")]
+position = Vector2(1268, -16)
+
+[node name="UpWall_004" parent="UpWalls" unique_id=1879489135 instance=ExtResource("14_j7u81")]
+position = Vector2(1779, -17)
+
+[node name="UpWall_005" parent="UpWalls" unique_id=802339868 instance=ExtResource("14_j7u81")]
+position = Vector2(2290, -17)
+
+[node name="DownWalls" type="Node2D" parent="." unique_id=986946365]
+position = Vector2(-1482, 974)
+
+[node name="DownBigTower_001" parent="DownWalls" unique_id=1997715444 instance=ExtResource("11_7vphi")]
+modulate = Color(0.41279998, 0.42064, 0.48, 1)
+z_index = 3
+
+[node name="DownBigTower_002" parent="DownWalls" unique_id=670239816 instance=ExtResource("11_7vphi")]
+modulate = Color(0.41279998, 0.42064, 0.48, 1)
+z_index = 3
+position = Vector2(2973, 0)
+
+[node name="DownSmallTower_001" parent="DownWalls" unique_id=257170630 instance=ExtResource("12_rdcnd")]
+modulate = Color(0.41279998, 0.42064, 0.48, 1)
+z_index = 3
+position = Vector2(490, -17)
+
+[node name="DownSmallTower_002" parent="DownWalls" unique_id=1182828787 instance=ExtResource("12_rdcnd")]
+modulate = Color(0.41279998, 0.42064, 0.48, 1)
+z_index = 3
+position = Vector2(2508, -17)
+
+[node name="DownWall_001" parent="DownWalls" unique_id=1890793308 instance=ExtResource("13_uixek")]
+modulate = Color(0.41279998, 0.42064, 0.48, 1)
+z_index = 2
+position = Vector2(284, -16)
+
+[node name="DownWall_002" parent="DownWalls" unique_id=299989837 instance=ExtResource("13_uixek")]
+modulate = Color(0.41279998, 0.42064, 0.48, 1)
+z_index = 2
+position = Vector2(2733, -16)
+
+[node name="DownWall_003" parent="DownWalls" unique_id=633829441 instance=ExtResource("14_j7u81")]
+modulate = Color(0.41279998, 0.42064, 0.48, 1)
+z_index = 2
+position = Vector2(758, -16)
+
+[node name="DownWall_004" parent="DownWalls" unique_id=1274904337 instance=ExtResource("14_j7u81")]
+modulate = Color(0.41279998, 0.42064, 0.48, 1)
+z_index = 2
+position = Vector2(1268, -16)
+
+[node name="DownWall_005" parent="DownWalls" unique_id=591918308 instance=ExtResource("14_j7u81")]
+modulate = Color(0.41279998, 0.42064, 0.48, 1)
+z_index = 2
+position = Vector2(1779, -17)
+
+[node name="DownWall_006" parent="DownWalls" unique_id=1053125854 instance=ExtResource("14_j7u81")]
+modulate = Color(0.41279998, 0.42064, 0.48, 1)
+z_index = 2
+position = Vector2(2290, -17)
+
+[node name="StaticBody2D" parent="." unique_id=1805333026 instance=ExtResource("11_t0kd8")]
+position = Vector2(46, -185)
