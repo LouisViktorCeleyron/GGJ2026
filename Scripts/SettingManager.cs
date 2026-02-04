@@ -1,0 +1,73 @@
+using Godot;
+using System;
+using Godot.Collections;
+
+public partial class SettingManager : Node
+{
+	[Export]
+	private Array<SettingElement> _settingsElements;
+
+	private int _current;
+
+	public override void _Ready()
+	{
+		base._Ready();
+		var children = GetChildren();
+		_settingsElements = new Array<SettingElement>();
+		foreach (var child in children)
+		{
+			if (child is SettingElement castedChild)
+			{
+				_settingsElements.Add(castedChild);
+				castedChild.Initialize(this);
+			}
+		}
+		CallDeferred("Select", 0);
+	}
+	
+
+	private void Select(int index)
+	{
+		var currentIndex = Mathf.Clamp(index, 0, _settingsElements.Count - 1);
+		foreach (var element in _settingsElements)
+		{
+			element.Select(false);
+		}
+		_settingsElements[currentIndex].Select(true);
+		_current = currentIndex;
+	}
+
+	public int GetElementValue(string elementName)
+	{
+		foreach (var element in _settingsElements)
+		{
+			if (element.Name == elementName)
+			{
+				return element.Value;
+			}
+		}
+
+		return -1;
+	}
+
+	public override void _Process(double delta)
+	{
+		base._Process(delta);
+		if (Input.IsActionJustPressed("ui_left_0"))
+		{
+			_settingsElements[_current].AddNumber(-1);
+		}
+		if (Input.IsActionJustPressed("ui_right_0"))
+		{
+			_settingsElements[_current].AddNumber(+1);
+		}
+		if (Input.IsActionJustPressed("ui_up0"))
+		{
+			Select(_current-1);
+		}
+		if (Input.IsActionJustPressed("ui_down0"))
+		{
+			Select(_current+1);
+		}
+	}
+}

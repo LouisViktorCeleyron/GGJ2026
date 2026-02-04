@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://bsnb1s6qpl11k" path="res://Objects/Bulet/PrimaryBullet.tscn" id="1_w8jxn"]
 
 [node name="HeavyBullet" unique_id=383007295 instance=ExtResource("1_w8jxn")]
-_bulletSpeed = 15.0
+_bulletSpeed = 100.0
 
 [node name="Area2D" parent="." index="0" unique_id=1591744049]
 modulate = Color(0.47673285, 0.40703622, 0.6205375, 1)
 
 [node name="Timer" parent="." index="1" unique_id=1078268870]
-wait_time = 4.0
+wait_time = 15.0

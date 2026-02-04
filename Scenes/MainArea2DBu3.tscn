@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://bm7lfkl4twmhl" path="res://Objects/game_manager.tscn" id="1_h52p4"]
 [ext_resource type="Texture2D" uid="uid://dmi8binjjp1ar" path="res://Temp/LeSol.png" id="2_e05as"]
 [ext_resource type="PackedScene" uid="uid://bw3cnu3ajpejh" path="res://Objects/CharacterSelect.tscn" id="3_sl6kx"]
-[ext_resource type="Texture2D" uid="uid://dlpeqwh24rxlg" path="res://Sprites/S_BottomMask_003.png" id="4_b6d4v"]
 [ext_resource type="Texture2D" uid="uid://d1oeclm8vx3o0" path="res://Textures/T_Ground_001.png" id="5_m3mxe"]
 [ext_resource type="Texture2D" uid="uid://dtx87qwk6juxt" path="res://Textures/T_Grass_001.png" id="6_cwt0v"]
 [ext_resource type="PackedScene" uid="uid://dqvay87d4v6g6" path="res://Objects/Wall_003.tscn" id="7_ispnx"]
@@ -16,8 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://bpbyqa2wwguv" path="res://Objects/Charette.tscn" id="14_tw51v"]
 [ext_resource type="PackedScene" uid="uid://bbai0b1lwabkt" path="res://Objects/Well_001.tscn" id="15_4kw87"]
 [ext_resource type="PackedScene" uid="uid://cieemcbemdyu1" path="res://Objects/Bard.tscn" id="16_43eym"]
-[ext_resource type="SpriteFrames" uid="uid://dh5fk4gnh2o8a" path="res://Sprites/SF_P1.tres" id="17_ycao5"]
-[ext_resource type="SpriteFrames" uid="uid://tp3kabu2lqyi" path="res://Sprites/SF_P2.tres" id="18_co2jg"]
+[ext_resource type="SpriteFrames" uid="uid://dyihlkjqn620i" path="res://Sprites/SF_P1.tres" id="17_ycao5"]
+[ext_resource type="SpriteFrames" uid="uid://dojqbpyotirlu" path="res://Sprites/SF_P2.tres" id="18_co2jg"]
 [ext_resource type="PackedScene" uid="uid://b7pp74715uex" path="res://Objects/SpawnPoint.tscn" id="19_xd81t"]
 [ext_resource type="PackedScene" uid="uid://csbh3twk2ycu1" path="res://Objects/Barrel_001.tscn" id="20_yfj0y"]
 [ext_resource type="PackedScene" uid="uid://cepi6ct5rbue5" path="res://Objects/Barrel_002.tscn" id="21_6ok58"]
@@ -61,18 +60,23 @@ z_index = 176
 position = Vector2(0, 233)
 scale = Vector2(2.071, 2.071)
 
-[node name="SFlute001" parent="Character Select" index="2" unique_id=1616097586]
-scale = Vector2(1, 0.9)
+[node name="SFlute001" parent="Character Select/Node2D" parent_id_path=PackedInt32Array(936254722, 113821969) index="2" unique_id=1616097586]
+scale = Vector2(1, 0.9015189)
 
-[node name="SFlute002" parent="Character Select" index="3" unique_id=662526606]
-scale = Vector2(0.9, 0.9)
+[node name="SFlute002" parent="Character Select/Node2D" parent_id_path=PackedInt32Array(936254722, 113821969) index="3" unique_id=662526606]
+scale = Vector2(0.9, 0.9015249)
 
-[node name="SButt002" parent="Character Select" index="5" unique_id=796604284]
-position = Vector2(83.55, 47.99)
-scale = Vector2(0.9, 0.8646956)
+[node name="SButt002" parent="Character Select/Node2D" parent_id_path=PackedInt32Array(936254722, 113821969) index="5" unique_id=796604284]
+position = Vector2(83.62268, 47.99)
+scale = Vector2(0.9015189, 0.8646956)
 
-[node name="SBottomMask001" parent="Character Select" index="11" unique_id=1240492084]
-texture = ExtResource("4_b6d4v")
+[node name="TextureRect2" parent="Character Select" index="2" unique_id=641724442]
+offset_top = -701.1105
+offset_right = 1034.283
+
+[node name="TextureRect" parent="Character Select" index="3" unique_id=1686463253]
+offset_left = -1019.7972
+offset_bottom = 446.64404
 
 [node name="Art" type="Node2D" parent="." unique_id=25068648]
 metadata/_edit_lock_ = true

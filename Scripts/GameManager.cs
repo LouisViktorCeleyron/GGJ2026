@@ -13,14 +13,49 @@ public partial class GameManager : Node
 
 	[Export] private Array<SpawnPoint> _spawnPoints;
 	[Signal]
+	public delegate void LoadScreenSignalEventHandler();
+	[Signal]
 	public delegate void StartGameSignalEventHandler();
 	[Signal]
 	public delegate void EndGameSignalEventHandler(PlayerRef winner);
 
+	[Export] private AnimationPlayer _animPlayer;
 	public int BestOf = 3;
 	private bool _gameStarted,_canGameStart;
+	[Export] private PackedScene _mainScene;
+	
+	
+	
+	public void AddSpawnPoint(SpawnPoint newSP)
+	{
+		_spawnPoints.Add(newSP);
+	}
 
-	private void StartGame()
+	public void LoadStartScreen()
+	{
+		EmitSignalLoadScreenSignal();
+	}
+
+	private void ManageAnimation(StringName animName)
+	{
+		switch (animName)
+		{
+			case "In":
+				_animPlayer.Play("Out");
+				if (_canGameStart)
+				{
+					PreStartGame();
+				}
+				break;
+			case "Out":
+				if(!_canGameStart)
+				{
+					_canGameStart = true;
+				}
+				break;;
+		}
+	}
+	public void StartGame()
 	{
 		foreach (var player in _players)
 		{
@@ -33,21 +68,24 @@ public partial class GameManager : Node
 			player.Position = pos.Position;
 			pos.IsOccupied = true;
 		}
-	}
-
-	public void CanGameStart()
-	{
-		_canGameStart = true;
-	}
-
-	private void LaunchMask()
-	{
+		
 		EmitSignalStartGameSignal();
 		foreach (var player in _players)
 		{
+			_gameStarted = true;
 			player.GetModule<MaskManagerModule>().GenerateMasks();
 			player.SetPause(false);
 		}
+	}
+	
+	public void GameOver()
+	{
+		GetTree().Quit();
+	}
+
+	private void PreStartGame()
+	{
+		GetTree().ChangeSceneToPacked(_mainScene);
 	}
 	
 	// Called when the node enters the scene tree for the first time.
@@ -56,13 +94,13 @@ public partial class GameManager : Node
 		if (GameManager.Instance is null)
 		{
 			GameManager.Instance = this;
+			_gameStarted = false;
+			_spawnPoints = new Array<SpawnPoint>();
 		}
 		else
 		{
 			Free();
 		}
-
-		CallDeferred("StartGame");
 	}
 
 	public override void _Process(double delta)
@@ -72,11 +110,11 @@ public partial class GameManager : Node
 		{
 			if (Input.IsActionJustPressed("ui_accept"))
 			{
-				LaunchMask();
+				_animPlayer.Play("In");
 			}
 		}
 	}
-
+	
 	public void EndGame(PlayerRef winner)
 	{
 		foreach (var player in _players)

@@ -17,6 +17,8 @@ public partial class BGSound : AudioStreamPlayer2D
 		if (GetPlaybackPosition() >= 11.075f)
 		{
 			_doOnce = true;
+			GD.Print("wesh");
+			;
 			EmitSignalOnChangeMusic();
 		}
 	}

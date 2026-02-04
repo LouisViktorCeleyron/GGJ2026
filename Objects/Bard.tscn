@@ -142,7 +142,7 @@ animations = [{
 [node name="Bard" type="CharacterBody2D" unique_id=646171583 node_paths=PackedStringArray("_scallable", "_as")]
 process_priority = 1
 script = ExtResource("1_6cr34")
-_scallable = [NodePath("CollisionShape2D"), NodePath("Scaler")]
+_scallable = [NodePath("Scaler")]
 _frames = ExtResource("2_vycds")
 _as = NodePath("Scaler/AnimatedSprite2D")
 
@@ -181,7 +181,7 @@ position = Vector2(9.991174e-06, 114.285706)
 [node name="MovementModule" type="Node" parent="." unique_id=404004772 node_paths=PackedStringArray("_canonRotator")]
 script = ExtResource("2_hj2n3")
 _canonRotator = NodePath("../Node2D")
-Speed = 250.0
+Speed = 400.0
 
 [node name="ShooterModule" type="Node" parent="." unique_id=392662035 node_paths=PackedStringArray("_shootTimer", "_canon")]
 script = ExtResource("3_j35rj")

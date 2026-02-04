@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://dqxd8eqky8gj4"]
+
+[ext_resource type="Script" uid="uid://exqx7ese4quj" path="res://Scripts/Extentions/ConnectAutoload.cs" id="1_o7pyn"]
+[ext_resource type="Texture2D" uid="uid://u0csxy6l2q76" path="res://Textures/T_Pattern_001.png" id="2_xtm1q"]
+
+[sub_resource type="Animation" id="Animation_87264"]
+resource_name = "In"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 755), Vector2(1300, 755)]
+}
+
+[sub_resource type="Animation" id="Animation_vds4q"]
+resource_name = "Nothing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1300, 755)]
+}
+
+[sub_resource type="Animation" id="Animation_kxc51"]
+resource_name = "Out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1300, 755), Vector2(0, 755)]
+}
+
+[sub_resource type="Animation" id="Animation_ob15c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 755)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kxc51"]
+_data = {
+&"In": SubResource("Animation_87264"),
+&"Nothing": SubResource("Animation_vds4q"),
+&"Out": SubResource("Animation_kxc51"),
+&"RESET": SubResource("Animation_ob15c")
+}
+
+[node name="LoadingScreen" type="CanvasLayer" unique_id=631532692]
+layer = 2
+script = ExtResource("1_o7pyn")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2119797116]
+z_index = -1
+texture_repeat = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -16.0
+offset_right = -1294.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xtm1q")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=536543025]
+libraries/ = SubResource("AnimationLibrary_kxc51")
+autoplay = &"Nothing"

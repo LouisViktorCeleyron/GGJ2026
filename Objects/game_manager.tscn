@@ -1,7 +1,73 @@
 [gd_scene format=3 uid="uid://bm7lfkl4twmhl"]
 
 [ext_resource type="Script" uid="uid://daub10c41cmtp" path="res://Scripts/GameManager.cs" id="1_yrffa"]
+[ext_resource type="PackedScene" uid="uid://cu6t7vl41813v" path="res://Objects/audio_stream_player_2d.tscn" id="2_xbpjh"]
+[ext_resource type="PackedScene" uid="uid://be8n1bv2r6gwk" path="res://Scenes/MainArea2D.tscn" id="2_xn3ak"]
+[ext_resource type="PackedScene" uid="uid://ce5nt6vldt8wy" path="res://UI/MainUI.tscn" id="3_nbjgj"]
+[ext_resource type="PackedScene" uid="uid://dyvgtu05l0rbk" path="res://UI/main_title.tscn" id="4_7e5x8"]
+[ext_resource type="Texture2D" uid="uid://bynpvmhg2fviq" path="res://Sprites/S_BottomMask_002.png" id="6_5i6f4"]
+[ext_resource type="PackedScene" uid="uid://dqxd8eqky8gj4" path="res://UI/LoadingScreen.tscn" id="6_xn3ak"]
+[ext_resource type="Script" uid="uid://btt2xmyui1k8w" path="res://Scripts/SettingManager.cs" id="8_5i6f4"]
+[ext_resource type="Script" uid="uid://jcxkddk3g0cp" path="res://Scripts/SettingElement.cs" id="8_twmhu"]
 
-[node name="GameManager" type="Node" unique_id=529569245 node_paths=PackedStringArray("_spawnPoints")]
+[node name="GameManager" type="Node" unique_id=529569245 node_paths=PackedStringArray("_spawnPoints", "_animPlayer")]
 script = ExtResource("1_yrffa")
-_spawnPoints = [NodePath(""), NodePath(""), NodePath(""), NodePath("")]
+_spawnPoints = [null, null, null, null]
+_animPlayer = NodePath("LoadingScreen/AnimationPlayer")
+_mainScene = ExtResource("2_xn3ak")
+
+[node name="AudioStreamPlayer2D" parent="." unique_id=1986237446 instance=ExtResource("2_xbpjh")]
+
+[node name="GameOverTImer" type="Timer" parent="." unique_id=593834194]
+wait_time = 3.0
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=369300904]
+visible = false
+follow_viewport_enabled = true
+
+[node name="MainUi" parent="UI" unique_id=2139807447 instance=ExtResource("3_nbjgj")]
+offset_left = -894.0
+offset_top = -926.0
+offset_right = -458.0
+offset_bottom = -206.0
+
+[node name="MainTitile" type="CanvasLayer" parent="." unique_id=2057667938]
+
+[node name="MainTitle" parent="MainTitile" unique_id=653868411 instance=ExtResource("4_7e5x8")]
+
+[node name="SBottomMask001" parent="MainTitile/MainTitle/Node2D" parent_id_path=PackedInt32Array(653868411, 1532343156) index="8" unique_id=1384629082]
+texture = ExtResource("6_5i6f4")
+
+[node name="LoadingScreen" parent="." unique_id=631532692 instance=ExtResource("6_xn3ak")]
+
+[node name="Settings" type="Node" parent="." unique_id=814798121 node_paths=PackedStringArray("_settingsElements")]
+script = ExtResource("8_5i6f4")
+_settingsElements = []
+
+[node name="Obstacles" type="Node" parent="Settings" unique_id=167731060 node_paths=PackedStringArray("_uiFeedback")]
+script = ExtResource("8_twmhu")
+_uiFeedback = NodePath("../../MainTitile/MainTitle/SGeurageLong/VBoxContainer/UIElementNumber")
+
+[node name="BestOf" type="Node" parent="Settings" unique_id=953204858 node_paths=PackedStringArray("_uiFeedback")]
+script = ExtResource("8_twmhu")
+_defaultValue = 3
+_uiFeedback = NodePath("../../MainTitile/MainTitle/SGeurageLong/VBoxContainer/UIElementNumber2")
+
+[node name="Volume" type="Node" parent="Settings" unique_id=1066484815 node_paths=PackedStringArray("_uiFeedback")]
+script = ExtResource("8_twmhu")
+_uiFeedback = NodePath("../../MainTitile/MainTitle/SGeurageLong/VBoxContainer/UIElementNumber3")
+
+[node name="Autre" type="Node" parent="Settings" unique_id=992232364 node_paths=PackedStringArray("_uiFeedback")]
+script = ExtResource("8_twmhu")
+_uiFeedback = NodePath("../../MainTitile/MainTitle/SGeurageLong/VBoxContainer/UIElementNumber4")
+
+[connection signal="LoadScreenSignal" from="." to="LoadingScreen/AnimationPlayer" method="play" binds= ["Out"]]
+[connection signal="StartGameSignal" from="." to="AudioStreamPlayer2D" method="LaunchGameMusic"]
+[connection signal="StartGameSignal" from="." to="UI" method="set_visible" binds= [true]]
+[connection signal="StartGameSignal" from="." to="MainTitile" method="set_visible" binds= [false]]
+[connection signal="animation_finished" from="LoadingScreen/AnimationPlayer" to="." method="ManageAnimation"]
+
+[editable path="UI/MainUi"]
+[editable path="UI/MainUi/HBoxContainer3"]
+[editable path="MainTitile/MainTitle"]
+[editable path="LoadingScreen"]

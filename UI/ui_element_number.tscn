@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://bab54bwr0hi2q"]
+
+[ext_resource type="Script" uid="uid://dqyo1h4dlogvi" path="res://Scripts/Extentions/UiElementNumber.cs" id="1_hrhxn"]
+[ext_resource type="FontFile" uid="uid://do84872148i2c" path="res://Temp/Old_Englished_Boots.ttf" id="2_8bo7h"]
+[ext_resource type="Texture2D" uid="uid://c2woh4ntw3t7h" path="res://Temp/Arrow.png" id="2_brk5k"]
+[ext_resource type="Texture2D" uid="uid://0cl6kfiegeum" path="res://Temp/I.png" id="3_4y027"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vco3a"]
+font = ExtResource("2_8bo7h")
+font_size = 56
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4y027"]
+atlas = ExtResource("3_4y027")
+region = Rect2(85, 28, 85, 190)
+
+[node name="UIElementNumber" type="Control" unique_id=2465967 node_paths=PackedStringArray("_numberTexture", "_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -580.0
+offset_bottom = -575.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hrhxn")
+_activeColor = Color(1, 1, 1, 1)
+_inactiveColor = Color(0.28, 0.28, 0.28, 1)
+_numberTexture = [NodePath("VBoxContainer/HBoxContainer2/HBoxContainer/Number"), NodePath("VBoxContainer/HBoxContainer2/HBoxContainer/Number2"), NodePath("VBoxContainer/HBoxContainer2/HBoxContainer/Number3"), NodePath("VBoxContainer/HBoxContainer2/HBoxContainer/Number4")]
+_label = NodePath("VBoxContainer/Label")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1060197741]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=874121627]
+layout_mode = 2
+text = "Name"
+label_settings = SubResource("LabelSettings_vco3a")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1402072139]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LeftArrow" type="TextureRect" parent="VBoxContainer/HBoxContainer2" unique_id=994790682]
+layout_mode = 2
+texture = ExtResource("2_brk5k")
+expand_mode = 2
+flip_h = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2" unique_id=1774721266]
+layout_mode = 2
+
+[node name="Number" type="TextureRect" parent="VBoxContainer/HBoxContainer2/HBoxContainer" unique_id=908599857]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture = SubResource("AtlasTexture_4y027")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Number2" type="TextureRect" parent="VBoxContainer/HBoxContainer2/HBoxContainer" unique_id=159599039]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture = SubResource("AtlasTexture_4y027")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Number3" type="TextureRect" parent="VBoxContainer/HBoxContainer2/HBoxContainer" unique_id=1283041182]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture = SubResource("AtlasTexture_4y027")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Number4" type="TextureRect" parent="VBoxContainer/HBoxContainer2/HBoxContainer" unique_id=895737858]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture = SubResource("AtlasTexture_4y027")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="RightArrow" type="TextureRect" parent="VBoxContainer/HBoxContainer2" unique_id=441872504]
+layout_mode = 2
+texture = ExtResource("2_brk5k")
+expand_mode = 2

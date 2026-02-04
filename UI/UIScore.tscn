@@ -2,9 +2,13 @@
 
 [ext_resource type="Script" uid="uid://cvre8bok6jmuq" path="res://Scripts/Extentions/UiScore.cs" id="1_6173j"]
 [ext_resource type="Texture2D" uid="uid://rdvxpq8ggj1p" path="res://Sprites/S_Sun_001.png" id="1_re6vd"]
+[ext_resource type="FontFile" uid="uid://do84872148i2c" path="res://Temp/Old_Englished_Boots.ttf" id="2_gr68x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6173j"]
+font = ExtResource("2_gr68x")
 font_size = 83
+outline_size = 11
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wwh41"]
 atlas = ExtResource("1_re6vd")

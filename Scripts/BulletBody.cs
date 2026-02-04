@@ -8,7 +8,7 @@ public partial class BulletBody : RigidBody2D
 
 	protected PlayerRef _owner;
 
-
+	
 	private bool _shouldCollide=true;
 
 	public void SetShouldCollide(bool b)
@@ -40,7 +40,7 @@ public partial class BulletBody : RigidBody2D
 			}
 		}
 
-		if (!body.IsInGroup("Bullet"))
+		if (!body.IsInGroup("Bullet") && PhysicsMaterialOverride==null)
 		{
 			QueueFree();
 		}

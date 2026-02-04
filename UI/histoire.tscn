@@ -1,0 +1,233 @@
+[gd_scene format=3 uid="uid://7km366eqbvb4"]
+
+[ext_resource type="Script" uid="uid://exqx7ese4quj" path="res://Scripts/Extentions/ConnectAutoload.cs" id="1_6dbnq"]
+[ext_resource type="Texture2D" uid="uid://sf1ukgj0b5x3" path="res://Sprites/S_Scroll_001.png" id="2_1y3h0"]
+[ext_resource type="Texture2D" uid="uid://b13f0o3v3rjm5" path="res://Sprites/S_Text_001.png" id="3_wuwg2"]
+[ext_resource type="Texture2D" uid="uid://bgph640ryu7cu" path="res://Sprites/S_Text_002.png" id="4_3hops"]
+[ext_resource type="Texture2D" uid="uid://dgd253wul70t2" path="res://Sprites/S_Text_003.png" id="5_6dbnq"]
+[ext_resource type="Texture2D" uid="uid://dhllg0ig28cov" path="res://Sprites/S_Text_004.png" id="6_53mms"]
+
+[sub_resource type="Animation" id="Animation_3hops"]
+resource_name = "Histoire"
+length = 17.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect4/TextureRect5:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect4/TextureRect6:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect4/TextureRect7:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(8, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect4/TextureRect8:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(12.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect4:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(15.866667, 17),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6dbnq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect4/TextureRect5:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect4/TextureRect6:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect4/TextureRect7:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect4/TextureRect8:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect4:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6dbnq"]
+_data = {
+&"Histoire": SubResource("Animation_3hops"),
+&"RESET": SubResource("Animation_6dbnq")
+}
+
+[node name="Histoire" type="CanvasLayer" unique_id=631532692]
+layer = 3
+script = ExtResource("1_6dbnq")
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=341013331]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -361.0
+offset_top = -361.0
+offset_right = 361.0
+offset_bottom = 361.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1y3h0")
+
+[node name="TextureRect5" type="TextureRect" parent="TextureRect4" unique_id=148680779]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -160.0
+offset_right = 123.0
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_wuwg2")
+expand_mode = 1
+
+[node name="TextureRect6" type="TextureRect" parent="TextureRect4" unique_id=188637848]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -160.0
+offset_right = 123.0
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_3hops")
+expand_mode = 1
+
+[node name="TextureRect7" type="TextureRect" parent="TextureRect4" unique_id=1933022675]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -160.0
+offset_right = 123.0
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_6dbnq")
+expand_mode = 1
+
+[node name="TextureRect8" type="TextureRect" parent="TextureRect4" unique_id=1076108836]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -34.0
+offset_right = 123.0
+offset_bottom = 294.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_53mms")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2107173266]
+libraries/ = SubResource("AnimationLibrary_6dbnq")
+autoplay = &"Histoire"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="LoadGameStart" unbinds=1]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="set_visible" unbinds=1 binds= [false]]

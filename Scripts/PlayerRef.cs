@@ -27,6 +27,7 @@ public partial class PlayerRef : CharacterBody2D
 
 	private bool _pause = true;
 	public bool Pause => _pause;
+
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -106,7 +107,8 @@ public partial class PlayerRef : CharacterBody2D
 			"ui_lookRight"+_playerIndex,
 			"ui_lookDown"+_playerIndex,
 			"ui_lookUp"+_playerIndex);
-		_shoot = Input.IsActionPressed("ui_shoot"+_playerIndex);
+		_shoot = _lookAxis.Length() > 0.02f;
+		// _shoot = Input.IsActionPressed("ui_shoot"+_playerIndex);
 	}
 
 }
