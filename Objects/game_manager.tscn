@@ -4,8 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://cu6t7vl41813v" path="res://Objects/audio_stream_player_2d.tscn" id="2_xbpjh"]
 [ext_resource type="PackedScene" uid="uid://be8n1bv2r6gwk" path="res://Scenes/MainArea2D.tscn" id="2_xn3ak"]
 [ext_resource type="PackedScene" uid="uid://ce5nt6vldt8wy" path="res://UI/MainUI.tscn" id="3_nbjgj"]
+[ext_resource type="Script" uid="uid://rhpv4ftojrvo" path="res://Scripts/ChangeVolume.cs" id="4_4y2xu"]
 [ext_resource type="PackedScene" uid="uid://dyvgtu05l0rbk" path="res://UI/main_title.tscn" id="4_7e5x8"]
-[ext_resource type="Texture2D" uid="uid://bynpvmhg2fviq" path="res://Sprites/S_BottomMask_002.png" id="6_5i6f4"]
+[ext_resource type="Texture2D" uid="uid://bwfyypfmlsdg8" path="res://Sprites/S_BottomMask_004.png" id="6_twmhu"]
 [ext_resource type="PackedScene" uid="uid://dqxd8eqky8gj4" path="res://UI/LoadingScreen.tscn" id="6_xn3ak"]
 [ext_resource type="Script" uid="uid://btt2xmyui1k8w" path="res://Scripts/SettingManager.cs" id="8_5i6f4"]
 [ext_resource type="Script" uid="uid://jcxkddk3g0cp" path="res://Scripts/SettingElement.cs" id="8_twmhu"]
@@ -17,6 +18,10 @@ _animPlayer = NodePath("LoadingScreen/AnimationPlayer")
 _mainScene = ExtResource("2_xn3ak")
 
 [node name="AudioStreamPlayer2D" parent="." unique_id=1986237446 instance=ExtResource("2_xbpjh")]
+
+[node name="ChangeVolume" type="Node" parent="AudioStreamPlayer2D" unique_id=2004407886]
+script = ExtResource("4_4y2xu")
+metadata/_custom_type_script = "uid://rhpv4ftojrvo"
 
 [node name="GameOverTImer" type="Timer" parent="." unique_id=593834194]
 wait_time = 3.0
@@ -35,8 +40,18 @@ offset_bottom = -206.0
 
 [node name="MainTitle" parent="MainTitile" unique_id=653868411 instance=ExtResource("4_7e5x8")]
 
+[node name="SFlute001" parent="MainTitile/MainTitle/Node2D" parent_id_path=PackedInt32Array(653868411, 1532343156) index="2" unique_id=66608462]
+scale = Vector2(1, 0.42509985)
+
+[node name="SFlute002" parent="MainTitile/MainTitle/Node2D" parent_id_path=PackedInt32Array(653868411, 1532343156) index="3" unique_id=1115391830]
+scale = Vector2(0.9, 0.42509937)
+
+[node name="SButt002" parent="MainTitile/MainTitle/Node2D" parent_id_path=PackedInt32Array(653868411, 1532343156) index="5" unique_id=817444424]
+position = Vector2(31.499872, 30.523035)
+scale = Vector2(0.42509985, 0.8646956)
+
 [node name="SBottomMask001" parent="MainTitile/MainTitle/Node2D" parent_id_path=PackedInt32Array(653868411, 1532343156) index="8" unique_id=1384629082]
-texture = ExtResource("6_5i6f4")
+texture = ExtResource("6_twmhu")
 
 [node name="LoadingScreen" parent="." unique_id=631532692 instance=ExtResource("6_xn3ak")]
 
