@@ -8,7 +8,8 @@ Integrer masque centré
 UI/Compteur de score
 Tweak de perso
 Bouger le truc de mort 
-
+Spawner d'obstacle
+faire un truc qui passe la cinematique 
 
 generation d'objet
 Option

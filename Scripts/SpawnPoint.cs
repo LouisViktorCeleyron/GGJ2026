@@ -4,10 +4,15 @@ using System;
 public partial class SpawnPoint : Node2D
 {
 	public bool IsOccupied= false;
+
+	[Export] private bool _forPlayer; 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		GameManager.Instance.AddSpawnPoint(this);
+		if (_forPlayer)
+		{
+			GameManager.Instance.AddSpawnPoint(this);
+		}
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

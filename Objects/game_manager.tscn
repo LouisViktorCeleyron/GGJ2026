@@ -10,6 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://cfjc71y1v26wb" path="res://Sprites/S_BottomMask_001.png" id="7_4y2xu"]
 [ext_resource type="Script" uid="uid://btt2xmyui1k8w" path="res://Scripts/SettingManager.cs" id="8_5i6f4"]
 [ext_resource type="Script" uid="uid://jcxkddk3g0cp" path="res://Scripts/SettingElement.cs" id="8_twmhu"]
+[ext_resource type="PackedScene" uid="uid://5d3oylrkmod6" path="res://Objects/ObstacleSpawnpoint.tscn" id="11_jxbvp"]
+[ext_resource type="Script" uid="uid://cbqba8l512nnu" path="res://Scripts/ObstacleManager.cs" id="11_venit"]
+[ext_resource type="PackedScene" uid="uid://csbh3twk2ycu1" path="res://Objects/Barrel_001.tscn" id="12_44k2y"]
+[ext_resource type="Script" uid="uid://j5ubdqvshkqt" path="res://Scripts/SpawnPoint.cs" id="12_venit"]
+[ext_resource type="PackedScene" uid="uid://cepi6ct5rbue5" path="res://Objects/Barrel_002.tscn" id="13_t6dwj"]
+[ext_resource type="PackedScene" uid="uid://bpbyqa2wwguv" path="res://Objects/Charette.tscn" id="14_a80t7"]
+[ext_resource type="PackedScene" uid="uid://qh0wpgd538fm" path="res://Objects/Chval_001.tscn" id="15_3plak"]
 
 [node name="GameManager" type="Node" unique_id=529569245 node_paths=PackedStringArray("_spawnPoints", "_animPlayer", "_settings")]
 script = ExtResource("1_yrffa")
@@ -42,14 +49,14 @@ offset_bottom = -206.0
 [node name="MainTitle" parent="MainTitile" unique_id=653868411 instance=ExtResource("4_7e5x8")]
 
 [node name="SFlute001" parent="MainTitile/MainTitle/Node2D" parent_id_path=PackedInt32Array(653868411, 1532343156) index="2" unique_id=66608462]
-scale = Vector2(1, 0.9028098)
+scale = Vector2(1, 0.43866363)
 
 [node name="SFlute002" parent="MainTitile/MainTitle/Node2D" parent_id_path=PackedInt32Array(653868411, 1532343156) index="3" unique_id=1115391830]
-scale = Vector2(0.9, 0.9028207)
+scale = Vector2(0.9, 0.4386305)
 
 [node name="SButt002" parent="MainTitile/MainTitle/Node2D" parent_id_path=PackedInt32Array(653868411, 1532343156) index="5" unique_id=817444424]
-position = Vector2(83.68445, 47.99)
-scale = Vector2(0.90280974, 0.8646956)
+position = Vector2(32.8408, 30.935139)
+scale = Vector2(0.43866366, 0.8646956)
 
 [node name="SBottomMask001" parent="MainTitile/MainTitle/Node2D" parent_id_path=PackedInt32Array(653868411, 1532343156) index="8" unique_id=1384629082]
 texture = ExtResource("7_4y2xu")
@@ -80,8 +87,112 @@ _minValue = 2
 _defaultValue = 2
 _uiFeedback = NodePath("../../MainTitile/MainTitle/SGeurageLong/VBoxContainer/UIElementNumber4")
 
+[node name="ObstaclesManager" type="Node" parent="." unique_id=1816549978]
+script = ExtResource("11_venit")
+_obstacles = Array[PackedScene]([ExtResource("12_44k2y"), ExtResource("13_t6dwj"), ExtResource("14_a80t7"), ExtResource("15_3plak")])
+
+[node name="ObstaclesSP" type="Node2D" parent="ObstaclesManager" unique_id=1905647654]
+visible = false
+
+[node name="ObjectSpawnpoint" parent="ObstaclesManager/ObstaclesSP" unique_id=1661061621 instance=ExtResource("11_jxbvp")]
+position = Vector2(-1408, -128)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint3" parent="ObstaclesManager/ObstaclesSP" unique_id=159317328 instance=ExtResource("11_jxbvp")]
+position = Vector2(-1408, 384)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint6" parent="ObstaclesManager/ObstaclesSP" unique_id=2104589128 instance=ExtResource("11_jxbvp")]
+position = Vector2(-1152, 128)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint8" parent="ObstaclesManager/ObstaclesSP" unique_id=112714547 instance=ExtResource("11_jxbvp")]
+position = Vector2(-1152, 640)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint9" parent="ObstaclesManager/ObstaclesSP" unique_id=2016483606 instance=ExtResource("11_jxbvp")]
+position = Vector2(-896, -128)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint11" parent="ObstaclesManager/ObstaclesSP" unique_id=446763820 instance=ExtResource("11_jxbvp")]
+position = Vector2(-896, 384)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint14" parent="ObstaclesManager/ObstaclesSP" unique_id=518428068 instance=ExtResource("11_jxbvp")]
+position = Vector2(-640, 128)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint16" parent="ObstaclesManager/ObstaclesSP" unique_id=507125735 instance=ExtResource("11_jxbvp")]
+position = Vector2(-640, 640)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint17" parent="ObstaclesManager/ObstaclesSP" unique_id=378510209 instance=ExtResource("11_jxbvp")]
+position = Vector2(-384, -128)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint19" parent="ObstaclesManager/ObstaclesSP" unique_id=1336845817 instance=ExtResource("11_jxbvp")]
+position = Vector2(-384, 384)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint22" parent="ObstaclesManager/ObstaclesSP" unique_id=1959600784 instance=ExtResource("11_jxbvp")]
+position = Vector2(-128, 128)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint24" parent="ObstaclesManager/ObstaclesSP" unique_id=2043728472 instance=ExtResource("11_jxbvp")]
+position = Vector2(-128, 640)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint25" parent="ObstaclesManager/ObstaclesSP" unique_id=405979004 instance=ExtResource("11_jxbvp")]
+position = Vector2(128, -128)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint27" parent="ObstaclesManager/ObstaclesSP" unique_id=802219165 instance=ExtResource("11_jxbvp")]
+position = Vector2(128, 384)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint30" parent="ObstaclesManager/ObstaclesSP" unique_id=1832664893 instance=ExtResource("11_jxbvp")]
+position = Vector2(384, 128)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint32" parent="ObstaclesManager/ObstaclesSP" unique_id=1211077913 instance=ExtResource("11_jxbvp")]
+position = Vector2(384, 640)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint33" parent="ObstaclesManager/ObstaclesSP" unique_id=815937354 instance=ExtResource("11_jxbvp")]
+position = Vector2(640, -128)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint35" parent="ObstaclesManager/ObstaclesSP" unique_id=386637639 instance=ExtResource("11_jxbvp")]
+position = Vector2(640, 384)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint38" parent="ObstaclesManager/ObstaclesSP" unique_id=1280267006 instance=ExtResource("11_jxbvp")]
+position = Vector2(896, 128)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint40" parent="ObstaclesManager/ObstaclesSP" unique_id=1281868341 instance=ExtResource("11_jxbvp")]
+position = Vector2(896, 640)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint41" parent="ObstaclesManager/ObstaclesSP" unique_id=1822735791 instance=ExtResource("11_jxbvp")]
+position = Vector2(1152, -128)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint43" parent="ObstaclesManager/ObstaclesSP" unique_id=137586691 instance=ExtResource("11_jxbvp")]
+position = Vector2(1152, 384)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint46" parent="ObstaclesManager/ObstaclesSP" unique_id=995025483 instance=ExtResource("11_jxbvp")]
+position = Vector2(1408, 128)
+script = ExtResource("12_venit")
+
+[node name="ObjectSpawnpoint48" parent="ObstaclesManager/ObstaclesSP" unique_id=621629118 instance=ExtResource("11_jxbvp")]
+position = Vector2(1408, 640)
+script = ExtResource("12_venit")
+
 [connection signal="LoadScreenSignal" from="." to="LoadingScreen/AnimationPlayer" method="play" binds= ["Out"]]
 [connection signal="StartGameSignal" from="." to="AudioStreamPlayer2D" method="LaunchGameMusic"]
+[connection signal="StartGameSignal" from="." to="ObstaclesManager" method="GenerateObstacles"]
 [connection signal="StartGameSignal" from="." to="UI" method="set_visible" binds= [true]]
 [connection signal="StartGameSignal" from="." to="MainTitile" method="set_visible" binds= [false]]
 [connection signal="animation_finished" from="LoadingScreen/AnimationPlayer" to="." method="ManageAnimation"]

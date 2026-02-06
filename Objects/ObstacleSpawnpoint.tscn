@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://5d3oylrkmod6"]
+
+[ext_resource type="Texture2D" uid="uid://df6tsaojxli1b" path="res://Textures/T_Sauqre_001.png" id="1_dfhjw"]
+
+[node name="ObjectSpawnpoint" type="Sprite2D" unique_id=1661061621]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_dfhjw")

@@ -24,8 +24,7 @@ public partial class GameManager : Node
 	private bool _gameStarted,_canGameStart;
 	[Export] private PackedScene _mainScene;
 
-	[Export]
-	private SettingManager _settings;
+	[Export] private SettingManager _settings;
 	
 	public void AddSpawnPoint(SpawnPoint newSP)
 	{
