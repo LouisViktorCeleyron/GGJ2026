@@ -8,7 +8,7 @@ public partial class SettingManager : Node
 	private Array<SettingElement> _settingsElements;
 
 	private int _current;
-
+	
 	public override void _Ready()
 	{
 		base._Ready();
@@ -37,19 +37,30 @@ public partial class SettingManager : Node
 		_current = currentIndex;
 	}
 
-	public int GetElementValue(string elementName)
+	public int GetSettingValue(string elementName)
+	{
+		var element = GetSetting(elementName);
+		return element?.Value ?? -1;
+	}
+
+	public void SubscribeToSetting(string elementName, SettingElement.OnElementNumberChangeEventHandler action)
+	{
+		GetSetting(elementName).SubscribeToSetting(action);
+	}
+
+	public SettingElement GetSetting(string elementName)
 	{
 		foreach (var element in _settingsElements)
 		{
 			if (element.Name == elementName)
 			{
-				return element.Value;
+				return element;
 			}
 		}
 
-		return -1;
+		return default;
 	}
-
+	
 	public override void _Process(double delta)
 	{
 		base._Process(delta);

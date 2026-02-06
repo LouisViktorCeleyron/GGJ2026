@@ -6,16 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://ce5nt6vldt8wy" path="res://UI/MainUI.tscn" id="3_nbjgj"]
 [ext_resource type="Script" uid="uid://rhpv4ftojrvo" path="res://Scripts/ChangeVolume.cs" id="4_4y2xu"]
 [ext_resource type="PackedScene" uid="uid://dyvgtu05l0rbk" path="res://UI/main_title.tscn" id="4_7e5x8"]
-[ext_resource type="Texture2D" uid="uid://bwfyypfmlsdg8" path="res://Sprites/S_BottomMask_004.png" id="6_twmhu"]
 [ext_resource type="PackedScene" uid="uid://dqxd8eqky8gj4" path="res://UI/LoadingScreen.tscn" id="6_xn3ak"]
+[ext_resource type="Texture2D" uid="uid://cfjc71y1v26wb" path="res://Sprites/S_BottomMask_001.png" id="7_4y2xu"]
 [ext_resource type="Script" uid="uid://btt2xmyui1k8w" path="res://Scripts/SettingManager.cs" id="8_5i6f4"]
 [ext_resource type="Script" uid="uid://jcxkddk3g0cp" path="res://Scripts/SettingElement.cs" id="8_twmhu"]
 
-[node name="GameManager" type="Node" unique_id=529569245 node_paths=PackedStringArray("_spawnPoints", "_animPlayer")]
+[node name="GameManager" type="Node" unique_id=529569245 node_paths=PackedStringArray("_spawnPoints", "_animPlayer", "_settings")]
 script = ExtResource("1_yrffa")
 _spawnPoints = [null, null, null, null]
 _animPlayer = NodePath("LoadingScreen/AnimationPlayer")
 _mainScene = ExtResource("2_xn3ak")
+_settings = NodePath("Settings")
 
 [node name="AudioStreamPlayer2D" parent="." unique_id=1986237446 instance=ExtResource("2_xbpjh")]
 
@@ -41,17 +42,17 @@ offset_bottom = -206.0
 [node name="MainTitle" parent="MainTitile" unique_id=653868411 instance=ExtResource("4_7e5x8")]
 
 [node name="SFlute001" parent="MainTitile/MainTitle/Node2D" parent_id_path=PackedInt32Array(653868411, 1532343156) index="2" unique_id=66608462]
-scale = Vector2(1, 0.42509985)
+scale = Vector2(1, 0.9028098)
 
 [node name="SFlute002" parent="MainTitile/MainTitle/Node2D" parent_id_path=PackedInt32Array(653868411, 1532343156) index="3" unique_id=1115391830]
-scale = Vector2(0.9, 0.42509937)
+scale = Vector2(0.9, 0.9028207)
 
 [node name="SButt002" parent="MainTitile/MainTitle/Node2D" parent_id_path=PackedInt32Array(653868411, 1532343156) index="5" unique_id=817444424]
-position = Vector2(31.499872, 30.523035)
-scale = Vector2(0.42509985, 0.8646956)
+position = Vector2(83.68445, 47.99)
+scale = Vector2(0.90280974, 0.8646956)
 
 [node name="SBottomMask001" parent="MainTitile/MainTitle/Node2D" parent_id_path=PackedInt32Array(653868411, 1532343156) index="8" unique_id=1384629082]
-texture = ExtResource("6_twmhu")
+texture = ExtResource("7_4y2xu")
 
 [node name="LoadingScreen" parent="." unique_id=631532692 instance=ExtResource("6_xn3ak")]
 
@@ -70,10 +71,13 @@ _uiFeedback = NodePath("../../MainTitile/MainTitle/SGeurageLong/VBoxContainer/UI
 
 [node name="Volume" type="Node" parent="Settings" unique_id=1066484815 node_paths=PackedStringArray("_uiFeedback")]
 script = ExtResource("8_twmhu")
+_defaultValue = 4
 _uiFeedback = NodePath("../../MainTitile/MainTitle/SGeurageLong/VBoxContainer/UIElementNumber3")
 
-[node name="Autre" type="Node" parent="Settings" unique_id=992232364 node_paths=PackedStringArray("_uiFeedback")]
+[node name="Joueurs" type="Node" parent="Settings" unique_id=992232364 node_paths=PackedStringArray("_uiFeedback")]
 script = ExtResource("8_twmhu")
+_minValue = 2
+_defaultValue = 2
 _uiFeedback = NodePath("../../MainTitile/MainTitle/SGeurageLong/VBoxContainer/UIElementNumber4")
 
 [connection signal="LoadScreenSignal" from="." to="LoadingScreen/AnimationPlayer" method="play" binds= ["Out"]]

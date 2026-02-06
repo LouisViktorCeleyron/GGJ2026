@@ -16,6 +16,7 @@ public partial class SettingElement : Node
 
 	[Export] private UiElementNumber _uiFeedback;
 	public int Value => _currentValue;
+	public int Max => _maxValue;
 	private SettingManager _manager;
 	
 	public void Initialize(SettingManager manager)
@@ -28,6 +29,10 @@ public partial class SettingElement : Node
 		EmitSignalOnInitialization(Name);
 	}
 
+	public void SubscribeToSetting(OnElementNumberChangeEventHandler action)
+	{
+		OnElementNumberChange += action;
+	}
 	public void AddNumber(int toAdd)
 	{
 		ChangeNumber(_currentValue+toAdd);

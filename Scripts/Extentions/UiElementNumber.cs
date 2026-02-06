@@ -28,7 +28,7 @@ public partial class UiElementNumber : Control
 	{
 		for (int i = 0; i < elementMax; i++)
 		{
-			_numberTexture[i].Modulate = i < elementValue ? _activeColor : _inactiveColor;
+			_numberTexture[i].Modulate = i < elementValue ? _activeColor : Colors.Black;
 		}
 	}
 }

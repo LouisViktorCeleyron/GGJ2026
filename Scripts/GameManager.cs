@@ -23,8 +23,9 @@ public partial class GameManager : Node
 	public int BestOf = 3;
 	private bool _gameStarted,_canGameStart;
 	[Export] private PackedScene _mainScene;
-	
-	
+
+	[Export]
+	private SettingManager _settings;
 	
 	public void AddSpawnPoint(SpawnPoint newSP)
 	{
@@ -87,7 +88,11 @@ public partial class GameManager : Node
 	{
 		GetTree().ChangeSceneToPacked(_mainScene);
 	}
-	
+
+	public static SettingManager GetSettings()
+	{
+		return Instance._settings;
+	}
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{

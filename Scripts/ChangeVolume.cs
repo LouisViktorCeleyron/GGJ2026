@@ -5,18 +5,29 @@ using System;
 public partial class ChangeVolume : Node
 {
 	[Export]
-	private AudioStreamPlayer _parent;
-	private float _baseDecibel;
+	private AudioStreamPlayer2D _parent;
+	private float _baseLinear;
 	private SettingManager _settings;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		_baseDecibel = _parent.VolumeDb;
+		CallDeferred("SetUp");
 	}
 
-	public void ChangeVolumeFunction(int newVolume, int max)
+	private void SetUp()
 	{
-		_parent.VolumeDb = ((float)newVolume/(float)max)*_baseDecibel;
+		_parent = GetParent<AudioStreamPlayer2D>();
+		_baseLinear = _parent.VolumeLinear;
+		GD.Print(GameManager.GetSettings());
+		var volumeSetting = GameManager.GetSettings().GetSetting("Volume"); 
+		volumeSetting.SubscribeToSetting(ChangeVolumeFunction);
+		ChangeVolumeFunction(volumeSetting.Value,volumeSetting.Max);
+		
+	}
+
+	private void ChangeVolumeFunction(int newVolume, int max)
+	{
+		_parent.VolumeLinear = ((float)newVolume/(float)max)*_baseLinear;
 	}
 }
