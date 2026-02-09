@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://2se2v6jfe33w"]
 
 [ext_resource type="PackedScene" uid="uid://cp7rya56tr4e0" path="res://Objects/Obstacle.tscn" id="1_kwcui"]
-[ext_resource type="Texture2D" uid="uid://onj8rxj6c6v0" path="res://Sprites/S_Straw_001.png" id="2_bfekg"]
+[ext_resource type="Texture2D" uid="uid://onj8rxj6c6v0" path="res://Sprites/BackGrounds/S_Straw_001.png" id="2_bfekg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kq7l5"]
 size = Vector2(224, 114)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cepi6ct5rbue5"]
 
 [ext_resource type="PackedScene" uid="uid://csbh3twk2ycu1" path="res://Objects/Barrel_001.tscn" id="1_dj0ye"]
-[ext_resource type="Texture2D" uid="uid://biyjd72c14e3x" path="res://Sprites/S_Barrel_002.png" id="2_vxvoo"]
+[ext_resource type="Texture2D" uid="uid://biyjd72c14e3x" path="res://Sprites/BackGrounds/S_Barrel_002.png" id="2_vxvoo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6oesx"]
 size = Vector2(245, 146)

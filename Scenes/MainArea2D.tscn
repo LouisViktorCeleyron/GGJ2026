@@ -5,17 +5,18 @@
 [ext_resource type="PackedScene" uid="uid://cieemcbemdyu1" path="res://Objects/Bard.tscn" id="2_ulm5l"]
 [ext_resource type="PackedScene" uid="uid://dqvay87d4v6g6" path="res://Objects/Wall_003.tscn" id="6_4ln0f"]
 [ext_resource type="Texture2D" uid="uid://d1oeclm8vx3o0" path="res://Textures/T_Ground_001.png" id="9_t0kd8"]
-[ext_resource type="Texture2D" uid="uid://c7ome75583blt" path="res://Sprites/S_Grass_001.png" id="10_xy48h"]
+[ext_resource type="Texture2D" uid="uid://c7ome75583blt" path="res://Sprites/BackGrounds/S_Grass_001.png" id="10_xy48h"]
 [ext_resource type="PackedScene" path="res://Objects/Tower_001.tscn" id="11_7vphi"]
 [ext_resource type="Texture2D" uid="uid://dtx87qwk6juxt" path="res://Textures/T_Grass_001.png" id="11_kg1u7"]
 [ext_resource type="PackedScene" path="res://Objects/Tower_003.tscn" id="12_rdcnd"]
-[ext_resource type="Texture2D" uid="uid://dj5o04eopppbw" path="res://Sprites/S_Dirt_001.png" id="13_kg1u7"]
+[ext_resource type="Texture2D" uid="uid://dj5o04eopppbw" path="res://Sprites/BackGrounds/S_Dirt_001.png" id="13_kg1u7"]
 [ext_resource type="PackedScene" uid="uid://dv5vggydyrxvy" path="res://Objects/Wall_001.tscn" id="13_uixek"]
 [ext_resource type="PackedScene" path="res://Objects/Wall_002.tscn" id="14_j7u81"]
-[ext_resource type="SpriteFrames" uid="uid://dyihlkjqn620i" path="res://Sprites/SF_P1.tres" id="16_a0v8m"]
+[ext_resource type="SpriteFrames" uid="uid://cvq5rtb3xwvwe" path="res://Sprites/SF_Yellow.tres" id="16_7g5k4"]
 [ext_resource type="PackedScene" uid="uid://b7pp74715uex" path="res://Objects/SpawnPoint.tscn" id="16_uixek"]
-[ext_resource type="SpriteFrames" uid="uid://dojqbpyotirlu" path="res://Sprites/SF_P2.tres" id="17_4t8pf"]
-[ext_resource type="Texture2D" uid="uid://5h5ku68ei7vh" path="res://Sprites/S_Clouds.png" id="18_m74dh"]
+[ext_resource type="SpriteFrames" uid="uid://dojqbpyotirlu" path="res://Sprites/SF_Green.tres" id="17_4t8pf"]
+[ext_resource type="SpriteFrames" uid="uid://dax5n40hcsoqu" path="res://Sprites/SF_Blue.tres" id="17_s4ppk"]
+[ext_resource type="Texture2D" uid="uid://5h5ku68ei7vh" path="res://Sprites/BackGrounds/S_Clouds.png" id="18_m74dh"]
 [ext_resource type="SpriteFrames" uid="uid://pt1f6ed8ei2u" path="res://Sprites/SF_Sun_001.tres" id="25_csgkp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8bcxb"]
@@ -340,16 +341,27 @@ position = Vector2(1098.0001, -294.00006)
 scale = Vector2(1.6222445, 1.9126557)
 texture = SubResource("AtlasTexture_uixek")
 
-[node name="Bard2" parent="." unique_id=646171583 instance=ExtResource("2_ulm5l")]
+[node name="RedB" parent="." unique_id=646171583 instance=ExtResource("2_ulm5l")]
 z_index = 22
 position = Vector2(-566, 284)
-_frames = ExtResource("16_a0v8m")
 
-[node name="Bard3" parent="." unique_id=1823047616 instance=ExtResource("2_ulm5l")]
+[node name="GreenB" parent="." unique_id=1823047616 instance=ExtResource("2_ulm5l")]
 z_index = 38
 position = Vector2(1063, -172)
-_playerIndex = 1
+PlayerIndex = 1
 _frames = ExtResource("17_4t8pf")
+
+[node name="YellowB" parent="." unique_id=1752659806 instance=ExtResource("2_ulm5l")]
+z_index = 38
+position = Vector2(1063, -172)
+PlayerIndex = 2
+_frames = ExtResource("16_7g5k4")
+
+[node name="BlueB" parent="." unique_id=1706446410 instance=ExtResource("2_ulm5l")]
+z_index = 38
+position = Vector2(1063, -172)
+PlayerIndex = 3
+_frames = ExtResource("17_s4ppk")
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=935454320]
 

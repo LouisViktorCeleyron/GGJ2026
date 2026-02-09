@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bbai0b1lwabkt"]
 
 [ext_resource type="PackedScene" uid="uid://cp7rya56tr4e0" path="res://Objects/Obstacle.tscn" id="1_uyjdw"]
-[ext_resource type="Texture2D" uid="uid://icuise1mbc2t" path="res://Sprites/S_Well_001.png" id="2_f6rtd"]
+[ext_resource type="Texture2D" uid="uid://icuise1mbc2t" path="res://Sprites/BackGrounds/S_Well_001.png" id="2_f6rtd"]
 
 [node name="StaticBody2D" unique_id=1673683336 instance=ExtResource("1_uyjdw")]
 

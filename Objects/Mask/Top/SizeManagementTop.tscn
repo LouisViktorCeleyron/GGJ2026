@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://clad4bcpv8bu7" path="res://Objects/Mask/TopMaskBase.tscn" id="1_sigj1"]
 [ext_resource type="Script" uid="uid://blvwjkeq8vbc4" path="res://Scripts/Extentions/TopMaskSizeManagement.cs" id="2_odvdc"]
-[ext_resource type="Texture2D" uid="uid://dy5sxqq0tqjem" path="res://Sprites/S_TopMask_006.png" id="3_ul6g0"]
+[ext_resource type="Texture2D" uid="uid://dy5sxqq0tqjem" path="res://Sprites/Mask/S_TopMask_006.png" id="3_ul6g0"]
 
 [node name="Mask" unique_id=1561778943 instance=ExtResource("1_sigj1")]
 script = ExtResource("2_odvdc")

@@ -8,7 +8,7 @@ public partial class SettingManager : Node
 	private Array<SettingElement> _settingsElements;
 
 	private int _current;
-	
+	private GameManager _gameManager;
 	public override void _Ready()
 	{
 		base._Ready();
@@ -22,12 +22,17 @@ public partial class SettingManager : Node
 				castedChild.Initialize(this);
 			}
 		}
-		CallDeferred("Select", 0);
+		CallDeferred("SetUp");
 	}
-	
 
+	private void SetUp()
+	{
+		Select(0);
+		_gameManager = GameManager.Instance;
+	}
 	private void Select(int index)
 	{
+		
 		var currentIndex = Mathf.Clamp(index, 0, _settingsElements.Count - 1);
 		foreach (var element in _settingsElements)
 		{
@@ -60,10 +65,23 @@ public partial class SettingManager : Node
 
 		return default;
 	}
-	
+
+	private bool IsInMenu()
+	{
+		if (_gameManager is null)
+		{
+			return false;
+		}
+
+		return !_gameManager.IsInGame();
+	}
 	public override void _Process(double delta)
 	{
 		base._Process(delta);
+		if (!IsInMenu())
+		{
+			return;
+		}
 		if (Input.IsActionJustPressed("ui_left_0"))
 		{
 			_settingsElements[_current].AddNumber(-1);

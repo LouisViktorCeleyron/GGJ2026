@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://ctjb1eughues3" path="res://Scripts/PlayerRef.cs" id="1_6cr34"]
 [ext_resource type="Script" uid="uid://dsxgn7ujeotov" path="res://Scripts/MovementModule.cs" id="2_hj2n3"]
-[ext_resource type="SpriteFrames" uid="uid://0pwfb2bexl30" path="res://Sprites/chara_sprite_frame.tres" id="2_vycds"]
-[ext_resource type="Texture2D" uid="uid://g3fccqaeycpr" path="res://Sprites/S_Character_002.png" id="3_efr62"]
+[ext_resource type="SpriteFrames" uid="uid://dyihlkjqn620i" path="res://Sprites/SF_Red.tres" id="2_idveu"]
+[ext_resource type="Texture2D" uid="uid://g3fccqaeycpr" path="res://Sprites/Characters/Green/S_Green_Iddle.png" id="3_efr62"]
 [ext_resource type="SpriteFrames" uid="uid://cu0xntdpb5j1j" path="res://Sprites/Trumpet.tres" id="3_f4fd3"]
 [ext_resource type="Script" uid="uid://x2fqao1t4e3d" path="res://Scripts/ShooterModule.cs" id="3_j35rj"]
-[ext_resource type="Texture2D" uid="uid://qpjeyq56y2oy" path="res://Sprites/S_Character.png" id="4_pv0n8"]
+[ext_resource type="Texture2D" uid="uid://qpjeyq56y2oy" path="res://Sprites/Characters/Red/S_Red_Walk.png" id="4_pv0n8"]
 [ext_resource type="Script" uid="uid://idi63dk6617h" path="res://Scripts/DeathModule.cs" id="6_vycds"]
 [ext_resource type="Script" uid="uid://jabjt1w4hat0" path="res://Scripts/ScoreModule.cs" id="7_m75ex"]
 [ext_resource type="PackedScene" uid="uid://btxcu3ocmec0l" path="res://Objects/Mask/Top/SizeManagementTop.tscn" id="8_gu161"]
@@ -139,11 +139,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Bard" type="CharacterBody2D" unique_id=646171583 node_paths=PackedStringArray("_scallable", "_as")]
+[node name="Bard" type="CharacterBody2D" unique_id=646171583 node_paths=PackedStringArray("_scalable", "_as")]
 process_priority = 1
 script = ExtResource("1_6cr34")
-_scallable = [NodePath("Scaler")]
-_frames = ExtResource("2_vycds")
+_scalable = [NodePath("Scaler")]
+_frames = ExtResource("2_idveu")
 _as = NodePath("Scaler/AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1916308384]
@@ -236,9 +236,11 @@ stream = ExtResource("22_x1yxg")
 [connection signal="OnDeath" from="DeathModule" to="Scaler/TopSpawnPoint" method="set_visible" binds= [false]]
 [connection signal="OnDeath" from="DeathModule" to="Scaler/AnimatedSprite2D" method="play" binds= ["Lose"]]
 [connection signal="OnDeath" from="DeathModule" to="Node2D" method="set_visible" binds= [false]]
+[connection signal="OnDeath" from="DeathModule" to="WalkSound" method="set_stream_paused" binds= [true]]
 [connection signal="OnDeath" from="DeathModule" to="DefeatSound" method="play" binds= [0.0]]
 [connection signal="OnVictory" from="ScoreModule" to="Scaler/BotSpawnPoint" method="set_visible" binds= [false]]
 [connection signal="OnVictory" from="ScoreModule" to="Scaler/TopSpawnPoint" method="set_visible" binds= [false]]
 [connection signal="OnVictory" from="ScoreModule" to="Scaler/AnimatedSprite2D" method="play" binds= ["Win"]]
 [connection signal="OnVictory" from="ScoreModule" to="Node2D" method="set_visible" binds= [false]]
+[connection signal="OnVictory" from="ScoreModule" to="WalkSound" method="set_stream_paused" binds= [true]]
 [connection signal="finished" from="DefeatSound" to="VictorySound" method="play" binds= [0.0]]

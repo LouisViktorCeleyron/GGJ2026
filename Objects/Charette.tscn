@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bpbyqa2wwguv"]
 
 [ext_resource type="PackedScene" uid="uid://cp7rya56tr4e0" path="res://Objects/Obstacle.tscn" id="1_bhjra"]
-[ext_resource type="Texture2D" uid="uid://bf8ak486vddjl" path="res://Sprites/S_Charette_001.png" id="2_1r6xg"]
+[ext_resource type="Texture2D" uid="uid://bf8ak486vddjl" path="res://Sprites/BackGrounds/S_Charette_001.png" id="2_1r6xg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqv18"]
 size = Vector2(440, 182)

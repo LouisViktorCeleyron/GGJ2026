@@ -7,8 +7,8 @@ public partial class UiElementNumber : Control
 	[Export] private Color _activeColor, _inactiveColor;
 	[Export]
 	private Array<TextureRect> _numberTexture;
-
-	[Export] private Label _label;
+	
+	[Export] private Label _label,_numberLabel;
 
 	public void SetLabelName(string name)
 	{
@@ -22,7 +22,19 @@ public partial class UiElementNumber : Control
 
 	public void NumberChange(int elementValue, int max)
 	{
-		BarFeedback(elementValue,max);
+		if (_numberTexture.Count <= 0)
+		{
+			ChangeLabel(elementValue);			
+		}
+		else
+		{
+			BarFeedback(elementValue,max);
+		}
+	}
+
+	private void ChangeLabel(int settingValue)
+	{
+		_numberLabel.SetText(settingValue.ToString());
 	}
 	private void BarFeedback(int elementValue, int elementMax)
 	{

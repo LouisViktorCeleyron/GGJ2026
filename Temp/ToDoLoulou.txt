@@ -3,20 +3,23 @@ UI et score des joueurs
 
 
 
-Roulette de Mask
-Integrer masque centré
 UI/Compteur de score
 Tweak de perso
 Bouger le truc de mort 
-Spawner d'obstacle
-faire un truc qui passe la cinematique 
-
-generation d'objet
-Option
+Invincibilité de respawn
+Reset les points en debut de partie
+Changer best of 
 
 
-Integrer sons/musiques
-passr les balels en +z
-Passer e chato en + Z
+//Option
+//faire un truc qui passe la cinematique 
+//generation d'objet
+//Integrer sons/musiques
+//Integrer masque centré
+//Roulette de Mask
+//Mettre une baniere sur p1/p2/etc..
+//passr les balels en +z
+//Passer e chato en + Z
 //Mettre en place victoire defaire (Bo3)
 //Integrer Balle
+//Spawner d'obstacle

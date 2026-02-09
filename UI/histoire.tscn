@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://7km366eqbvb4"]
 
 [ext_resource type="Script" uid="uid://exqx7ese4quj" path="res://Scripts/Extentions/ConnectAutoload.cs" id="1_6dbnq"]
-[ext_resource type="Texture2D" uid="uid://sf1ukgj0b5x3" path="res://Sprites/S_Scroll_001.png" id="2_1y3h0"]
-[ext_resource type="Texture2D" uid="uid://b13f0o3v3rjm5" path="res://Sprites/S_Text_001.png" id="3_wuwg2"]
-[ext_resource type="Texture2D" uid="uid://bgph640ryu7cu" path="res://Sprites/S_Text_002.png" id="4_3hops"]
-[ext_resource type="Texture2D" uid="uid://dgd253wul70t2" path="res://Sprites/S_Text_003.png" id="5_6dbnq"]
-[ext_resource type="Texture2D" uid="uid://dhllg0ig28cov" path="res://Sprites/S_Text_004.png" id="6_53mms"]
+[ext_resource type="Texture2D" uid="uid://sf1ukgj0b5x3" path="res://Sprites/UI/S_Scroll_001.png" id="2_1y3h0"]
+[ext_resource type="Texture2D" uid="uid://b13f0o3v3rjm5" path="res://Sprites/UI/S_Text_001.png" id="3_wuwg2"]
+[ext_resource type="Texture2D" uid="uid://bgph640ryu7cu" path="res://Sprites/UI/S_Text_002.png" id="4_3hops"]
+[ext_resource type="Texture2D" uid="uid://dgd253wul70t2" path="res://Sprites/UI/S_Text_003.png" id="5_6dbnq"]
+[ext_resource type="Texture2D" uid="uid://dhllg0ig28cov" path="res://Sprites/UI/S_Text_004.png" id="6_53mms"]
+[ext_resource type="FontFile" uid="uid://do84872148i2c" path="res://Temp/Old_Englished_Boots.ttf" id="7_6dbnq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_53mms"]
+font = ExtResource("7_6dbnq")
+font_size = 34
+font_color = Color(0.5211406, 0.5211406, 0.5211405, 1)
 
 [sub_resource type="Animation" id="Animation_3hops"]
 resource_name = "Histoire"
@@ -41,7 +47,7 @@ tracks/2/path = NodePath("TextureRect4/TextureRect7:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(8, 12),
+"times": PackedFloat32Array(8, 12.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -140,9 +146,12 @@ _data = {
 &"RESET": SubResource("Animation_6dbnq")
 }
 
-[node name="Histoire" type="CanvasLayer" unique_id=631532692]
+[node name="Histoire" type="CanvasLayer" unique_id=631532692 node_paths=PackedStringArray("_progressBar", "_layer", "_animPlayer")]
 layer = 3
 script = ExtResource("1_6dbnq")
+_progressBar = NodePath("TextureRect4/ProgressBar")
+_layer = NodePath("TextureRect4")
+_animPlayer = NodePath("AnimationPlayer")
 
 [node name="TextureRect4" type="TextureRect" parent="." unique_id=341013331]
 anchors_preset = 8
@@ -225,9 +234,36 @@ grow_vertical = 2
 texture = ExtResource("6_53mms")
 expand_mode = 1
 
+[node name="ProgressBar" type="ProgressBar" parent="TextureRect4" unique_id=999119716]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.386
+anchor_top = 0.961
+anchor_right = -0.22600001
+anchor_bottom = 1.0
+offset_left = -0.3079834
+offset_top = 0.15795898
+offset_right = -0.10798645
+offset_bottom = -0.9239502
+grow_vertical = 0
+max_value = 1.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="TextureRect4/ProgressBar" unique_id=1808739216]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Skip"
+label_settings = SubResource("LabelSettings_53mms")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2107173266]
 libraries/ = SubResource("AnimationLibrary_6dbnq")
 autoplay = &"Histoire"
 
+[connection signal="ready" from="." to="." method="PrepareSkip"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="LoadGameStart" unbinds=1]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="set_visible" unbinds=1 binds= [false]]

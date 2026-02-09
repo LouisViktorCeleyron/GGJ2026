@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dqvay87d4v6g6"]
 
 [ext_resource type="PackedScene" uid="uid://cp7rya56tr4e0" path="res://Objects/Obstacle.tscn" id="1_j8qd6"]
-[ext_resource type="Texture2D" uid="uid://8s6mt3o43mjy" path="res://Sprites/S_Wall_003.png" id="2_j8qd6"]
+[ext_resource type="Texture2D" uid="uid://8s6mt3o43mjy" path="res://Sprites/BackGrounds/S_Wall_003.png" id="2_j8qd6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yujnw"]
 size = Vector2(228, 512)

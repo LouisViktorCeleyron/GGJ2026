@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://c0pt2xtcwlm46"]
+
+[ext_resource type="Script" uid="uid://dqyo1h4dlogvi" path="res://Scripts/Extentions/UiElementNumber.cs" id="1_0qwd6"]
+[ext_resource type="FontFile" uid="uid://do84872148i2c" path="res://Temp/Old_Englished_Boots.ttf" id="2_d3fta"]
+[ext_resource type="Texture2D" uid="uid://c2woh4ntw3t7h" path="res://Temp/Arrow.png" id="3_2hjvd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vco3a"]
+font = ExtResource("2_d3fta")
+font_size = 56
+
+[sub_resource type="LabelSettings" id="LabelSettings_kkjsv"]
+font = ExtResource("2_d3fta")
+font_size = 71
+
+[node name="UIElementNumber3" type="Control" unique_id=389750878 node_paths=PackedStringArray("_numberTexture", "_label", "_numberLabel")]
+layout_mode = 3
+anchors_preset = 0
+size_flags_vertical = 3
+script = ExtResource("1_0qwd6")
+_activeColor = Color(1, 1, 1, 1)
+_inactiveColor = Color(0.28, 0.28, 0.28, 1)
+_numberTexture = [null, null, null, null]
+_label = NodePath("VBoxContainer/Label")
+_numberLabel = NodePath("VBoxContainer/HBoxContainer2/HBoxContainer/Container/Label")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=686828750]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1746813432]
+layout_mode = 2
+text = "Name"
+label_settings = SubResource("LabelSettings_vco3a")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=127715227]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LeftArrow" type="TextureRect" parent="VBoxContainer/HBoxContainer2" unique_id=1166143460]
+layout_mode = 2
+texture = ExtResource("3_2hjvd")
+expand_mode = 2
+flip_h = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2" unique_id=1058087856]
+layout_mode = 2
+
+[node name="Container" type="Control" parent="VBoxContainer/HBoxContainer2/HBoxContainer" unique_id=1587262644]
+custom_minimum_size = Vector2(160.655, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/HBoxContainer/Container" unique_id=1678689757]
+custom_minimum_size = Vector2(155.955, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.04
+offset_bottom = 14.959999
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "3"
+label_settings = SubResource("LabelSettings_kkjsv")
+horizontal_alignment = 1
+vertical_alignment = 3
+
+[node name="RightArrow" type="TextureRect" parent="VBoxContainer/HBoxContainer2" unique_id=2038766948]
+layout_mode = 2
+texture = ExtResource("3_2hjvd")
+expand_mode = 2

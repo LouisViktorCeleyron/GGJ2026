@@ -7,106 +7,25 @@ using Array = Godot.Collections.Array;
 [GlobalClass]
 public partial class GameManager : Node
 {
-
 	public static GameManager Instance;
-	private Array<PlayerRef> _players;
-
-	[Export] private Array<SpawnPoint> _spawnPoints;
-	[Signal]
-	public delegate void LoadScreenSignalEventHandler();
-	[Signal]
-	public delegate void StartGameSignalEventHandler();
-	[Signal]
-	public delegate void EndGameSignalEventHandler(PlayerRef winner);
-
-	[Export] private AnimationPlayer _animPlayer;
-	public int BestOf = 3;
-	private bool _gameStarted,_canGameStart;
-	[Export] private PackedScene _mainScene;
-
 	[Export] private SettingManager _settings;
-	
-	public void AddSpawnPoint(SpawnPoint newSP)
-	{
-		_spawnPoints.Add(newSP);
-	}
-
-	public void LoadStartScreen()
-	{
-		EmitSignalLoadScreenSignal();
-	}
-
-	private void ManageAnimation(StringName animName)
-	{
-		switch (animName)
-		{
-			case "In":
-				_animPlayer.Play("Out");
-				if (_canGameStart)
-				{
-					PreStartGame();
-				}
-				break;
-			case "Out":
-				if(!_canGameStart)
-				{
-					_canGameStart = true;
-				}
-				break;;
-		}
-	}
-	public void StartGame()
-	{
-		foreach (var player in _players)
-		{
-			var pos = _spawnPoints.PickRandom();
-			while (pos.IsOccupied)
-			{
-				pos = _spawnPoints.PickRandom();
-			}
-			player.GetModule<MovementModule>().InitMovement();
-			player.Position = pos.Position;
-			pos.IsOccupied = true;
-		}
-		
-		EmitSignalStartGameSignal();
-		foreach (var player in _players)
-		{
-			_gameStarted = true;
-			player.GetModule<MaskManagerModule>().GenerateMasks();
-			player.SetPause(false);
-		}
-	}
-	
-	public void GameOver()
-	{
-		GetTree().Quit();
-	}
-
-	private void PreStartGame()
-	{
-		GetTree().ChangeSceneToPacked(_mainScene);
-	}
-
 	public static SettingManager GetSettings()
 	{
 		return Instance._settings;
 	}
-	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		if (GameManager.Instance is null)
 		{
 			GameManager.Instance = this;
 			_gameStarted = false;
-			_spawnPoints = new Array<SpawnPoint>();
+			SetUpGame();
 		}
 		else
 		{
 			Free();
 		}
 	}
-
 	public override void _Process(double delta)
 	{
 		base._Process(delta);
@@ -114,46 +33,155 @@ public partial class GameManager : Node
 		{
 			if (Input.IsActionJustPressed("ui_accept"))
 			{
-				_animPlayer.Play("In");
+				LaunchAnim("In");
 			}
 		}
-	}
-	
-	public void EndGame(PlayerRef winner)
-	{
-		foreach (var player in _players)
+		else
 		{
-			player.SetPause(true);
-			if (player == winner)
+			if (Input.IsActionPressed("ui_accept"))
 			{
-				continue;
+				ProcessSkip(_skipProcess+(float)delta);
 			}
-			player.GetModule<DeathModule>().Defeat();
+
+			if (Input.IsActionJustReleased("ui_accept"))
+			{
+				ProcessSkip(0f);
+			}
 		}
-		EmitSignalEndGameSignal(winner);
 	}
-	public void AddPlayerRef(PlayerRef pr)
-	{
-		if (_players is null)
+
+	#region SkipManagement
+		[Export] private float _skipAmount =1;
+		private float _skipProcess;
+		public Action<float> OnSkipUpdate;
+		public Action OnSkipFinished;
+		private void ProcessSkip(float skipValue)
 		{
-			_players = new Array<PlayerRef>();
+			_skipProcess = skipValue;
+			OnSkipUpdate?.Invoke(skipValue);
+			if (_skipProcess >= _skipAmount)
+			{
+				OnSkipFinished?.Invoke();
+				OnSkipFinished = null;
+				OnSkipUpdate = null;
+			}
 		}
-		_players.Add(pr);
-	}
-
-	public PlayerRef FindRandomPlayer(PlayerRef exclude = null)
-	{
-		PlayerRef ret = null;
-		while (ret is null || ret == exclude)
+	#endregion
+	#region GameManagement
+		private bool _gameStarted,_canGameStart;
+		[Export] private PackedScene _mainScene;
+		[Signal] public delegate void StartGameSignalEventHandler();
+		[Signal] public delegate void EndGameSignalEventHandler(PlayerRef winner);
+		private void SetUpGame()
 		{
-			ret = _players.PickRandom();
+			_spawnPoints = new Array<SpawnPoint>();
+			Players = new Array<PlayerRef>();
+			_gameStarted = false;
+			_canGameStart = false;
 		}
-		return ret;
-	}
+		public void StartGame()
+		{
+			foreach (var player in Players)
+			{
+				var pos = _spawnPoints.PickRandom();
+				while (pos.IsOccupied)
+				{
+					pos = _spawnPoints.PickRandom();
+				}
+				player.GetModule<MovementModule>().InitMovement();
+				player.Position = pos.Position;
+				pos.IsOccupied = true;
+			}
+			
+			EmitSignalStartGameSignal();
+			foreach (var player in Players)
+			{
+				_gameStarted = true;
+				player.GetModule<MaskManagerModule>().GenerateMasks();
+				player.SetPause(false);
+			}
+		}
+		private void PreStartGame()
+		{
+			GetTree().ChangeSceneToPacked(_mainScene);
+		}
+		public void EndGame(PlayerRef winner)
+		{
+			foreach (var player in Players)
+			{
+				player.SetPause(true);
+				if (player == winner)
+				{
+					continue;
+				}
+				player.GetModule<DeathModule>().Defeat();
+			}
+			EmitSignalEndGameSignal(winner);
+		}
+		public bool IsInGame()
+		{
+			return _gameStarted;
+		}
+	#endregion
+	#region Player
+		[Export] private Array<SpawnPoint> _spawnPoints;
+		public Array<PlayerRef> Players { get; private set; }
+		public void AddPlayerRef(PlayerRef pr)
+		{
+			if (Players is null)
+			{
+				Players = new Array<PlayerRef>();
+			}
+			Players.Add(pr);
+		}
+		public PlayerRef FindRandomPlayer(PlayerRef exclude = null)
+		{
+			PlayerRef ret = null;
+			while (ret is null || ret == exclude)
+			{
+				ret = Players.PickRandom();
+			}
+			return ret;
+		}
+		public void SpawnPlayerAtPoint(PlayerRef player)
+		{
+			player.Position = _spawnPoints.PickRandom().Position;
+		}
+		public void AddSpawnPoint(SpawnPoint newSP)
+		{
+			_spawnPoints.Add(newSP);
+		}
+	#endregion
+	#region Animations
+		[Export] private AnimationPlayer _animPlayer;
 
-	public void SpawnPlayerAtPoint(PlayerRef player)
-	{
-		player.Position = _spawnPoints.PickRandom().Position;
-	}
-
+		[Export] private CanvasLayer _mainMenu;
+		public void LaunchAnim(string animName)
+		{
+			_animPlayer.Play(animName);
+		}
+		public void ManageAnimation(StringName animName)
+		{
+			switch (animName)
+			{
+				case "In":
+					LaunchAnim("Out");
+					if (_canGameStart)
+					{
+						PreStartGame();
+					}
+					else
+					{
+						_mainMenu.Visible = true;
+					}
+					break;
+				case "Out":
+					if(!_canGameStart)
+					{
+						_canGameStart = true;
+					}
+					break;;
+			}
+		}
+	#endregion
 }

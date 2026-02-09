@@ -1,47 +1,46 @@
 [gd_scene format=3 uid="uid://p8kvet24kctl"]
 
 [ext_resource type="Script" uid="uid://cvre8bok6jmuq" path="res://Scripts/Extentions/UiScore.cs" id="1_6173j"]
-[ext_resource type="Texture2D" uid="uid://rdvxpq8ggj1p" path="res://Sprites/S_Sun_001.png" id="1_re6vd"]
 [ext_resource type="FontFile" uid="uid://do84872148i2c" path="res://Temp/Old_Englished_Boots.ttf" id="2_gr68x"]
+[ext_resource type="Texture2D" uid="uid://cpn7uqfffhqjs" path="res://Sprites/UI/S_Flag.png" id="2_v3yur"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5008a"]
+atlas = ExtResource("2_v3yur")
+region = Rect2(48, 40, 160, 175)
 
 [sub_resource type="LabelSettings" id="LabelSettings_6173j"]
 font = ExtResource("2_gr68x")
-font_size = 83
+font_size = 51
 outline_size = 11
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wwh41"]
-atlas = ExtResource("1_re6vd")
-region = Rect2(529, 1040, 482, 482)
-
-[node name="HBoxContainer2" type="HBoxContainer" unique_id=497052685 node_paths=PackedStringArray("jpp")]
-offset_right = 427.0
-offset_bottom = 103.0
+[node name="ScoreContainer" type="HBoxContainer" unique_id=497052685 node_paths=PackedStringArray("_scoreLabel", "_playerLabel", "_textureRectFlag")]
+offset_right = 160.0
+offset_bottom = 175.0
 script = ExtResource("1_6173j")
-jpp = NodePath("HBoxContainer")
+_scoreLabel = NodePath("TextureRect/ScoreLabel")
+_playerLabel = NodePath("")
+_textureRectFlag = NodePath("TextureRect")
 
-[node name="Label" type="Label" parent="." unique_id=1107557344]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=576840270]
+self_modulate = Color(0.85490197, 0.2509804, 0.38431373, 1)
 layout_mode = 2
-text = "P1"
+texture = SubResource("AtlasTexture_5008a")
+expand_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="TextureRect" unique_id=2057409403]
+self_modulate = Color(1, 0.94600004, 0.45999998, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = 17.0
+offset_right = -35.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "00"
 label_settings = SubResource("LabelSettings_6173j")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1315487878]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1191582179]
-visible = false
-layout_mode = 2
-texture = SubResource("AtlasTexture_wwh41")
-expand_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer" unique_id=1990282903]
-visible = false
-layout_mode = 2
-texture = SubResource("AtlasTexture_wwh41")
-expand_mode = 2
-
-[node name="TextureRect3" type="TextureRect" parent="HBoxContainer" unique_id=1058547105]
-visible = false
-layout_mode = 2
-texture = SubResource("AtlasTexture_wwh41")
-expand_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
